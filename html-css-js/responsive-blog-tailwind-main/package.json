@@ -1,0 +1,11 @@
+{
+  "name": "tailwind-css-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build-css": "npx tailwindcss-cli@latest build style.css -o output.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

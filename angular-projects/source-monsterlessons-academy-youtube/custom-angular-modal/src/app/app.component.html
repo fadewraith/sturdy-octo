@@ -1,0 +1,21 @@
+<!-- source = 'https://www.youtube.com/watch?v=MuHpsz7Q3P0'  -->
+
+<h1>Custom Ng Modal</h1>
+<!-- below button can open the modal -->
+<!-- here inside method, we are providing template reference, which actually means whatever we are providing inside ng template, and then we can use this ng template to render the modal with the content inside  -->
+<button (click)="openModal(modalTemplate)">Open modal</button>
+<router-outlet></router-outlet>
+
+<!-- here we are providing markup that we want to render inside our modal because this is something, that wont be rendered and we can later use it for rendering-->
+<ng-template #modalTemplate>
+  <div>This is our custom modal content</div>
+</ng-template>
+
+<!--
+<h1>Monsterlessons Academy</h1>
+<button (click)="openModal(modalTemplate)">Open modal</button>
+<router-outlet></router-outlet>
+
+<ng-template #modalTemplate>
+  <div>This is our custom modal content</div>
+</ng-template> -->

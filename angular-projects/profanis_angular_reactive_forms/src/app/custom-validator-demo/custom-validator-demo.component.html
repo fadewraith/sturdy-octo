@@ -1,0 +1,21 @@
+<!-- https://www.youtube.com/watch?v=mK0CX-68hBE&list=PLhzRPVQgdM8WKFb-2cQfquUnRWdu8qD3m&index=5 -->
+<form [formGroup]="myForm" class="form-container">
+    <!-- Password field -->
+    <p>Password</p>
+    <mat-form-field>
+      <input matInput placeholder="" formControlName="password">
+    </mat-form-field>
+    <!-- /Password field -->
+  
+  
+    <!-- Confirm password field -->
+    <p>Confirm Password</p>
+    <mat-form-field>
+      <input matInput placeholder="" formControlName="confirmPassword">
+      <mat-hint align="start" *ngIf="myForm?.errors?.['valuesDoNotMatch']">
+        <strong>Passwords do not match</strong>
+      </mat-hint>
+    </mat-form-field>
+    <!-- /Confirm password field -->
+  
+  </form>

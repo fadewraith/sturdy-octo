@@ -1,0 +1,15 @@
+<div class="modal {{ size }}">
+  <div class="modal-header">
+    {{ title }}
+    <span class="modal-close" (click)="close()">✕</span>
+  </div>
+  <div class="modal-content">
+    <ng-content></ng-content>
+  </div>
+  <div class="modal-footer">
+    <button (click)="submit()">Submit</button>
+  </div>
+</div>
+
+<!-- for closing the modal, when clicking anywhere outside -->
+<div class="modal-backdrop" (click)="close()"></div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <form
+    [formGroup]="searchForm"
+    class="searchBar"
+    (ngSubmit)="onSearchSubmit()"
+  >
+    <input
+      type="text"
+      placeholder="Search..."
+      formControlName="searchValue"
+      class="searchBarInput"
+    />
+  </form>
+  <div class="articlesTable">
+    <div class="article" *ngFor="let article of articles">
+      {{ article.title }}
+    </div>
+  </div>
+</div>
+

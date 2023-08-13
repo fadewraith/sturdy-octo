@@ -1,0 +1,23 @@
+<!-- https://www.youtube.com/watch?v=QftaHIiLEzU&list=PLhzRPVQgdM8WKFb-2cQfquUnRWdu8qD3m&index=6 -->
+
+<form [formGroup]="myForm" class="form-container">
+    <ng-container formArrayName="colors">
+        <!-- because each control is a different form group, we also need to have a form group name -->
+        <!-- in order to work with nested formgroups, we need to specify the name of the form group -->
+        <ng-container *ngFor="let _ of colors.controls; index as i" [formGroupName]="i">
+            <div class="form-inline mb-1">
+                <!-- where name is the controlName {name: 'red'} in ts file -->
+                <input class="form-control" formControlName="name">
+
+                <!-- this is for deleting -->
+                <button class="btn btn-primary btn-sm ml-1" (click)="removeColor(i)">X</button>
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <button class="btn btn-primary" (click)="addColor()">Add new</button>
+</form>
+
+<pre>
+    {{ myForm.value | json }}
+</pre>

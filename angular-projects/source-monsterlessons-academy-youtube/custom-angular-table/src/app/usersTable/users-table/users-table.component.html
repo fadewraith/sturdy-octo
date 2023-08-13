@@ -1,0 +1,22 @@
+<div class="search-bar">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+    <input type="text" placeholder="Search..." formControlName="searchValue">
+  </form>
+</div>
+<table class="users-table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns" class="users-table-cell" (click)="sortTable(column)">{{ capitalize(column) }}
+        <span *ngIf="isDescSorting(column)">&#9660;</span>
+        <span *ngIf="isAscSorting(column)">&#9650;</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td *ngFor="let column of columns"  class="users-table-cell">
+        {{user[column]}}
+      </td>
+    </tr>
+  </tbody>
+</table>

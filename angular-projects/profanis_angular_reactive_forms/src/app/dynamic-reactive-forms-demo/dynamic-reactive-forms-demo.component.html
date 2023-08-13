@@ -1,0 +1,17 @@
+<!-- https://www.youtube.com/watch?v=YXfDM5MvpRg&list=PLhzRPVQgdM8WKFb-2cQfquUnRWdu8qD3m&index=9
+
+    https://www.youtube.com/watch?v=1EST2T9eIwY&list=PLhzRPVQgdM8WKFb-2cQfquUnRWdu8qD3m&index=10
+
+-->
+
+<ng-container [formGroup]="myForm">
+  <ng-container *ngFor="let formItem of dynamicFormFields">
+    <app-dynamic-form-field
+      [formItem]="formItem"
+    ></app-dynamic-form-field>
+  </ng-container>
+
+  {{ myForm.value | json }}
+
+  isValid: {{ myForm.valid }}
+</ng-container>

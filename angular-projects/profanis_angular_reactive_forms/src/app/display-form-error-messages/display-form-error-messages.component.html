@@ -1,0 +1,34 @@
+<!-- https://www.youtube.com/watch?v=wOtPXAbxoM4&list=PLhzRPVQgdM8WKFb-2cQfquUnRWdu8qD3m&index=3 -->
+<!-- this demo is all about that if user doesnt fills any field and submits the form, then it should display the error -->
+<!-- #localForm="ngForm", as soon as we click the submit button, this variable will know, if the form has been submitted or not, and we will know it by using, {{ localForm.submitted }} -->
+<form [formGroup]="form" (ngSubmit)="submitForm()" #localForm="ngForm" class="col-md-4 mb-3">
+
+  <!-- user name field -->
+  <div class="form-group">
+    <label>Username</label>
+    <div class="input-group">
+      <input type="text" class="form-control" formControlName="username"
+      [class.is-invalid]="localForm.submitted && form.get('username')?.invalid"
+      />
+      <!-- "invalid-feedback" this requires to be the class inside the input field according to the bootstrap -->
+      <div class="invalid-feedback">
+        Username is required
+      </div>
+    </div>
+  </div>
+
+  <!-- password field -->
+  <div class="form-group">
+    <label>Password</label>
+    <div class="input-group">
+      <input type="password" class="form-control" formControlName="password"
+      [class.is-invalid]="localForm.submitted && form.get('password')?.invalid"
+      />
+      <div class="invalid-feedback">
+        Password is required
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

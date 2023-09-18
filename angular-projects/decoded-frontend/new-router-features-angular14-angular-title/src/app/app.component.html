@@ -1,0 +1,21 @@
+<!-- source - https://youtu.be/WKCweQOI9-U?list=PLX7eV3JL9sflxg0fWgaWoz43Rx99bivmv -->
+<mat-toolbar color="primary">
+  <img class="logo" width="70" src="https://www.decodedfrontend.io/wp-content/uploads/2021/01/icon.png" alt="Decoded Frontend">
+  <span class="title">Router Features in Angular 14</span>
+  <a mat-button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >Home</a>
+  <a mat-button
+    routerLink="/users"
+    routerLinkActive="active"
+  >Users</a>
+  <a mat-button
+    routerLink="/admin"
+    routerLinkActive="active"
+  >Admin</a>
+</mat-toolbar>
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

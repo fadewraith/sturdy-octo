@@ -1,0 +1,102 @@
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
+
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Register Yourself</h2>
+    </div>
+
+
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+
+            <form class="mb-0 space-y-6" #tdForm="ngForm" (ngSubmit)="getData(tdForm.value)" novalidate>
+<!-- ############################################################################################################################################################################### -->
+
+                <div>
+                    <label for="fname" class="block font-medium text-gray-700">First Name</label>
+                    <div class="mt-2 border p-1"><input class="outline-none" type="text" id="fname" name="fname" placeholder="Enter First Name" autocomplete="fname" required minlength="3" maxlength="20" [(ngModel)]="user.fName" #fName="ngModel" ></div>
+                </div>
+                
+                <div *ngIf="!fName?.valid && (fName?.dirty || fName?.touched)" class="error">
+                    <div *ngIf="fName.errors && fName.errors['required']">
+                        <p class="text-red-500 text-sm">First Name is required</p>
+                    </div>
+                    <div *ngIf="fName.errors && fName.errors['minlength']"><p class="text-red-500 text-sm">First Name should be minimum {{ fName.errors && fName.errors['minlength'].requiredLength }} character</p></div>
+          <div *ngIf="fName.errors && fName.errors['maxlength']"><p class="text-red-500 text-sm">First Name is maximum 10 character</p></div>
+                </div>
+                
+<!-- ############################################################################################################################################################################### -->
+                <div>
+                    <label for="lname" class="block font-medium text-gray-700">Last Name</label>
+                    <div class="mt-2 border p-1"><input class="outline-none" required minlength="3" maxlength="20" [(ngModel)]="user.lName" #lName="ngModel" type="text" id="lname" name="lname" placeholder="Enter Last Name" autocomplete="lname"></div>
+                </div>
+
+                <div *ngIf="!lName?.valid && (lName?.dirty || lName?.touched)" class="error">
+                    <div *ngIf="lName.errors && lName.errors['required']">
+                        <p class="text-red-500 text-sm">Last Name is required</p>
+                    </div>
+                    <div *ngIf="lName.errors && lName.errors['minlength']">
+                        <p class="text-red-500 text-sm">Last Name should be minimum {{ lName.errors && lName.errors['minlength'].requiredLength }} character</p>
+                    </div>
+          <div *ngIf="lName.errors && lName.errors['maxlength']">
+              <p class="text-red-500 text-sm">Last Name is maximum 10 character</p>
+            </div>
+                </div>
+<!-- ############################################################################################################################################################################### -->
+                <div>
+                    <label for="phone" class="block font-medium text-gray-700">Enter Mobile Number</label>
+                    <div class="mt-2 border p-1"><input class="outline-none" required pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" [(ngModel)]="user.mobNum" #mobNum="ngModel" type="text" id="phone" name="phone" placeholder="Mobile Number" autocomplete="phone"></div>
+                </div>
+                
+                <div *ngIf="!mobNum?.valid && (mobNum?.dirty || mobNum?.touched)" class="error">
+                    <div *ngIf="mobNum.errors && mobNum.errors['required']">
+                        <p class="text-red-500 text-sm">Enter mobile number</p>
+                    </div>
+                    <div *ngIf="mobNum.errors && mobNum.errors['pattern']">
+                        <p class="text-red-500 text-sm">Characters are not allowed</p>
+                    </div>
+                </div>
+                
+<!-- ############################################################################################################################################################################### -->
+                <div>
+                    <label for="mail" class="block font-medium text-gray-700">Enter Email</label>
+                    <div class="mt-2 border p-1"><input class="outline-none" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" [(ngModel)]="user.eMail" #eMail="ngModel" type="email" id="mail" name="mail" placeholder="Email" autocomplete="email"></div>
+                </div>
+
+                <div *ngIf="!eMail?.valid && (eMail?.dirty || eMail?.touched)" class="error">
+                    <div *ngIf="eMail.errors && eMail.errors['required']">
+                        <p class="text-red-500 text-sm">Enter mail</p>
+                    </div>
+                    <div *ngIf="eMail.errors && eMail.errors['pattern']">
+                        <p class="text-red-500 text-sm">Enter email in correct format</p>
+                    </div>
+                </div>
+<!-- ############################################################################################################################################################################### -->
+
+                <div>
+                    <label for="password" class="block font-medium text-gray-700 ">Password</label>
+                    <div class="mt-2 border p-1"><input class="outline-none" minlength="8" maxlength="20" [(ngModel)]="user.pass" #pass="ngModel" type="password" id="password" name="password" placeholder="Password" required></div>
+                </div>
+
+                <div *ngIf="!pass?.valid && (pass?.dirty || pass?.touched)" class="error">
+                    <div *ngIf="pass.errors && pass.errors['required']">
+                        <p class="text-red-500 text-sm">Enter the password</p>
+                    </div>
+                    <div *ngIf="pass.errors && pass.errors['minlength']">
+                        <p class="text-red-500 text-sm">Password is minimum {{ pass.errors && pass.errors['minlength'].requiredLength }} character</p>
+                    </div>
+          <div *ngIf="pass.errors && pass.errors['maxlength']">
+              <p class="text-red-500 text-sm">Password should be not maximum</p>
+            </div>
+                </div>
+
+<!-- ############################################################################################################################################################################### -->
+        <div>
+            <button type="submit" [disabled]="!tdForm.valid" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+          </div>
+<!-- ############################################################################################################################################################################### -->
+            </form>
+<!-- ############################################################################################################################################################################### -->
+        </div>
+    </div>
+</div>

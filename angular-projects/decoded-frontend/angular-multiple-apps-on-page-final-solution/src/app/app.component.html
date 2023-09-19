@@ -1,0 +1,10 @@
+<div *ngIf="hasNewMessage$ | async" class="new-message">You've got a new message</div>
+<header class="header">
+  <img class="logo" width="100" src="https://www.decodedfrontend.io/wp-content/uploads/2021/01/logo-01-1.png" alt="logo">
+  <span class="name">Multi-Apps Bootstraping</span>
+</header>
+<main class="content">
+  <button (click)="onClick()">Bootstrap Chat</button>
+  <app-home-page></app-home-page>
+</main>
+

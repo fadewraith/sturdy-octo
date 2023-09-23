@@ -1,0 +1,130 @@
+What is Lambda Expression ?
+
+expression through which we can represent and anonymous function
+
+anonymous - nameless / unknown
+
+	anonymous function - a method who don't have any name or modifier
+	
+syntax -	parameter	expression	body
+			( )				->		System.out.println("hello");
+
+Functional Interface ?
+	The interface who contains only one abstract method but can have multiple default and static method is called functional interface. ex - 
+		Runnable - run()
+		Callable - call()
+		Comparable - compareTo()
+		Comparator - compare()	
+
+############################################################################
+
+1. Consumer Functional Interface - 
+	Consumer<T> is an in built functional interface introduced in Java 8. Consumer can be used in all contexts where an object needs to be consumed, i.e. taken as input and some operation is to be performed on the object without returning any result.
+	ex - void accept(T t);
+	
+2. Predicate Functional Interface - 
+	This functional interface used for conditional check, where we think, we can use these true/false returning functions in day to dat programming, we should choose Predicate
+	ex - boolean test(T t);
+	
+3. Supplier Functional Interface - 
+	Supplier can be used in all contexts where there is no input but an output is expected.
+	ex - T get(); 
+	
+	**in Java in stream api, there is a forEach method and that forEach method always accepts the Consumer Functional Interface.
+	
+############################################################################
+
+Stream in Java -
+
+Stream API is used to process collections of objects.
+	A stream is a sequence of objects that supports various methods which can be piplined to produce the desired result.
+	
+	A stream is not a data structure instead it takes input from the collections, arrays or I/O channels.
+	
+	Streams dont change the original data structure, they only provide the result as per the pipelined methods.
+
+	why we need stream api ?
+	functional programming / code reduce / bulk operation
+	
+############################################################################
+
+Map() & flatMap() -
+
+-> java 8 stream api provides map() & flatMap() method. Both these methods are intermediate methods and returns another stream as part of the output
+
+-> map() method used for transformation
+
+-> flatMap() used for transformation & flattening
+
+-> flatMap() -> map()  + flattening
+
+map() method -> data transformation
+
+-> map() takes Stream<T> as input and return Stream<R>
+
+-> Stream<R> map(Stream<T> input){}
+
+<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+
+-> its mapper function produces single value for each input value, hence it is also called 1-to-1 mapping.
+
+---------------------------
+
+flatMap() method -> map() + flattening
+
+-> flatMap() takes Stream<Stream<T>> as input and return Stream<R>
+
+-> Stream<R> map(Stream<Stream<T input){}
+
+<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);
+
+-> its mapper function produces multiple value for each input value, hence it is also called 1-to-many mapping.
+
+=============================================
+
+What is map-reduce ?
+
+	-> map-reduce is a functional programming model it serves our 2 purpose - 
+		Map -> transforming data
+		Reduce -> aggregating data
+		(combine elements of a stream and produces a single value)
+	
+	-> ex-> Stream: [2, 4, 6, 9, 1, 3, 7], sum of numbers present in stream?
+	-> Map() -> transform stream<Object> to Stream of int
+	-> Reduce() -> combine stream of int and produce the sum result
+	
+	-- Reduce method - 
+		-> T reduce(T identity, BinaryOperator<T> accumulator);
+		1. identity is initial value of type T
+		2. accumulator is a function for combining 2 values.
+		
+		Integer sum = Stream.of(2, 4, 6, 9, 1, 3, 7)
+					  .reduce(0, (a, b) -> a + b);
+		
+		Integer: 0, which is nothing initial value
+		Accumulator: (a, b) -> a + b function
+		
+=============================================
+
+what is java parallel streams? 
+	
+	-> java parallel streams is a feature of java 8, it meant for utilizing multiple cores of the processor
+	-> normally any java code has one stream of processing, where it is executed sequentially. whereas by using parallel streams, we can divide the code into multiple streams that are executed in parallel on separate cores and the final result is the combination of the individual outcomes
+	-> the order of execution, however, is not under our control
+	
+=============================================
+
+@FunctionalInterface
+public interface BiFunction<T, U, R> {
+	R apply(T t, U u);
+}
+
+@FunctionalInterface
+public interface BiConsumer<T, U> {
+	void accept(T t, U u);
+}
+
+@FunctionalInterface
+public interface BiPredicate<T, U> {
+	boolean test(T t, U u);
+}

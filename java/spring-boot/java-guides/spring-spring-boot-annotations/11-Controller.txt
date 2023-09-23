@@ -1,0 +1,77 @@
+@Controller Annotation - 
+
+1. Spring provides @Controller annotation to make a Java class as a Spring MVC controller. The @Controller annotation indicates that a particular class serves the role of a controller.
+2. Controller in spring MVC web application is a component that handles incoming HTTP requests.
+3. @Controller annotation is simply a specialization of the @Component class, which allows us to auto-detect implementation classes through the classpath scanning.
+4. We typically use @Controller in combination with a @RequestMapping annotation for request handling methods.
+
+====================
+
+in controller package - 
+create class - BookController class- 
+
+//    when we are developing the api using spring mvc, then @Controller, @RequestMapping & @ResponseBody should be used
+
+@Controller
+public class BookController {
+
+//    when we are developing the api using spring mvc, then @Controller, @RequestMapping & @ResponseBody should be used
+    @RequestMapping("/hello-world") //making this method as handler method by this annotation
+    @ResponseBody // we have to annotate handler method with this annotation & it will return as a JSON to the client
+    public String helloWorld(){
+        return "Hello World";
+    }
+}
+
+
+create a new package beans - 
+class Book - 
+
+public class Book {
+    private int id;
+    private String titles;
+    private String description;
+
+    public Book(int id, String titles, String description) {
+        this.id = id;
+        this.titles = titles;
+        this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitles() {
+        return titles;
+    }
+
+    public void setTitles(String titles) {
+        this.titles = titles;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+
+go to BookController class - 
+
+add code - 
+
+@RequestMapping("/book")
+    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+

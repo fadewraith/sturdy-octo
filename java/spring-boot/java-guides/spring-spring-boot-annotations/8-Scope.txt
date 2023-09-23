@@ -1,0 +1,62 @@
+Spring Bean Scopes - 
+
+1. The latest version of the spring framework defines 6 types of scopes - 
+singleton
+prototype
+request
+session
+application
+websocket
+
+2. The last 4 scopes mentioned, request, session, application and websocket, are only available in a web-aware application.
+3. @Scope annotation is used to define a scope of the bean
+4. We use @Scope to define the scope of a @Component class or a @Bean definition
+5. Singleton: only one instance of the bean is created and shared across the entire application. This is the default scope.
+6. Prototype: a new instance of the bean is created every time it is requested
+
+=============
+
+new package scope - 
+
+create classes - 
+
+@Component
+@Scope(value = "singleton")
+or both are same
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+public class SingletonBean {
+
+    public SingletonBean() {
+        System.out.println("SingletonBean");
+    }
+}
+
+
+@Component
+//@Scope(value = "prototype")
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public class PrototypeBean {
+
+    public PrototypeBean() {
+        System.out.println("PrototypeBean");
+    }
+}
+
+go to main method - 
+
+        var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+        SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
+        System.out.println(singletonBean1.hashCode());
+        SingletonBean singletonBean2 = context.getBean(SingletonBean.class);
+        System.out.println(singletonBean2.hashCode());
+        SingletonBean singletonBean3 = context.getBean(SingletonBean.class);
+        System.out.println(singletonBean3.hashCode());
+
+        PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean1.hashCode());
+        PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean2.hashCode());
+        PrototypeBean prototypeBean3 = context.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean3.hashCode());
+

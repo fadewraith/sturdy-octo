@@ -1,0 +1,74 @@
+Stereotype annotations - 
+
+1. These annotations are used to create Spring beans automatically in the application context (Spring IOC container)
+2. The main stereotype annotation is @Component.
+3. By using this annotations, Spring provides more Stereotype meta annotations such as @Service, @Repository and @Controller
+4. @Service annotation is used to create Spring beans at the Service layer
+5. @Repository is used to create Spring beans for the repositories @ DAO layer
+6. @Controller is used to create spring beans at the controller layer
+
+
+=========================
+
+create a repository package - 
+create a class and method - 
+
+@Configuration
+public class MyController { // we handle the http request
+
+    public String hello() {
+        return "Hello Controller";
+    }
+}
+
+go to main method - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+//		MyController
+		MyController myController = context.getBean(MyController.class);
+		System.out.println(myController.hello());
+
+===================
+
+create a service package - all the business logic
+
+create a class - 
+
+@Service
+public class MyService {
+
+
+    public String hello() {
+        return "Hello Service";
+    }
+}
+
+go to main method - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+
+//		MyService
+		MyService myService = context.getBean(MyService.class);
+		System.out.println(myService.hello());
+
+===================
+
+create a repository package - contains all the db logic
+
+@Repository
+public class MyRepository {
+    public String hello() {
+        return "Hello Repository";
+    }
+}
+
+go to main method - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+
+//		MyRepository
+		MyRepository myRepository = context.getBean(MyRepository.class);
+		System.out.println(myRepository.hello());

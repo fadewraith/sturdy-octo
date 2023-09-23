@@ -1,0 +1,44 @@
+@PostMapping and @RequestBody Annotations - 
+
+1. The POST HTTP method is used to create a resource and @PostMapping annotation for mapping HTTP POST requests onto specific handler method.
+2. Specifically, @PostMapping is a composed annotation that acts as a shortcut for @RequestMapping(method=RequestMethod.POST).
+3. The @RequestBody annotation is responsible for retrieving the HTTP request body and automatically converting it to the Java object.
+
+=====================================
+
+in BookController class - 
+
+//    @RequestMapping(value="/books/create", method=RequestMethod.POST)
+//    @PostMapping("/books/create")
+    @PostMapping(value = "/books/create",
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Book createBook(@RequestBody Book book) { // we need to use one more annotation, RequestBody will convert JSON into java Book  object
+        System.out.println(book.getId());
+        System.out.println(book.getTitle());
+        System.out.println(book.getDescription());
+        return book;
+    }
+
+
+======================
+
+to add the HTTP status, either we can use @ResponseStatus
+other way is to use ResponseEntity class - 
+
+//    @RequestMapping(value="/books/create", method=RequestMethod.POST)
+//    @PostMapping("/books/create")
+    @PostMapping(value = "/books/create",
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+//    @ResponseStatus(value= HttpStatus.CREATED) // to add the response status
+//    public Book createBook(@RequestBody Book book) { // we need to use one more annotation, RequestBody will convert JSON into java Book  object
+    public ResponseEntity<Book> createBook(@RequestBody Book book) { // other way to create Response Status code
+        System.out.println(book.getId());
+        System.out.println(book.getTitle());
+        System.out.println(book.getDescription());
+//        return book;
+        return new ResponseEntity<>(book, HttpStatus.CREATED); // this is other way to return response and status code, its must with the method signataure used above
+    }
+
+    

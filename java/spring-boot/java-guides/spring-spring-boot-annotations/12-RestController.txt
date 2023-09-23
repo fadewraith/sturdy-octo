@@ -1,0 +1,53 @@
+@RestController Annotation
+
+1. In order to develop RESTful web services using Spring MVC, we need to use @Controller and @ResponseBody annotations.
+2. Spring 4.0 introduced @RestController, a specialized version of the @Controller which is a convenience annotation that does nothing more than adding the @Controller and @ResponseBody annotations.
+3. In order to create Restful web services using Spring MVC, we need to annotate a java class with @RestController annotation.
+for spring MVC web application, we need to use @Controller annotation
+
+so instead of using @Controller and @ResponseBody
+
+instead of using @ResponseBody at the method level, we can use it @ class level - 
+
+@Controller
+@ResponseBody
+public class BookController {
+
+//    when we are developing the api using spring mvc, then @Controller, @RequestMapping & @ResponseBody should be used
+    @RequestMapping("/hello-world") //making this method as handler method by this annotation
+//    @ResponseBody // we have to annotate handler method with this annotation & it will return as a JSON to the client
+    public String helloWorld(){
+        return "Hello World";
+    }
+
+    @RequestMapping("/book")
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+}
+
+===================
+
+RestController usage - 
+
+//@Controller
+//@ResponseBody
+@RestController
+public class BookController {
+
+//    when we are developing the api using spring mvc, then @Controller, @RequestMapping & @ResponseBody should be used
+    @RequestMapping("/hello-world") //making this method as handler method by this annotation
+//    @ResponseBody // we have to annotate handler method with this annotation & it will return as a JSON to the client
+    public String helloWorld(){
+        return "Hello World";
+    }
+
+    @RequestMapping("/book")
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+}

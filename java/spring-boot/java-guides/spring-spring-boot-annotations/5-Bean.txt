@@ -1,0 +1,94 @@
+1. @Bean annotation indicates that a method produces a bean to be managed by the Spring container. The @Bean annotation is usually declared in Configuration class to create Spring Bean definitions.
+
+Create a package
+Create a AppConfig class
+@Configuration // the class will become a Configuration class and within that class, we can define the Spring Bean definitions using @Bean annotation
+for any interface which has been implemented by any Service class, remove the @Component
+Go to AppConfig class - 
+creating spring bean for the above class - 
+
+public class AppConfig {
+	// by default, spring bean will give the method name as default name, we can explicitly provide name, @Bean(name="otherName")
+
+	@Bean // it tells spring to manage, this is the java based configuration
+	public InterfaceName methodName() {
+ 		return new ClassName(); // this is the class name which implemented the interface
+	}
+
+@Configuration
+public class AppConfig {
+
+	    @Bean
+//    @Bean(name="vegPizzaBean")
+//    @Bean(name="vegPizza")
+    public Pizza vegPizza() {
+        return new VegPizza();
+    }
+}
+
+go to main method - 
+	declare SpringApplication.run with var context;
+	ClassName className = context.getBean(ClassName.class);
+		or
+	ClassName className = context.getBean("otherName"); // if explicitly defined the name
+		or
+	ClassName className = context.getBean("methodName");
+	sout(className.methodName());
+
+	
+//		VegPizza vegPizza = context.getBean(VegPizza.class);
+//		VegPizza vegPizza = (VegPizza) context.getBean("vegPizzaBean");
+//		VegPizza vegPizza = (VegPizza) context.getBean("vegPizza");
+//		System.out.println(vegPizza.getPizza());
+
+go to AppConfig class - 
+	// injecting the dependency
+create a new Bean- 
+	public Pizza nonVegPizza() {
+        return new NonVegPizza();
+    }
+go to NonVegPizza class and remove these 2 annotations - 
+@Component
+@Primary
+remove @Component & @Autowired from the PizzaController class also - 
+
+go to AppConfig class -
+
+@Bean
+public PizzaController pizzaController() {
+        return new PizzaController(vegPizza()); // inject vegPizza or nonVegPizza
+    }
+
+    this is how we inject java based dependency
+
+in the main method - 
+	PizzaController pizzaController = (PizzaController) context.getBean("pizzaController");
+		System.out.println(pizzaController.getPizza());
+
+===
+
+2. by default, the bean name is same as method name. We can specify bean name using @Bean(name = "beanName")
+3. @Bean annotation provides initMethod and destroyMethod attributes to perform certain actions after bean initialization or before bean destruction by a container
+
+=====
+
+initMethod and destroyMethod attributes - 
+go to AppConfig class - 
+
+@Bean(initMethod = "init", destroyMethod = "destroy") 
+    public PizzaController pizzaController() {
+        return new PizzaController(vegPizza()); // inject vegPizza or nonVegPizza
+    }
+
+spring method will call the destroy method, before it gets shutdown
+
+go to PizzaController class and define the method there -
+
+ public void init() { // init name should be same as given in the @Bean annotation
+        System.out.println("init");
+    }
+
+    public void destroy() {
+        System.out.println("destroy");
+    }
+

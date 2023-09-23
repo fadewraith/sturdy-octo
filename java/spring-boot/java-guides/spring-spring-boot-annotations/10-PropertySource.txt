@@ -1,0 +1,150 @@
+@PropertySource & @PropertySources Annotations
+
+1. Spring @PropertySource annotation is used to provide properties file to spring environment.
+2. Spring @PropertySources annotation is used to provide multiple properties files to Spring Environment.
+3. These annotation is used with @Configuration classes.
+4. Spring @PropertySource annotation is repeatable, means we can have multiple PropertySource on a Configuration class
+5. We can use @Value annotation and Environment class to read the property file.
+
+
+============================================
+
+in resources dir, create a custom property file - mail.properties file - 
+
+test.host=test.com
+test.email=test@test.com
+test.password=test
+
+create a package propertysource - 
+create a class SpringConfig & PropertySourceDemo - 
+
+when we use @propertySource and @PropertySources with @Configuration annotation, thats why we have here created configuration class and we have annotated it with @Configuration annotation
+
+@Configuration
+@PropertySource("classpath:mail.properties")
+public class SpringConfig {
+
+
+}
+
+
+@Component
+public class PropertySourceDemo {
+
+    @Value("${test.host}")
+    private String host;
+    @Value("${test.email}")
+    private String email;
+    @Value("${test.password}")
+    private String password;
+
+    public String getHost() {
+        return host;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+}
+
+in main class - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+		PropertySourceDemo propertySourceDemo = context.getBean(PropertySourceDemo.class);
+		System.out.println(propertySourceDemo.getEmail());
+		System.out.println(propertySourceDemo.getPassword());
+		System.out.println(propertySourceDemo.getHost());
+
+
+================
+
+in resources dir, create a custom property file - messages.properties file - 
+
+app.name=Spring Boot App
+app.description=Spring Boot App Description
+
+in SpringConfig class - add - 
+
+@PropertySource("classpath:messages.properties")
+
+in PropertySourceDemo class - add - 
+
+ @Value("${app.name}")
+    private String appName;
+    @Value("${app.description}")
+    private String appDescription;
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public String getAppDescription() {
+        return appDescription;
+    }
+
+in main file - 
+
+		System.out.println(propertySourceDemo.getAppName());
+		System.out.println(propertySourceDemo.getAppDescription());
+
+
+=================================
+
+add in PropertySourceDemo file - 
+
+    @Autowired
+    private Environment environment;
+
+and comment rest @Value annotation in the PropertySourceDemo file - 
+
+
+change the methods now - 
+
+ public String getAppName() {
+//        return appName;
+        return environment.getProperty("app.name");
+    }
+
+    public String getAppDescription() {
+//        return appDescription;
+        return environment.getProperty("app.description");
+    }
+
+    public String getHost() {
+//        return host;
+        return environment.getProperty("test.host");
+    }
+
+    public String getEmail() {
+//        return email;
+        return environment.getProperty("test.email");
+    }
+
+
+    public String getPassword() {
+//        return password;
+        return environment.getProperty("test.password");
+    }
+
+=================================
+
+@PropertySources - 
+
+in SpringConfig class - 
+
+@Configuration
+@PropertySources({
+        @PropertySource("classpath:mail.properties"),
+        @PropertySource("classpath:messages.properties")
+})
+public class SpringConfig {
+
+
+}
+
+

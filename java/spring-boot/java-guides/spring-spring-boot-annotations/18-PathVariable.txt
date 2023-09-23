@@ -1,0 +1,33 @@
+@PathVariable Annotation - 
+
+1. @PathVariable annotation used on a method argument to bind the value of a URI template variable to a method argument.
+
+=====================
+
+BookController class - 
+
+
+    @GetMapping("books/{id}/{title}/{description}") // where ${id} is URI template variable
+    public ResponseEntity<Book> pathVariableDemo(@PathVariable int id, @PathVariable String title, @PathVariable String description) { // @PathVariable int id is method argument
+        System.out.println(id);
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+        book.setDescription(description);
+        return ResponseEntity.ok(book);
+    }
+
+=========================================
+
+
+if URI and method argument name is different, in that case we have to pass the like below for title - 
+
+    @GetMapping("books/{id}/{title}/{description}") // where ${id} is URI template variable
+    public ResponseEntity<Book> pathVariableDemo(@PathVariable int id, @PathVariable("title") String bookTitle, @PathVariable String description) { // @PathVariable int id is method argument
+        System.out.println(id);
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+        book.setDescription(description);
+        return ResponseEntity.ok(book);
+    }

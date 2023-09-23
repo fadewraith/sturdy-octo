@@ -1,0 +1,21 @@
+@PutMapping Annotation - 
+
+1. The PUT http method is used to update the resource and @PutMapping annotation for mapping HTTP PUT request onto specific handler method.
+2. Specifically, @PutMapping is a composed annotation that acts as a shortcut for @RequestMapping(method=RequestMethod.PUT).
+
+========================
+
+in BookController class - 
+later spring 4.3 introduces @PutMapping - 
+we can produces & consumes attribute to define the media types with @PutMapping
+
+// @RequestMapping(value = "/books/update/{id}", method=RequestMethod.PUT)
+@PutMapping(value = "/books/update/{id}")
+public ResponseEntity<Book> updateBook(@PathVariable int id, @RequestBody Book updatedBook) {
+    System.out.println(id);
+    System.out.println(updatedBook.getTitle());
+    System.out.println(updatedBook.getDescription());
+    updatedBook.setId(id);
+    return ResponseEntity.ok(updatedBook);
+}
+

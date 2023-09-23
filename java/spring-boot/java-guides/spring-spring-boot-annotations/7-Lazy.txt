@@ -1,0 +1,48 @@
+@Lazy Annotation - 
+
+1. By default, Spring creates all singleton beans eagerly at the startup/bootstrapping of the application context
+2. We can load the spring beans lazily (on demand) using @Lazy annotation
+3. @Lazy annotaion can be used with @Configuration, @Component and @Bean annotations
+4. Eager initialization is recommended - to avoid and detect all the possible errors immediately rather than at runtime
+
+=============================
+
+create a new package lazy - 
+
+create clases - 
+
+@Component
+public class EagerLoader {
+
+    public EagerLoader() {
+        System.out.println("EagerLoader");
+    }
+}
+
+
+@Component
+@Lazy
+public class LazyLoader {
+
+    public LazyLoader() {
+        System.out.println("LazyLoader");
+    }
+}
+
+annotate both the above classes with @Component
+spring IOC container creates the spring beans for the above classes at the ApplicationContext startup itself
+
+now denote LazyLoader class - with @Lazy
+
+in the main class - 
+//		@Lazy
+		LazyLoader lazyLoader = context.getBean(LazyLoader.class);
+		System.out.println(lazyLoader);
+
+we can use @Lazy with - 
+
+@Configuration
+@Lazy
+
+@Bean
+@Lazy

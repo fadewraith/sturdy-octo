@@ -1,0 +1,21 @@
+The @Autowired annotation is used to inject the bean automatically.
+The @Autowired annotation is used in constructor injection, setter injection and field injection.
+
+1. constructor injection - 
+
+@Autowired
+public ClassName() {
+	...
+}
+
+2. field injection - 
+
+@Autowired
+private ClassName className;
+
+3. setter injection - 
+
+@Autowired
+public void methodName(ClassName className) {
+	...
+}

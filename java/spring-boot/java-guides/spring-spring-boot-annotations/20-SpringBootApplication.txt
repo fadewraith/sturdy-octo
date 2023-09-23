@@ -1,0 +1,8 @@
+@SpringBootApplication Annotation - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+MyController myController = context.getBean(MyController.class);
+
+context is IOC container
+MyController.class is Bean

@@ -1,0 +1,35 @@
+@RequestParam Annotation - 
+
+1. We can use @RequestParam to extract query parameters from the request.
+
+====================
+
+
+localhost:8080/api/student/query?firstName="John" //queryparams
+
+@GetMapping("/student/query")
+public Student studentQueryParam(
+	@RequestParam(name = "firstName") String firstName // "firstName" = query param name, firstName = method argument
+) {
+	return new Student(firstName);
+}
+
+
+=================
+
+BookController class  - 
+
+// localhost:8080/api/books/query?id=1&title=Javascript
+
+    @GetMapping("/books/query")
+    public ResponseEntity<Book> requestParamDemo(@RequestParam(name="id") int id, @RequestParam String title) {
+        System.out.println(id);
+        System.out.println(title);
+
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+
+        return ResponseEntity.ok(book);
+
+    }

@@ -1,0 +1,74 @@
+Value Annotation - 
+
+1. Spring @Value annotation is used to assign default values to variables and method arguments.
+2. @Value annotation is mostly used to get value for specific property key from the properties file.
+3. We can read spring environment variables as well as system variables using @Value annotation.
+
+=====================
+
+package -> value
+
+@Component
+public class ValueAnnotationDemo {
+
+    @Value("Default Name")
+    private String defaultName;
+
+    public String getDefaultName() {
+        return defaultName;
+    }
+}
+
+in main file - 
+
+var context = SpringApplication.run(SpringbootannotationApplication.class, args);
+
+ValueAnnotationDemo valueAnnotationDemo = context.getBean(ValueAnnotationDemo.class);
+System.out.println(valueAnnotationDemo.getDefaultName());
+
+================
+
+go to application.properties file - 
+
+mail.host=test.com
+mail.email=test@test.com
+mail.password=test
+
+now go to ValueAnnotationDemo class - 
+
+@Value("${mail.host}")
+private String host;
+
+public String getHost() {
+    return host;
+}
+
+in main file - 
+
+System.out.println(valueAnnotationDemo.getHost());
+
+======================
+
+by default spring boot will load environment and system variables - 
+
+now go to ValueAnnotationDemo class - 
+
+    @Value("${java.home}")
+    private String javaHome;
+
+    @Value("${HOME}")
+    private String homeDir;
+
+
+ public String getJavaHome() {
+        return javaHome;
+    }
+
+    public String getHomeDir() {
+        return homeDir;
+    }
+
+    in main file - 
+
+        System.out.println(valueAnnotationDemo.getJavaHome());
+        System.out.println(valueAnnotationDemo.getHomeDir());

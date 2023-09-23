@@ -1,0 +1,10 @@
+1. @Qualifier annotation is used in conjunction with Autowired to avoid confusion when we have 2 or more beans configured for same type.
+
+Spring team recommended to use interface for Dependency Injection and in this way, we can achieve the loose coupling
+
+@Autowired
+public ClassName(@Qualifier("otherClassNameInjected") Interface interface) {
+	...
+}
+
+in the above example, we have one interface and 2 classes with the same interface implemented and in Controller, we will use @Qualifier

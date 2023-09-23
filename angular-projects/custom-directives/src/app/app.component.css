@@ -1,0 +1,9 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.btn {
+    width: 10em;
+}

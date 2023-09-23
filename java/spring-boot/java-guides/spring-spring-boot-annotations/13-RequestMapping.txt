@@ -1,0 +1,88 @@
+@RequestMapping Annotation - 
+
+1. @RequestMapping annotation is used to map web requests to Spring Controller methods.
+2. @RequestMapping can be applied to the controller class as well as handler methods.
+
+ex - 
+
+1. @RequestMapping with Class
+2. @RequestMapping with Method
+3. @RequestMapping with Multiple URI
+4. @RequestMapping with HTTP Method
+5. @RequestMapping with Produces and Consumes
+
+===================
+
+1. @RequestMapping with Class
+
+//@Controller
+//@ResponseBody
+@RestController
+@RequestMapping("/api") // if we want to bind the base url, then in that case
+public class BookController {
+
+//    when we are developing the api using spring mvc, then @Controller, @RequestMapping & @ResponseBody should be used
+    @RequestMapping("/hello-world") //making this method as handler method by this annotation
+//    @ResponseBody // we have to annotate handler method with this annotation & it will return as a JSON to the client
+    public String helloWorld(){
+        return "Hello World";
+    }
+
+    2. @RequestMapping with Method
+
+    @RequestMapping("/book")
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+}
+
+======================
+
+3. @RequestMapping with Multiple URI
+
+//    @RequestMapping("/book")
+    @RequestMapping(value = {"/book", "/java", "/core"}) // multiple URI's using @RequestMapping
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+
+======================
+
+4. @RequestMapping with HTTP Method
+
+by default if we dont specify any HTTP method, it will take it as a GET method
+@RequestMapping has a method attribute and we can use it - 
+
+    @RequestMapping(value = {"/book", "/java", "/core"},
+        method = RequestMethod.GET
+    ) // multiple URI's using @RequestMapping
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+
+
+======================
+
+
+5. @RequestMapping with Produces and Consumes
+
+//    @RequestMapping("/book")
+    @RequestMapping(value = {"/book", "/java", "/core"},
+        method = RequestMethod.GET,
+//            produces = MediaType.APPLICATION_JSON_VALUE
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+            consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
+//            consumes = MediaType.APPLICATION_XML_VALUE
+    ) // multiple URI's using @RequestMapping
+//    @ResponseBody
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+

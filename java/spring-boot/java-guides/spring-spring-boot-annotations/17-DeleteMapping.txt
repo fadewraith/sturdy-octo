@@ -1,0 +1,17 @@
+@DeleteMapping Annotation - 
+
+1. The DELETE HTTP method is used to delete the resource and @DeleteMapping annotation for mapping HTTP DELETE requests onto specific handler methods.
+2. Specifically, @DeleteMapping is a composed annotation that acts as a shortcut for @RequestMapping(method=RequestMapping.DELETE).
+
+============
+
+BookController class - 
+
+//    @RequestMapping(value = "/books/delete/{id}", method=RequestMethod.DELETE)
+    @DeleteMapping(value = "/books/delete/{id}")
+    public ResponseEntity<String> deleteBook(@PathVariable int id) {
+        System.out.println(id);
+        return ResponseEntity.ok("Book deleted successfully: " + id );
+    }
+
+    

@@ -1,0 +1,26 @@
+@GetMapping Annotation
+
+1. The Get HTTP request is used to get a single or multiple resources and @GetMapping annotation for mapping HTTP GET requests onto specific handler methods.
+2. Specifically, @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method=RequestMethod.GET)
+
+===============================
+
+BookController class - 
+
+    @GetMapping(value = {"/book", "/java", "/core"}) // we can pass the single or multiple URI's
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }
+
+===============================
+
+we can use like this - 
+
+    @GetMapping(value = {"/book", "/java", "/core"},
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Book getBook() {
+        Book book = new Book(1, "Core Java", "Learn Java");
+        return book;
+    }

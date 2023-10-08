@@ -1,0 +1,52 @@
+.product {
+    padding: 20px 0;
+}
+
+.slider-wrap {
+    position: relative;
+    /* multiple cards */
+    overflow: hidden;
+    height: 150px;
+}
+
+.slider-main {
+    position: absolute;
+    width: 200%;
+}
+
+.item {
+    display: inline-block;
+    /* width: 300px; */
+    /* for showing 4 cards at a time */
+    width: 448px;
+    height: 150px;
+    background: rgb(151, 2, 2);
+    /* multiple cards */
+    position: relative;
+    margin: 0 12px;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* multiple cards */
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.prev {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.next {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,502 @@
+/* lec 3 */
+
+/* h1 {
+    color: blue;    
+} */
+
+/* #red {
+    color: red;
+} */
+
+/* 
+combinators - descendant combinator - footer p {...},
+but if we want to select only first child of paragraph, then - 
+child selector -footer > p {...}
+
+sibling selector - h2 ~ p
+
+adjacent siblings - h2 + a
+*/
+/* footer > p {
+    color: red;
+} */
+
+/* h2 ~ p {
+    color: red;
+} */
+
+/* h2 + a {
+    color: red;
+} */
+
+/* 
+a. for matching only particular selector - a[href="https://algoexpert.io"]
+
+b. select anything that starts with algoexpert.io - a[href^="https://algoexpert.io"]
+
+c. can be written like this also - 
+[href^="https://algoexpert.io"]
+*/
+/* a[href^="https://algoexpert.io"] {
+    color: green;
+} */
+
+/* ############################################## */
+
+/* lec 3 */
+
+/* pseudo classes are chainable */
+/*  selects the first paragrapgh in this case, nth-of-type(odd/even/2n-1)  */
+/* p:first-of-type {
+  color: orange;
+} */
+
+/* p:first-child {
+  color: purple;
+} */
+
+/* pseudo elements - p::first-letter, p::first-line */
+/* p::first-line {
+  font-size: 2em;
+} */
+
+/* before - inserts an invisible element before the beginning of the content within the paragraph letter being selected */
+
+/* p::before {
+    content: ">";
+}
+
+p::first-letter {
+    font-size: 2em;
+}
+
+p::after {
+    content: "!";
+} */
+
+/*  focus means, actively used by user  */
+/* input:focus {
+    outline: 2px solid blue;
+} */
+
+/* input:invalid {
+    outline: 2px solid red;
+  } */
+
+/* select inputs that are invalid but not focused */
+/* input:invalid:not(:focus) {
+    outline: 2px solid red;
+} */
+
+/* 
+    will select that are unvisited, pseudo class only selects unvisited link
+    */
+/* a:link {
+    color: red;
+
+}
+
+a:visited {
+    color: green;
+} */
+
+/* ############################################## */
+
+/* lec 5 - only notes, no code */
+/*
+ Conflicting Declarations - 
+ Specific Selectors win - 
+ - the most "specific" selector is used
+ - defaults to the last rule in the stylesheet
+ Calculating specificity - 
+    Inline styles: 1000pts,
+    IDs: 100pts,
+    Classes: 10pts,
+    Pseudo classes: 10pts,
+    Attributes: 10pts,
+    Elements: 1pt,
+    Pseudo Elements: 1pt
+    ex - 
+    1. a[href=""] {...} => a = 1pt, href(attr) = 10pt => 10+1 = 11pt
+    2. section.links a {...} => 1pt + 10pt(.links=class) + 1pt = 12pt
+    
+!important - 
+    - overrides specificity
+    - avoid using if possible
+
+*/
+
+
+/* ############################################ */
+
+/* 
+lec 6 - 
+How to choose units - 
+    px - pixels, absolute length,
+    em - relative to font size, (parents font size)
+    rem - " " root element " ", (relative to root element which is the HTML tag, default is 16px),
+    vw - 1% of viewport width,
+    vh - 1% of viewport height,
+    ch - width of '0' character in the current font,
+    % - percentage usually relative to parent value
+
+====================
+
+width/height - 
+    % - to be relative to parent
+    vw/vh - " " " " viewport
+    ch - for paragraph widths
+    rem - for closer to absolute values
+    px - as a last resort for true absolutes
+
+====================
+
+margin/padding - 
+    rem - for closer to absolute values
+    em - to scale with font size
+    px - for small values, last resort
+
+====================
+
+borders, shadows - 
+    px - for small values
+    rem/em - scaling doesnt always looks great
+
+====================
+
+font size - 
+    rem - is usually best
+    em - to scale to parent size
+    px - as a last resort
+
+    Note: 
+        1em = 16px,
+        1rem = 16px
+    So, if the parent is 1.5em and child is 1em, then child will be - 1 * 1.5 = 25px
+====================
+
+html - font-size - 24px
+#parent {font-size - 1.5em} // parent -> body -> html, fontsize = 1.5*24px
+#red {font-size - 1em} // fontsize will be of parent = 1.5*24px
+#blue {font-size - 1rem} // fontsize = 24px = html font size
+
+#4B7DAF - 
+4b = red, 7d = blue, af = green
+*/
+
+/* html {
+    font-size: 24px;
+}
+
+p {
+    width: 60ch;
+}
+
+#parent {
+    font-size: 1.5em;
+    width: 75%;
+    border: 2px solid black;
+}
+
+#red {
+    font-size: 1em;
+    width: 50%;
+    background-color: red;
+}
+
+#blue {
+    font-size: 1rem;
+    width: 50vw;
+    background-color: blue;
+}
+
+#green {
+    font-size: 16px;
+    width: 10rem;
+    background-color: green;
+}
+
+div {
+    margin: 10px;
+    color: white;
+} */
+
+/* ############################################ */
+
+/* 
+    lec 7 - 
+
+Block level element does 2 things - 
+    default to taking up the entire width of the parent,
+    they start on a new line
+
+Inline elements cant have a width or a height. For that we need to use inline-block property.
+
+*/
+
+/* display: inline; */
+/* p {
+    display: inline-block;
+    width: 30vw;
+    border: 2px solid black;
+} */
+
+/* display: block;
+margin: 10px; */
+/* wont have effect, until we use block */
+/* height: 100vh;  */
+/* wont have effect, until we use block */
+/* width: 100vw; */
+/* em {
+    border: 2px solid blue;
+} */
+
+/* ############################################ */
+
+/* 
+    lec 8 - Box model
+    in case of vertical margins, bigger value is considered.
+    in case of horizontal margines, they are collapsed above each other means they're added. 
+    vertical margines have no effect on inline elements.
+*/
+
+/* margin: 24px auto; */
+/* width: 30%; */
+/* p {
+    padding: 10px;
+    border: 2px solid black;
+    background-color: powderblue;
+} */
+
+/* ############################################ */
+
+/* lec 9 - 
+
+*/
+
+/* * {
+    box-sizing: border-box;
+}
+
+#container {
+    width: 300px;
+    background-color: powderblue;
+} */
+
+
+
+/* 
+below the child will overflow the container, because border is taking 10px from left and right and padding also with the 12px from the left and right.
+so one soln is -
+width: calc(100% -20px -24px);
+instead of using above solution - 
+we can use - border box solution.
+*/
+/* #child {
+    box-sizing: border-box;
+    width: 100%;
+    border: 10px solid black;
+    padding: 12px;
+    background-color: orange;
+} */
+
+/* ############################################ */
+
+/* lec 10 */
+
+/* p {
+    font-size: 1.75rem;
+    margin: 1.5rem;
+    padding: 1rem;
+    border: 2px solid black;
+} */
+
+/* body > p {
+    float: right;
+    background-color: powderblue;
+} */
+
+/* position: relative; */
+/* section {
+} */
+
+/* position: relative; */
+/* position: absolute; */
+/* #box {
+    float: left;
+    top: -20px; 
+    left: 200px;
+    width: 15rem;
+    z-index: 3;
+    height: 10rem;
+    border: 2px solid black;
+    background-color: lightgreen;
+} */
+
+/* position: relative;
+z-index: 4; */
+/* clear: both, go below both the floated item */
+/* #long {
+    clear: left;
+    background-color: lightyellow;
+} */
+
+/* ############################################ */
+
+/* lec 11 */
+
+/* section {
+    position: fixed;
+    z-index: 4;
+}
+
+#red {
+    z-index: 1;
+    background-color: red;
+}
+
+#blue {
+    z-index: 2;
+    top: 100px;
+    left: 150px;
+    background-color: blue;
+}
+
+#green {
+    z-index: 3;
+    top: 200px;
+    left: 40px;
+    background-color: green;
+}
+
+div {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    padding: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+} */
+
+/* ############################################ */
+/* lec - 12 */
+
+/* 
+gap - similar to margine and only difference is that it applies to flex.
+shorthand for flex-direction and justify-wrap - 
+flex-flow: row wrap;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: flex-start; // will move it to the top
+if we want anyone of them to be different, we can use order - 
+order: -1; order: 1;
+if there is space, how much should it take - 
+flex-grow;
+flex shorthand property - 
+flex: grow shrink basis
+*/
+/* 
+section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around;
+    gap: 10px;
+    height: 90vh;
+    border: 2px dotted black;
+} */
+
+/* width: 100vw; */
+/* flex-basis: 100vw;
+flex-shrink: 1; */
+/* .red {
+    order: 0;
+    flex: 1 0 200px;
+    height: 75px;
+    background-color: red;
+}
+
+.green {
+    height: 125px;
+    background-color: green;
+}
+
+.blue {
+    height: 100px;
+    background-color: blue;
+}
+
+div {
+    border: 5px solid black;
+    padding: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+} */
+
+
+/* ############################################ */
+
+/* lec - 13 */
+
+/* 
+grid-template-columns: ; - 
+what will be the column structure of the grid.
+grid-template-columns: 1fr 2fr 1fr;
+fr - fractional unit, takes up to the other fractional units.
+grid-template-areas: ; - it is the subsection of the grid col.
+
+justify-items: center;
+    align-items: center;
+    place-items: center; / shorthand of above 2
+*/
+
+
+/* grid-template-columns: 1fr 2fr 1fr; */
+/* grid-template-columns: minmax(200px, 1fr) 2fr 1fr; */
+/* body {
+    display: grid;
+    grid-template-columns: [left] 3fr [middle] 1fr [right];
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "header header" "main aside" "footer footer";
+    gap: 10px;
+} */
+
+/* grid-column-start: 1;
+grid-column-end: 3; */
+/* grid-column: 1 / 3; */
+/* grid-column: left / right; */
+/* header {
+    grid-area: header;
+} */
+/* 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+} */
+/* 
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+body > * {
+    border: 5px solid powderblue;
+} */
+
+/* ############################################ */
+
+/* lec - 16 */
+
+
+
+/* ############################################ */

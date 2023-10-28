@@ -25,7 +25,7 @@ void display(struct Queue q) {
     do {
         cout << q.Q[i];
         i = (i + 1) % q.size;
-        if(i != q.front && q.Q[i]) cout << " <- ";
+        if(i != (q.rear + 1) % q.size) cout << " <- ";
     } while (i != (q.rear + 1) % q.size);
     
     cout << endl;
@@ -58,12 +58,12 @@ int main() {
     enqueue(&q, 40);
     display(q);
     cout << dequeue(&q) << endl;
+    cout << dequeue(&q) << endl;
     enqueue(&q, 40);
     display(q);
     cout << dequeue(&q) << endl;
+    display(q);
     enqueue(&q, 50);
     display(q);
-    cout << dequeue(&q) << endl;
-    dequeue(&q);
     return 0;
 }

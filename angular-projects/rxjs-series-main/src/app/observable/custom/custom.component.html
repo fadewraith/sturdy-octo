@@ -1,0 +1,50 @@
+<div class="my-3">
+
+    <h2>Custom Observable</h2>
+    <br>
+<!--  -->
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Ex - 01 (Manual)</strong>
+            <hr>
+            <ul [ngClass]="techStatus == 'completed' ? 'completed': techStatus == 'error' ? 'error' : ''" class="techList" id="elContainer">
+                <!-- <li>Angular</li>
+                <li>Typescript</li>
+                <li>HTML and CSS</li> -->
+            </ul>
+        </div>
+
+        <!--  -->
+
+        <div class="col-md-6">
+            <strong>Ex - 02 (Custom Interval Observable)</strong>
+            <hr>
+            <ul [ngClass]="techStatus2 == 'completed' ? 'completed': techStatus2 == 'error' ? 'error' : ''" class="techList" id="elContainer2">
+                <!-- <li>Angular</li>
+                <li>Typescript</li>
+                <li>HTML and CSS</li> -->
+            </ul>
+        </div>
+    </div>
+<!--  -->
+    <br>
+<!--  -->
+
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <strong>Ex - 03 (Random Names)</strong>
+        <br>
+        <br>
+        <p class="border rounded bg-light py-2 px-3">
+            <strong>Random Names: </strong>'Call of Duty: Mobile', 'Apex Legends Mobile', 'Battlefield Mobile', 'Diablo', 'Rainbow 6: Seige'
+        </p>
+        <hr>
+        <p>Current Name : <strong>{{names}}</strong></p>
+        <span class="badge "
+        [ngClass]="nameStatus == 'completed' ? 'badge-success' : (nameStatus == 'error' ? 'badge-danger' : 'badge-primary')" 
+        >{{nameStatus == 'completed' ? 'Success' : (nameStatus == 'error' ? 'Error' : 'Running')}}</span>
+    </div>
+</div>
+
+</div>

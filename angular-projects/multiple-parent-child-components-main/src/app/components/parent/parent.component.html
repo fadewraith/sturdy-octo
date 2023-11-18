@@ -1,0 +1,7 @@
+<app-child1 *ngIf="childOne" (moodArrC1)="childOneData($event)"></app-child1>
+
+<app-child2 *ngIf="childTwo" [childData]="childData" (showDataC3)="childTwoData($event)" (backC1)="backToC1($event)"></app-child2>
+
+<app-child3 *ngIf="childThree" [data]="data" (dataChildFour)="childThreeData($event)" (backC2)="backToC1($event)"></app-child3>
+
+<app-child4 *ngIf="childFour"></app-child4>

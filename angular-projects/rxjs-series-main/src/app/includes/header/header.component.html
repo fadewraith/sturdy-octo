@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light navbar-expand-lg" style="background-color: powderblue;">
+    <div class="container">
+        <a class="navbar-brand" >Observable and Promises</a>
+        <!-- exclusive is used to demonstrate thesubject -->
+        <strong class="badge badge-primary" *ngIf="exclusive">Exclusive</strong>
+        <button class="navbar-toggler" (click)="onNavToggle()" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [class.show]="navOpen" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="promise">Promise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="observable">Observable</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

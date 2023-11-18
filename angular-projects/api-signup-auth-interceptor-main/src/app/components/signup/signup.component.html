@@ -1,0 +1,39 @@
+<div class="signupFrm">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"  class="form">
+    <h1 class="title">Sign Up</h1>
+
+    <div class="inputContainer">
+      <input type="text" id="firstName" formControlName="firstName" name="firstName" class="input">
+      <label for="firstName" class="label">First Name</label>
+    </div>
+    <div class="inputContainer">
+      <input type="text" id="lastName" formControlName="lastName" name="lastName" class="input">
+      <label for="lastName" class="label">Last Name</label>
+    </div>
+
+    <div class="inputContainer">
+      <input type="password" id="password" formControlName="password" name="password" class="input">
+      <label for="password" class="label">Password</label>
+    </div>
+
+    <div class="inputContainer">
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="input">
+      <label for="confirmPassword" class="label">Confirm Password</label>
+    </div>
+
+    <div class="inputContainer">
+      <input type="email" id="email" formControlName="email" name="email" class="input">
+      <label for="email" class="label">Email</label>
+    </div>
+
+    <div class="inputContainer">
+      <input type="text" id="mobile" formControlName="mobile" name="mobile" class="input">
+      <label for="mobile" class="label">Mobile</label>
+    </div>
+
+    <div>
+      <button type="submit" class="submitBtn">Submit</button>
+      <p class="submitBtn">Already a User? <a routerLink="/login">Login</a></p>
+    </div>
+  </form>
+</div>

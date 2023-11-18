@@ -1,0 +1,9 @@
+<div class="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 text-center  justify-center">
+    <div *ngFor="let data of moodarr" class="flex">
+        <input type="radio" id="mood" name="mood" class="mr-2" (click)="chooseMood(data.mood)">
+        <label for="mood">{{ data.mood }}</label>
+    </div>
+    <div class="mt-4">
+        <button class="bg-red-400 rounded-md px-8 py-2 text-white" (click)="goToNext()">Next</button>
+    </div>
+ </div>

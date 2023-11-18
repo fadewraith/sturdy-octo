@@ -1,0 +1,15 @@
+<div class="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 text-center items">
+    <!-- <div *ngFor="let data of happyArr">
+        <p>{{ data.mood }}</p>
+    </div> -->
+    <div *ngFor="let user of data">
+        <h2> {{user.mood}} </h2>
+        <!-- <p>{{moodDataC3.mood}}</p> -->
+        <!-- <p *ngIf="moodDataC3.mood === "></p> -->
+        <!-- <p *ngIf="moodDataC3.mood == ">{{moodDataC3.mood}}</p> -->
+    </div>
+    <div class="flex justify-center mt-4">
+        <button class="bg-red-400 rounded-md px-8 py-2 mr-2 text-white" (click)="backToC2()">Back</button>
+        <button class="bg-blue-400 rounded-md px-8 py-2 text-white" (click)="dataCFour()" >Next</button>
+    </div>
+ </div>

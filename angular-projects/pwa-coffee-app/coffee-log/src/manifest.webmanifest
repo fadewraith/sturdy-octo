@@ -1,0 +1,52 @@
+{
+  "id": "/",
+  "name": "coffee-log",
+  "short_name": "coffee-log",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "minimal-ui",
+  "scope": "./",
+  "start_url": "./?utm_source=pwa",
+  "description": "This is the best app for the coffee track.",
+  "screenshots": [
+    {
+      "src": "assets/icons/icon.png",
+      "sizes": "1440x3210",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Coffee Review",
+      "short_name": "New Review",
+      "description": "Create a new review for a coffee",
+      "url": "/coffee",
+      "icons": [
+        {
+          "src": "assets/icons/icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        },
+        {
+          "src": "assets/icons/maskable_icon.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "src": "assets/icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+#buttonCreate {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media (display-mode: standalone) {
+  #buttonCreate {
+    bottom: 50px;
+  }
+}

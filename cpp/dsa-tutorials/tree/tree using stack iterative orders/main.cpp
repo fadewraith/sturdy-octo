@@ -102,19 +102,63 @@ void iterative_in(struct Node *p) { // passing pointer to root
 
 
 
+void levelOrder(struct Node *root) {
+    struct Queue q;
+    create(&q, 100); // creating queue to store the address of the current node visited
+    cout << root->data << " ";
+    enqueue(&q, root); // store the address of the visited root node
+    
+    while(!isEmpty(q)) {
+        root = dequeue(&q); // root will point to the first dequeued addr
+        if(root->lchild) {
+            cout << root->lchild->data << " ";
+            enqueue(&q, root->lchild); // storing the addr of lchild
+        }
+        if(root->rchild) {
+            cout << root->rchild->data << " ";
+            enqueue(&q, root->rchild); // storing the addr of lchild
+        }
+    }
+}
+
+
+int count(struct Node *root) {
+    if(root) {
+        return count(root->lchild) + count(root->rchild) + 1;
+    }
+    return 0;
+}
+
+int height(struct Node *root) {
+    int x = 0, y = 0;
+    if(root == NULL) return 0;
+    x = height(root->lchild);
+    y = height(root->rchild);
+    // if(x > y)
+    //     return x + 1;
+    // else
+    //     return y + 1;
+    return (x > y) ? x + 1 : y + 1;
+}
+
+
+
 int main() {
 
     createTree();
-    preOrder(root);
-    cout << endl;
+    // preOrder(root);
+    // cout << endl;
     // iterative_pre(root);
-    cout << endl;
-    postOrder(root);
-    cout << endl;
+    // cout << endl;
+    // postOrder(root);
+    // cout << endl;
     // iterative_post(root);
-    cout << endl;
+    // cout << endl;
     // inOrder(root);
-    cout << endl;
-    iterative_in(root);
+    // cout << endl;
+    // iterative_in(root);
+    // levelOrder(root);
+    cout << "no. of nodes: " << count(root) << endl;
+    cout << "height of the tree: " << height(root) << endl;
     return 0;
 }

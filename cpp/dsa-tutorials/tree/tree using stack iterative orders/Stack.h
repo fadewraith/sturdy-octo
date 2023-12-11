@@ -24,7 +24,8 @@ void push(struct Stack *st, struct Node *x) {
 struct Node *pop(struct Stack *st) {
     struct Node *x = NULL;
     if(st->top == -1) cout << "stack underflow\n";
-    else x = st->S[--st->top];
+    // else x = st->S[--st->top]; // incorrect
+    else x = st->S[st->top--];
     return x;
 }
 

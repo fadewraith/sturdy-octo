@@ -1,0 +1,6 @@
+<label *ngFor="let field of fields">
+  {{field}}:
+  <input [(ngModel)]="fieldValues[field]" />
+</label>
+
+<button (click)="submitForm()">Submit</button>

@@ -1,0 +1,12 @@
+.demo {
+    font-style: italic;
+    color: green;
+}
+
+.formatted-name {
+    font-style: italic;
+    font-weight: bolder;
+    font-family: system-ui;
+    text-decoration: underline;
+    color: red;
+}

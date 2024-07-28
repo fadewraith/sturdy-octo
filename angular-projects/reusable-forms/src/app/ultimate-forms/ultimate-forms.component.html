@@ -1,6 +1,6 @@
-<label *ngFor="let field of fields">
-  {{field}}:
-  <input [(ngModel)]="fieldValues[field]" />
+<label *ngFor="let field of fieldConfigs">
+  {{capitalize(field.displayName)}}:
+  <input [(ngModel)]="fieldValues[field.name]" />
 </label>
 
 <button (click)="submitForm()">Submit</button>

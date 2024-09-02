@@ -1,0 +1,49 @@
+/*style 1 */
+/*body {
+    font-family: Arial, sans-serif;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#results {
+    margin-top: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+*/
+
+/*style 2 */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#results {
+    margin-top: 10px;
+}
+
+.result-item {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.result-item.selected {
+    background-color: #f0f0f0;
+}
+
+.highlight {
+    background-color: yellow;
+}

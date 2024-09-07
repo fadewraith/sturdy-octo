@@ -8,7 +8,7 @@ Spring offers 3 types of configuration styles -
 
 start.spring.io
 
-@Component annotation tells spring IOC container to automaticall automatically create the wspring bean for the specified class and manage that spring bean, we dont have to create object of the specified class manually using new k/w. Spring container takes a control to automatically create the spring bean and manage that spring bean for us. So spring IOC container also calledinogenic contril because spring container takes a control to automatically create the objects and manage those objects for us.
+@Component annotation tells spring IOC container to automatically create the spring bean for the specified class and manage that spring bean, we dont have to create object of the specified class manually using new k/w. Spring container takes a control to automatically create the spring bean and manage that spring bean for us. So spring IOC container also called inogenic contril because spring container takes a control to automatically create the objects and manage those objects for us.
 
 Within main method, we have the run method called so the run method returns the application context object. Basically application context acts as a spring container.
 	var context = ;

@@ -1,0 +1,39 @@
+features of java 8 -
+
+lambda expressions
+stream api
+date and time api
+base64 encode decode
+method & const reference
+default methods in interfaces
+static methods in interfaces
+functional interface
+optional class
+collection api & java io improvements
+
+========================================================================================================================
+
+Lambda expression -
+
+anonymous fn, not having name, return type, modifier
+steps to make any fn lambda expr -
+remove modifier, return type, method name. place arrow
+
+========================================================================================================================
+
+functional interface -
+
+having exactly single abstract method, but can have any num of defaults and static methods. we can invoke lambda expre by using functional interface.
+
+========================================================================================================================
+
+default methods in interface -
+
+until 1.7 only public abstract methods were allowed whether we declare by writing or not.
+similarly public static final variable were allowed.
+since java 8 we can have concrete methods as well inside interface.
+
+========================================================================================================================
+
+static methods cannot be overridden or changed in the implementation class,
+contains the complete definition of the function

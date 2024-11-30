@@ -1,0 +1,31 @@
+.mvn
+for maven wrapper
+
+src -
+main - core functionality
+resources - properties
+
+Springboot Application internal working -
+bean is basically other name of object in terms of spring
+
+IOC container -
+spring will create object
+is a box which contains all objects
+and does so by scanning the package @Component
+class is automatically registered as a spring bean
+bean = object
+to create bean - @Component
+in a project @SpringBootApplication is used in main class
+and it contains - @Configuration, @EnableAutoConfiguration, @ComponentScan
+@EnableAutoConfiguration - add any depedency inpom.xml, spring boot will automatically configures it
+@Configuration - is used with @Bean
+@Bean is used at the function
+
+Application Context - way to implement IOC container
+
+install mongodb
+to run query install mongodb shell
+run mongosh.exe from the installed di
+enter string when asked -
+mongodb://localhost:27017
+and run disableTelemetry()

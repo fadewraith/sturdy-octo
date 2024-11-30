@@ -1,0 +1,64 @@
+kafka clusters - group of kafka brokers
+kafka producer - writes a new data in cluster
+kafka consumer - uses the data
+zookeeper - keeps tracks of kafka cluster health
+
+installing locally -
+apache kafka
+binary downloads - .tgz file
+extract into any drive
+for offline - https://youtu.be/vmuZaT6JpCM?list=PLA3GkZPtsafbAjKYkhWnD6GdhRtm6JrD1
+go to dir -
+kafka/bin/windows
+1. zookeeper-server-start.bat ..\..\config\zookeeper.properties
+2. kafka-server-start.bat ..\..\config\server.properties
+3. kafka-topics.bat --create --topic my-topic --bootstrap-server localhost:9092 --replication-factor 1 --partition 3
+4. kafka-console-producer.bat --broker-list localhost:9092 --topic my-topic
+5. kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-topic --from-beginning
+
+kafka topic - like tables in database
+partition, replication factor
+
+sending kafka msgs from cmd line -
+create account on kafka
+choose server
+choose default cluster
+add topic
+
+🟢 INSTALLATION COMMANDS
+
+zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+kafka-server-start.bat ..\..\config\server.properties
+
+kafka-topics.bat --create --topic my-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic my-topic
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-topic --from-beginning
+
+🟢 SENDING MESSAGES COMMANDS
+
+zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+kafka-server-start.bat ..\..\config\server.properties
+
+kafka-topics.bat --create --topic foods --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic foods --property "key.separator=-" --property "parse.key=true"
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic foods --from-beginning -property "key.separator=-" --property "print.key=false"
+
+
+providedd by kafka cloud -
+
+# Required connection configs for Kafka producer, consumer, and admin
+spring.kafka.properties.sasl.mechanism=PLAIN
+spring.kafka.bootstrap-servers=.aws.confluent.cloud:9092
+spring.kafka.properties.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='<username>' password='<password>';
+spring.kafka.properties.security.protocol=SASL_SSL
+
+# Best practice for higher availability in Apache Kafka clients prior to 3.0
+spring.kafka.properties.session.timeout.ms=45000
+
+client.id=<provided by kafka cloud>

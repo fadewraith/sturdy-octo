@@ -1,0 +1,3 @@
+consists of -
+header, payload, signature
+spring security 6 - https://github.com/chotabheeeeem/journalApp/tree/springbootv3

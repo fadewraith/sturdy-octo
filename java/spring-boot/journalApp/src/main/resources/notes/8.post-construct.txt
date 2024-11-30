@@ -1,0 +1,2 @@
+@PostConstruct is applied at method
+as soon as the bean is created, immediately that method will be invoked

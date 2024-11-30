@@ -1,0 +1,19 @@
+https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/
+
+we have to define the serialization and deserialization in redis
+ttl = -1 // never expires
+
+it doesnt works -
+install latest ubuntu
+wsl --install
+check the version installed
+wsl -l -v
+remove unnecessary versions
+wsl --unregister
+make anyone default, if having multiple installed
+wsl --setdefault Ubuntu
+
+sudo service redis-server start
+
+redis cloud -
+redis-cli -u <redis_cloud_uri>

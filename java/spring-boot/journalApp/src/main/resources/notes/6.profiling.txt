@@ -1,0 +1,13 @@
+intellij -> edit configuration -> env variables
+spring.profiles.active=dev
+
+using command line -
+./mvnw clean package -D spring.profiles.active=dev
+to run jar for specific profile -
+java -jar ./*.jar --spring.profiles.active=dev
+
+we can set Bean also for the specific profile -
+@Profile("dev/prod")
+
+for test -
+@ActiveProfiles("dev")

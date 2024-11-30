@@ -1,0 +1,31 @@
+logback - provided by spring boot, default uses
+log4j2 - for advanced
+java util logging - in built iwth java with limitations
+
+to customize logging config -
+create logback-spring.xml or logback.xml in src/main/resources directory. spring boot will use it
+
+log levels -
+trace
+debug
+info
+warn
+error
+
+by default logging is enabled for -
+info
+warn
+error
+
+spring boot provides annotations  like @Slf4j & @Log4j2
+that we can use to automatically inject logger instances into our classes
+
+in which class we need to do logging, we write like this in that class-
+instead of writing this, we can use Slf4j annotation and then log.{...}
+private static final Logger logger = LoggerFactory.getLogger(JournalEntryService.class);
+slf4j is logging abstraction framework
+
+same can be achieved by xml also
+generally logback.xml is used
+
+Diff between @Component vs @Service -

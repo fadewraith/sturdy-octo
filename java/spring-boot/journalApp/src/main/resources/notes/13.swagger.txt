@@ -1,0 +1,5 @@
+localhost:8080/swagger-ui/index.html
+import dependency
+
+springdoc.swagger-ui.path = /docs
+localhost:8080/v3/api-docs

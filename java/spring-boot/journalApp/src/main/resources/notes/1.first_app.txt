@@ -1,0 +1,19 @@
+win - tasklist /FI "PID eq 15964"
+linux - ps aux | grep 15964
+
+maven is used to manage dependencies and create builds
+build lifecycle of maven
+
+should be installed - mvn
+otherwise -
+./mvnw - can be used
+./mvnw validate
+./mvnw test
+./mvnw compile
+./mvnw package
+./mvnw install
+./mvnw clean
+
+to run using jar file using cli - cd target/
+java -jar project_name.jar
+

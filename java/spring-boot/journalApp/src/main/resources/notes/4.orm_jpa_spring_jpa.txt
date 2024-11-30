@@ -1,0 +1,21 @@
+ORM is a technique used to map java objects to database tables.
+
+JPA is a way to achieve ORM, includes interfaces & annotations that we use in our Java classes, requires a persistence provider (ORM tools) for implementation.
+ex - hibernate, eclipselink
+
+Spring Data JPA is built on top of JPA specification
+
+controller -> service -> repository
+@DbRef - to make the relation and for it, application.properties make it to true
+
+@Transactional - to make it work, use @EnableTransactionManagement in main app
+
+these 2 are used to manage internally - check main application
+PlatformTransactionManager, MongoTransactionManager
+
+./mvnw clean
+./mvnw package
+cd target
+java -jar '.jar'
+java -jar '.jar' --property=value
+priority is given to command line argument, then application.properites, then application.yml

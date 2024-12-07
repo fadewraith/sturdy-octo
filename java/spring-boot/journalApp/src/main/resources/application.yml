@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+
+#logging:
+#  level:
+#    com:
+#      journalappdemo: DEBUG # debug and severe than debug logs will be printed
+
+## we can put it at root level also
+#logging:
+#  level:
+#    root: ERROR # TRACE, DEBUG, WARN, INFO, OFF
+
+#specific class logging
+#logging:
+#  level:
+#    com:
+#      journalappdemo:
+#        service:
+#          UserService: OFF
+
+#other way to do is to save it in the database and use @PostConstruct
+weather:
+  api:
+    key:
+#    url: http://api.weatherstack.com/current?access_key=API_KEY&query=CITY
+

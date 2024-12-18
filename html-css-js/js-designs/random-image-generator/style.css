@@ -1,0 +1,40 @@
+/* style.css */
+
+/* Set up basic page styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Container for the image */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image styles */
+#random-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Make the design responsive for tablets */
+@media (max-width: 768px) {
+    #random-image {
+        width: 100%;
+        height: auto;
+    }
+}

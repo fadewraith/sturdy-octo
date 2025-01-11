@@ -1,6 +1,7 @@
+<p *ngFor="let fieldName of validationErrors">"{{fieldName}}"</p>
 <label *ngFor="let field of fieldConfigs">
-  {{capitalize(field.displayName)}}:
-  <input [(ngModel)]="fieldValues[field.name]" />
+  {{capitalize(field.displayName!)}}:
+  <input [(ngModel)]="fieldValues[field.name]" [placeholder]="field.placeholder" [type]="field.type" />
 </label>
 
 <button (click)="submitForm()">Submit</button>

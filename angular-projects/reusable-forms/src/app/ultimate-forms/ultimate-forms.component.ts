@@ -1,5 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FieldConfig } from './types';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { FieldConfig, Validator } from '../types';
+
+const defaultFieldConfigValues = {
+  type: 'text',
+  placeholder: '',
+  validators: <Validator[]>[],
+};
 
 @Component({
   selector: 'app-ultimate-forms',
@@ -7,6 +13,7 @@ import { FieldConfig } from './types';
   styleUrls: ['./ultimate-forms.component.css'],
 })
 export class UltimateFormsComponent implements OnInit {
+  validationErrors: string[] = [];
   // @Input() fields!: string[];
   fieldValues: any = {};
 
@@ -16,9 +23,17 @@ export class UltimateFormsComponent implements OnInit {
   set fields(newFields: (FieldConfig | string)[]) {
     this.fieldConfigs = newFields.map((field) => {
       if (typeof field === 'string') {
-        return { name: field, displayName: field };
+        return {
+          ...defaultFieldConfigValues,
+          name: field,
+          displayName: field,
+        };
       } else {
-        return field;
+        return {
+          ...defaultFieldConfigValues,
+          displayName: field.name,
+          ...field,
+        };
       }
     });
 
@@ -29,14 +44,27 @@ export class UltimateFormsComponent implements OnInit {
 
   constructor() {}
 
+  @Output() submit = new EventEmitter<any>();
+
   ngOnInit(): void {}
 
   submitForm() {
-    alert(
-      Object.entries(this.fieldValues)
-        .map((entry) => `${entry[0]}: ${entry[1]}`)
-        .join('\n')
-    );
+    this.validationErrors = [];
+    for (let field of this.fieldConfigs) {
+      for (let validator of field.validators!) {
+        const isValid = validator.checkFn(this.fieldValues[field.name]);
+        if (!isValid) {
+          this.validationErrors.push(
+            `${field.displayName!}: ${validator.errorMessage}`
+          );
+          break;
+        }
+      }
+    }
+    if (this.validationErrors.length > 0) {
+      return;
+    }
+    this.submit.emit(this.fieldValues);
   }
 
   capitalize(str: string): string {

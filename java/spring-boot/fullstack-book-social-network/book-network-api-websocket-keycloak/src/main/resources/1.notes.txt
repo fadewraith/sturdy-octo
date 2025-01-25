@@ -1,0 +1,36 @@
+User entity
+Role entity
+User & role repo
+implement security config class
+implement authentication provider
+implement user details service
+implement jwtfilter class
+implement jwtservice class
+finalize jwtfilter class
+authentication controller
+implement register method
+implement email sender service
+implement login method
+implement activate account method
+exception handling
+create the book entity
+feedback entity
+booktransactionhistory
+application auditor - by default spring boot takes care of createdDate, lastModifiedDate not for createdBy, lastModifiedBy
+implement save book method
+implement find book by id
+implement find all displayed books
+implement find all books by owner
+implement find all borrowed books
+implement find all returned books
+implement update books shareable status
+implement update book archived status
+implement borrow book feature
+implement return book borrowed
+implement approve book return
+implement book cover picture upload
+read the file from a given location
+implement save feedback
+implement find all feedbacks
+include openapi documentation
+fe - 6 32 48

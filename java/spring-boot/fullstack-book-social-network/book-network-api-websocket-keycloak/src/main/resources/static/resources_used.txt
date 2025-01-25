@@ -1,0 +1,72 @@
+https://github.com/ali-bouali/book-social-network
+docker
+application yml
+https://github.com/maildev/maildev - acts as an email server
+paste in docker file -
+$ docker run -p 1080:1080 -p 1025:1025 maildev/maildev
+
+book-network % docker-compose up -d
+
+not req for prod, trust -
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+
+@Async - to use @EnableAsync in  main app
+
+docker compose up
+docker compose down
+docker compose up -d
+docker compose ps
+docker compose rename
+localhost:1080
+
+java -Dspring.profiles.active=dev -jar <jar-file-name>
+1. create separate docker files for be and fe -
+to build the image, navigate to the directory of be -
+do mvn clean package or mvnw clean package
+check the version no and db authentication in pom.xml and docker-compose file
+cmd - docker build -t bsn/bsn:1.0.0 -f ../docker/backend/Dockerfile .
+cmd args -
+docker build --build-arg="APP_VERSION=1.0.3" -t bsn/bsn:1.0.3 -f ../docker/backend/Dockerfile .
+now run the docker compose up, if any image already exists, rename it using docker rename command
+fe -
+create nginx.conf file inside fe dir and is not added to git, can be added manually, if needed
+to build the image, fe -
+write the nginx.conf inside fe dir
+navigate to the dir, then -
+docker build -t bsn/bsn-ui:1.0.0 -f ../docker/frontend/Dockerfile .
+to run there is a configuration inside docker-compose.yml file -
+both for be and fe
+
+==========================================================================
+for keycloak -
+
+1. add in docker-compose.yml file
+2. run docker-compose file
+3. access the keycloak using url and port - localhost:9090 (in our case)
+4. create realm
+5. go to client tab and create a new client
+6. create user
+7. update the pom.xml file
+8. update the application-dev.yml
+9. update securityconfig.java
+10. update beansconfig
+11. update jwtfilter, jwtservice, authenticationservice, authenticationcontroller, user, book, bookrepo, bookservice, booktransactionhistoryrepository, booktransactionhistory, baseentity, bookspecification, feedbackservice, bookmapper, role, token, rolerepo, tokenrepo, userrepo, booknetworkappapplication, userdetailserviceimpl, applicationauditaware, filestorageservice
+
+==========================================================================
+
+websocket -
+pom.xml -
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-messaging</artifactId>
+		</dependency>
+
+
+add websocket, notificationservice, notification, securityconfig (edit for ws),

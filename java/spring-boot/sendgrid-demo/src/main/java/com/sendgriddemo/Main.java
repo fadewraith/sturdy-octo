@@ -12,13 +12,13 @@ public class Main {
                 I am testing out the Java SDK for SendGrid and this is a multiline string in Java.
                 
                 Thank You,
-                Dan Vega
+                SendGrid Demo
                 """;
 
         try {
             emailService.sendEmail(
-                    "dan.vega@broadcom.com",
-                    "YouTube SendGrid Tutorial",
+                    "test1@test.com",
+                    "Sendgrid Demo",
                     body
             );
         } catch (IOException e) {

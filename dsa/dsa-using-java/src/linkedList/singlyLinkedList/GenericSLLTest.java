@@ -1,4 +1,4 @@
-package linkedList;
+package linkedList.singlyLinkedList;
 
 public class GenericSLLTest {
 

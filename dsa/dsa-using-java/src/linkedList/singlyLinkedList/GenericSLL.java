@@ -1,22 +1,22 @@
-package linkedList;
+package linkedList.singlyLinkedList;
 
-import utils.Node;
+import utils.GenericNode;
 
-public class SinglyLinkedList {
-    public Node head;
-    public Node tail;
+public class GenericSLL<T> {
+    public GenericNode<T> head;
+    public GenericNode<T> tail;
     public int size;
 
     // Constructor
-    public SinglyLinkedList() {
+    public GenericSLL() {
         head = null;
         tail = null;
         size = 0;
     }
 
     // Create a Singly Linked List with one node
-    public Node createSinglyLinkedList(int nodeValue) {
-        Node node = new Node();
+    public GenericNode<T> createSinglyLinkedList(T nodeValue) {
+        GenericNode<T> node = new GenericNode<>();
         node.value = nodeValue;
         node.next = null;
         head = node;
@@ -26,8 +26,8 @@ public class SinglyLinkedList {
     }
 
     // Insert Method into the Singly Linked List
-    public void insertInLinkedList(int nodeValue, int location) {
-        Node node = new Node();
+    public void insertInLinkedList(T nodeValue, int location) {
+        GenericNode<T> node = new GenericNode<>();
         node.value = nodeValue;
 
         // Edge case: If the list is empty
@@ -53,13 +53,13 @@ public class SinglyLinkedList {
                 System.out.println("Invalid location");
                 return;
             }
-            Node tempNode = head;
+            GenericNode<T> tempNode = head;
             int index = 0;
             while (index < location - 1) {
                 tempNode = tempNode.next;
                 index++;
             }
-            Node nextNode = tempNode.next;
+            GenericNode<T> nextNode = tempNode.next;
             tempNode.next = node;
             node.next = nextNode;
         }
@@ -71,7 +71,7 @@ public class SinglyLinkedList {
         if (head == null) {
             System.out.println("SLL does not exist!");
         } else {
-            Node tempNode = head;
+            GenericNode<T> tempNode = head;
             while (tempNode != null) {
                 System.out.print(tempNode.value);
                 if (tempNode.next != null) {
@@ -84,23 +84,23 @@ public class SinglyLinkedList {
     }
 
     // Search for a node in the Singly Linked List
-    public boolean searchNode(int nodeValue) {
+    public boolean searchNode(T nodeValue) {
         if (head == null) {
             System.out.println("SLL does not exist!");
             return false;
         }
 
-        Node tempNode = head;
+        GenericNode<T> tempNode = head;
         int index = 0;
         while (tempNode != null) {
-            if (tempNode.value == nodeValue) {
+            if (tempNode.value.equals(nodeValue)) {
                 System.out.println("Found the node at location: " + index);
                 return true;
             }
             tempNode = tempNode.next;
             index++;
         }
-        System.out.println("Node not found!");
+        System.out.println("GenericNode not found!");
         return false;
     }
 
@@ -121,7 +121,7 @@ public class SinglyLinkedList {
         }
         // Deleting the last node (location >= size)
         else if (location >= size - 1) {
-            Node tempNode = head;
+            GenericNode<T> tempNode = head;
             while (tempNode.next != null && tempNode.next != tail) {
                 tempNode = tempNode.next;
             }
@@ -139,7 +139,7 @@ public class SinglyLinkedList {
                 System.out.println("Invalid location");
                 return;
             }
-            Node tempNode = head;
+            GenericNode<T> tempNode = head;
             for (int i = 0; i < location - 1; i++) {
                 tempNode = tempNode.next;
             }
@@ -156,18 +156,6 @@ public class SinglyLinkedList {
         System.out.println("The SLL has been deleted successfully.");
     }
 
-    public static void main(String[] args) {
-        SinglyLinkedList sLL = new SinglyLinkedList();
-        sLL.createSinglyLinkedList(5);
-        // System.out.println(sLL.head.value);
-        sLL.insertInLinkedList(6, 1);
-        sLL.insertInLinkedList(7, 3);
-        sLL.insertInLinkedList(8, 4);
-        sLL.insertInLinkedList(9, 0);
-        sLL.traverseSinglyLinkedList();
-        sLL.deleteSLL();
-        sLL.traverseSinglyLinkedList();
-
-    }
 
 }
+

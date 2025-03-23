@@ -1,0 +1,71 @@
+<!-- student-promotion.component.html -->
+<form [formGroup]="promotionForm" class="promotion-form">
+  <!-- Dropdown container for class selection -->
+  <div class="dropdown-container">
+    <!-- From class dropdown -->
+    <select formControlName="fromClass">
+      <option>Select from class</option>
+      <option *ngFor="let class of classes" [value]="getClassDisplayName(class)">
+        {{getClassDisplayName(class)}}
+      </option>
+    </select>
+
+    <!-- To class dropdown - triggers student loading -->
+    <select formControlName="toClass" (change)="onToClassChange($event)">
+      <option>Select to class</option>
+      <option *ngFor="let class of classes" [value]="getClassDisplayName(class)">
+        {{getClassDisplayName(class)}}
+      </option>
+    </select>
+  </div>
+
+  <!-- Student selection table - visible when both classes selected -->
+  <div class="table-container" *ngIf="showTable">
+    <!-- Display count of selected students -->
+    <div class="student-count" *ngIf="showTable && selectedStudentsCount > 0">
+      {{selectedStudentsCount}} students selected
+    </div>
+    <!-- Promote button - disabled when no students available -->
+    <button type="button" (click)="promoteStudents()" [disabled]="students.length === 0">
+      Promote Students
+    </button>
+
+    <!-- Students table -->
+    <table>
+      <thead>
+        <tr>
+          <!-- Select All checkbox - hidden when no students -->
+          <th><input type="checkbox" (change)="toggleAllStudents($event)" *ngIf="students.length > 0"> Select All</th>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Message when no students available -->
+        <tr *ngIf="students.length === 0">
+          <td colspan="3" class="no-students">No students available for migration</td>
+        </tr>
+        <!-- Student rows with individual checkboxes -->
+        <tr *ngFor="let student of students">
+          <td><input type="checkbox" [(ngModel)]="student.selected" [ngModelOptions]="{standalone: true}"
+              (change)="onStudentSelectionChange($event)"></td>
+          <td>{{student.id}}</td>
+          <td>{{student.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Promoted students list - visible when promotions exist and table hidden -->
+  <div class="promoted-list" *ngIf="savedPromotions.length > 0 && !showTable">
+    <h3>Promoted Students</h3>
+    <!-- Individual promotion entries -->
+    <div class="promotion-box" *ngFor="let promotion of savedPromotions; let i = index">
+      <span>{{getClassDisplayName(promotion.fromClass)}} to {{getClassDisplayName(promotion.toClass)}} -
+        {{promotion.studentsSelected.length}} students</span>
+      <button class="remove-btn" (click)="removePromotion(i)">×</button>
+    </div>
+    <!-- Submit button for final promotion submission -->
+    <button type="button" class="submit-btn" (click)="submitPromotions()">Submit Promotions</button>
+  </div>
+</form>

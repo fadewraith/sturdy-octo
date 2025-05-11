@@ -1,0 +1,17 @@
+<div class="container my-4">
+  <form [formGroup]="questionForm" (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+      <label for="question">Ask a Question</label>
+      <input
+        type="text"
+        class="form-control"
+        id="question"
+        placeholder="Enter your question"
+        formControlName="question"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="questionForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>

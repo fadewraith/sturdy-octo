@@ -1,0 +1,22 @@
+<div class="container my-4" *ngIf="response">
+  <h3>Response</h3>
+  <div class="card mb-3" *ngFor="let candidate of response.candidates; let i = index">
+    <div class="card-body">
+      <h5 class="card-title">Candidate {{ i + 1 }}</h5>
+      <p class="card-text">{{ candidate.content.parts[0].text }}</p>
+      <h6>Citations:</h6>
+      <ul>
+        <li *ngFor="let source of candidate.citationMetadata?.citationSources; let idx = index">
+          <a [href]="source.uri" target="_blank" rel="noopener noreferrer">
+            {{ source.uri }}
+          </a>
+          (Indexes: {{ source.startIndex }} - {{ source.endIndex }})
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h4>Usage Metadata</h4>
+  <p>Prompt Tokens: {{ response.usageMetadata.promptTokenCount }}</p>
+  <p>ProResponse Tokens: {{ response.usageMetadata.candidatesTokenCount }}</p>
+  <p>Total Tokens: {{ response.usageMetadata.totalTokenCount }}</p>
+</div>

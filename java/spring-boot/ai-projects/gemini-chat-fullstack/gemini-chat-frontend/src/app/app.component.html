@@ -1,0 +1,8 @@
+<div class="app">
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Gemini ChatBot</h1>
+  </header>
+  <app-chat-input (onSubmit)="handleQuestionSubmit($event)"></app-chat-input>
+  <h3 *ngIf="loading">Loading...</h3>
+  <app-chat-response [response]="response"></app-chat-response>
+</div>

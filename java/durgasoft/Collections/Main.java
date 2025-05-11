@@ -29,10 +29,10 @@ public class Main {
 	 * 
 	 * difference between arrays & collections - 
 	 * 1. fixed in size & collections are growable
-	 * 2. memorywise arrays are not recommended & wrt memory, collections are recommended
+	 * 2. memory wise arrays are not recommended & wrt memory, collections are recommended
 	 * 3. wrt performance, arrays are good & collections are not recommended
 	 * 4. only homogeneous but collections can hold both homogeneous and heterogeneous
-	 * 5. no base data structure available and no readymade method is available but every collection is implemented based on some readymade data structures
+	 * 5. no base data structure available and no ready-made method is available but every collection is implemented based on some ready-made data structures
 	 * 6. int[] & Integer[], using arrays can hold primitives and objects but in collections only objects can be hold only objects not primitives
 	 * 
 	 * ---------------------------

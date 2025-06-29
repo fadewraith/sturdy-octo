@@ -1,0 +1,1 @@
+1. Implemented the CORS and CSRF/XSRF protection

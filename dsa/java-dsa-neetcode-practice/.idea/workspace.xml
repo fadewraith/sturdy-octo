@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/ConcatenationOfArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/IsSubsequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/LengthOfLastWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/LongestCommonPrefix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/NumberOfSeniorCitizens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/ReplaceElementsWithRightMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/TwoSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/ValidAnagram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/ez/ValidPalindrome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/medium/AppendCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arraysandhashing/medium/GroupAnagrams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/InputOutputTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/OperatorsDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/TypeConversion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/arrays/PrefixSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/arrays/kadanesalgorithm/NonEmptySubArrayWithLargestSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/arrays/slidingwindow/SlidingWindowDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/arrays/slidingwindow/SlidingWindowVariable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/arrays/twopointers/TwoPointersDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/backtracking/Combination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/backtracking/Permutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/backtracking/Subset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/dynamicprogramming/Lcs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/dynamicprogramming/Palindrome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/dynamicprogramming/UnboundedKnapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/dynamicprogramming/ZeroOneKnapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/graphs/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/graphs/Prim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/graphs/TopologicalSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/heaps/Median.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/linkedlists/FastAndSlow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/tries/IterativeDfs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/tries/SegmentTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/tries/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/tries/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/advanced/tries/UnionFind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/arrays/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/arrays/BinarySearchRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/arrays/DynamicArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/arrays/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/arrays/StaticArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/backtracking/GraphNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/backtracking/PathWithoutZero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/backtracking/TreeMaze.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/bitmanipulation/CountingBits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/dynamicprogramming/CountPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/dynamicprogramming/Fibonacci.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/graphs/AdjacencyList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/graphs/MatrixBFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/graphs/MatrixDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/hashing/Counting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/hashing/HashMapDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/hashing/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/heaps/HeapDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/heaps/Heapify.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/linkedlists/DoublyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/linkedlists/DoublyLinkedListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/linkedlists/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/linkedlists/QueueDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/linkedlists/SinglyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/sortings/BucketSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/sortings/InsertionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/sortings/MergeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/sortings/QuickSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/BfsDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/BinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/DFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/InsertAndRemove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcode/algorithms/trees/TreeNode.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2y6DENsuak1nCo4HARSId1ZkwsR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.IsSubsequence.executor": "Run",
+    "Application.LengthOfLastWord.executor": "Debug",
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
+    "onboarding.tips.debug.path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.IsSubsequence">
+    <configuration name="IsSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysandhashing.ez.IsSubsequence" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysandhashing.ez.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LengthOfLastWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysandhashing.ez.LengthOfLastWord" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysandhashing.ez.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LengthOfLastWord" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="" />
+      <created>1749146017323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749146017323</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
+  </component>
+</project>

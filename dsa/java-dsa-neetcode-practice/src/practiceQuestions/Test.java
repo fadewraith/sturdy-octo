@@ -5,21 +5,26 @@ import java.util.Map;
 
 public class Test {
 
-    private static boolean solution(String s, String t) {
-        int sLen = s.length();
-        int tLen = t.length();
-        if(s.equals("")) return true;
-        if(sLen > tLen) return false;
-        int p1 = 0, p2 = 0;
-        while(p1 < sLen && p2 < tLen) {
-
-            if(s.charAt(p1) == t.charAt(p2)) {
-                p1++;
-            }
-            p2++;
+    private static void solution(int[] nums) {
+        int[] count = new int[3];
+        int j = 0;
+        for(int color: nums) {
+            count[color]++;
         }
 
-        return p1 == s.length();
+        int red = count[0], white = count[1], blue = count[2];
+        for(int i = 0; i < red; i++) {
+            nums[j++] = 0;
+        }
+
+        for(int i = red; i < red + white; i++) {
+            nums[i] = 1;
+        }
+
+        for(int i = red + white; i < nums.length; i++) {
+            nums[i] = 2;
+        }
+
     }
 
 

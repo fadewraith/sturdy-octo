@@ -4,7 +4,7 @@ import neetcode.algorithms.linkedlists.ListNode;
 
 public class FastAndSlow {
 
-    // Find the middle of a linked list with two pointers.
+    // Find the middle of a linked list with two twopointers.
     // Time: O(n), Space: O(1)
     public static ListNode middleOfList(ListNode head) {
         ListNode slow = head, fast = head;

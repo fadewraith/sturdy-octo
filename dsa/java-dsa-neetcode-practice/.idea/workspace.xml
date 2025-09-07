@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/MajorityElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/MaximumNumberOfBalloons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/hard/LongestConsecutiveSequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/medium/ValidSudoku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/easy/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/easy/FirstBadVersion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/easy/SearchInsertPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/easy/ValidPerfectSquare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/medium/FindMinimumInRotatedSortedArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/medium/KokoEatingBananas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/medium/SearchInRotatedSortedArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/medium/SearchTwoDMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/bitmanipulation/easy/BaseSeven.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/bitmanipulation/easy/NumberOfOneBits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/bitmanipulation/easy/SingleNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/CopyListWithRandomPointer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/InsertGreatestCommonDivisors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/stacks/easy/BaseballGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/stacks/hard/LargestRectangleInHistogram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/stacks/medium/DailyTemperatures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/stacks/medium/EvaluateReversePolishNotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/stacks/medium/MinStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/hard/TrappingRainWater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/FourSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/ThreeSumClosest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/ListNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +45,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fadewraith&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:fadewraith/sturdy-octo.git&quot;,
+    &quot;accountId&quot;: &quot;1ba16d97-ff87-48a1-b7ba-fe90c9e940d2&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -37,60 +68,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CustomArrayList.executor": "Run",
-    "Application.CustomArrayListNoDuplicatesAllowed.executor": "Run",
-    "Application.EvenOddPrinter.executor": "Run",
-    "Application.FindClosestNumberToZero.executor": "Run",
-    "Application.FunctionsDemo.executor": "Run",
-    "Application.HIndex.executor": "Run",
-    "Application.IsSubsequence.executor": "Run",
-    "Application.JavaTechieJavaEight.executor": "Run",
-    "Application.JewelsAndStones.executor": "Run",
-    "Application.JosephusProblemUsingLinkedList.executor": "Run",
-    "Application.LengthOfLastWord.executor": "Debug",
-    "Application.LongestConsecutiveSequence.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MergeIntervals.executor": "Run",
-    "Application.MergeStringsAlternately.executor": "Run",
-    "Application.MinAndMax.executor": "Run",
-    "Application.PascalsTriangle.executor": "Run",
-    "Application.ProductOfArrayExceptSelf.executor": "Debug",
-    "Application.RansomNote.executor": "Debug",
-    "Application.RemoveDuplicatesFromSortedArrayII.executor": "Run",
-    "Application.RomanToInteger.executor": "Run",
-    "Application.SLL.executor": "Run",
-    "Application.SearchInUnsortedArray.executor": "Run",
-    "Application.SearchUsingBinarySearch.executor": "Run",
-    "Application.SortColors.executor": "Run",
-    "Application.SpiralMatrix.executor": "Debug",
-    "Application.SquaresOfASortedArray.executor": "Debug",
-    "Application.Test.executor": "Run",
-    "Application.ValidSudoku.executor": "Run",
-    "Application.rotateByNinetyDegree.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
-    "onboarding.tips.debug.path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BaseSeven.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BaseballGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomArrayList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomArrayListNoDuplicatesAllowed.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DailyTemperatures.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EvaluateReversePolishNotation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EvenOddPrinter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FindClosestNumberToZero.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FourSum.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FunctionsDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HIndex.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InsertGreatestCommonDivisors.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IsSubsequence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaTechieJavaEight.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JewelsAndStones.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JosephusProblemUsingLinkedList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LargestRectangleInHistogram.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LengthOfLastWord.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.LongestConsecutiveSequence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MergeIntervals.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MergeStringsAlternately.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MinAndMax.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MinStack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NumberOfOneBits.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PascalsTriangle.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductOfArrayExceptSelf.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.RansomNote.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.RemoveDuplicatesFromSortedArrayII.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RomanToInteger.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SLL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchInUnsortedArray.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchUsingBinarySearch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SingleNumber.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SortColors.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpiralMatrix.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.SquaresOfASortedArray.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThreeSumClosest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrappingRainWater.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValidPerfectSquare.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValidSudoku.executor&quot;: &quot;Run&quot;,
+    &quot;Application.rotateByNinetyDegree.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LongestConsecutiveSequence">
-    <configuration name="JewelsAndStones" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.hashmapsAndSets.easy.JewelsAndStones" />
+  <component name="RunManager" selected="Application.AddBinary">
+    <configuration name="AddBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.bitmanipulation.easy.AddBinary" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.hashmapsAndSets.easy.*" />
+          <option name="PATTERN" value="practiceQuestions.algomapio.bitmanipulation.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LongestConsecutiveSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.hashmapsAndSets.hard.LongestConsecutiveSequence" />
+    <configuration name="BaseSeven" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.bitmanipulation.easy.BaseSeven" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.hashmapsAndSets.hard.*" />
+          <option name="PATTERN" value="practiceQuestions.algomapio.bitmanipulation.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,12 +156,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RansomNote" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.hashmapsAndSets.easy.RansomNote" />
+    <configuration name="NumberOfOneBits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.bitmanipulation.easy.NumberOfOneBits" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.hashmapsAndSets.easy.*" />
+          <option name="PATTERN" value="practiceQuestions.algomapio.bitmanipulation.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +169,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpiralMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.arraysAndStrings.medium.SpiralMatrix" />
+    <configuration name="SingleNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.bitmanipulation.easy.SingleNumber" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.arraysAndStrings.medium.*" />
+          <option name="PATTERN" value="practiceQuestions.algomapio.bitmanipulation.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,12 +182,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidSudoku" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.hashmapsAndSets.medium.ValidSudoku" />
+    <configuration name="ValidPerfectSquare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.binarysearch.easy.ValidPerfectSquare" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.hashmapsAndSets.medium.*" />
+          <option name="PATTERN" value="practiceQuestions.algomapio.binarysearch.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LongestConsecutiveSequence" />
-        <item itemvalue="Application.ValidSudoku" />
-        <item itemvalue="Application.RansomNote" />
-        <item itemvalue="Application.JewelsAndStones" />
-        <item itemvalue="Application.SpiralMatrix" />
+        <item itemvalue="Application.AddBinary" />
+        <item itemvalue="Application.NumberOfOneBits" />
+        <item itemvalue="Application.SingleNumber" />
+        <item itemvalue="Application.BaseSeven" />
+        <item itemvalue="Application.ValidPerfectSquare" />
       </list>
     </recent_temporary>
   </component>

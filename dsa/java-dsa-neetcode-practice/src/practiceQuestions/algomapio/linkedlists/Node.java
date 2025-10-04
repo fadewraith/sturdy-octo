@@ -1,4 +1,4 @@
-package practiceQuestions.algomapio.linkedLists;
+package practiceQuestions.algomapio.linkedlists;
 
 public class Node {
     public int val;

@@ -1,4 +1,4 @@
-package arraysandhashing.ez;
+package neetcodepracticesets.arraysandhashing.ez;
 
 import java.util.Arrays;
 import java.util.HashMap;

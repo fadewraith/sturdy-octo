@@ -1,0 +1,5 @@
+1NF - 
+using row order to convey info is not permitted,
+mixing data types within the same col violates 1nf,
+a table wihtout a pk violates 1nf,
+storing a repeating group of data items on a single row violates 1nf

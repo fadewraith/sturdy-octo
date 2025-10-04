@@ -1,4 +1,4 @@
-package practiceQuestions.algomapio.slidingwindow.medium;
+package practiceQuestions.algomapio.slidingwindow.easy;
 
 public class MaximumAverageSubarrayOne {
 

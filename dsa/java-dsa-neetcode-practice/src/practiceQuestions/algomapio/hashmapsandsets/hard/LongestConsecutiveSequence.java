@@ -1,4 +1,4 @@
-package practiceQuestions.algomapio.hashmapsAndSets.hard;
+package practiceQuestions.algomapio.hashmapsandsets.hard;
 
 import java.util.HashSet;
 import java.util.Set;

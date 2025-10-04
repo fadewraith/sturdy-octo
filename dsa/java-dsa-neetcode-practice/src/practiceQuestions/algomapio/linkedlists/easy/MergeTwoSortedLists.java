@@ -1,6 +1,6 @@
-package practiceQuestions.algomapio.linkedLists.easy;
+package practiceQuestions.algomapio.linkedlists.easy;
 
-import practiceQuestions.algomapio.linkedLists.ListNode;
+import practiceQuestions.algomapio.linkedlists.ListNode;
 
 public class MergeTwoSortedLists {
 

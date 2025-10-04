@@ -1,4 +1,4 @@
-package practiceQuestions.algomapio.arraysAndStrings.easy;
+package practiceQuestions.algomapio.arraysandstrings.easy;
 
 import java.util.ArrayList;
 import java.util.List;

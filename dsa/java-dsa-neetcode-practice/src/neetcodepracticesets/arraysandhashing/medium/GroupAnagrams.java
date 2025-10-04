@@ -1,4 +1,4 @@
-package arraysandhashing.medium;
+package neetcodepracticesets.arraysandhashing.medium;
 
 import java.util.*;
 

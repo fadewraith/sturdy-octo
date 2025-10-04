@@ -1,7 +1,6 @@
-package practiceQuestions.algomapio.arraysAndStrings.medium;
+package practiceQuestions.algomapio.arraysandstrings.medium;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SpiralMatrix {

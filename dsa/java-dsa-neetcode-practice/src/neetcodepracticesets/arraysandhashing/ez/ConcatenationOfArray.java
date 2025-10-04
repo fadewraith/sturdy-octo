@@ -1,4 +1,4 @@
-package arraysandhashing.ez;
+package neetcodepracticesets.arraysandhashing.ez;
 
 public class ConcatenationOfArray {
 

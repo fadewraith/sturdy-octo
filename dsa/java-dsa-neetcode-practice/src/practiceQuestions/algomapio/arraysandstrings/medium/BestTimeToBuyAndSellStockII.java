@@ -1,4 +1,4 @@
-package practiceQuestions.algomapio.arraysAndStrings.medium;
+package practiceQuestions.algomapio.arraysandstrings.medium;
 
 public class BestTimeToBuyAndSellStockII {
     private static int solution(int[] prices) {

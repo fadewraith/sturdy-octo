@@ -1,8 +1,8 @@
-package practiceQuestions.algomapio.linkedLists.medium;
+package practiceQuestions.algomapio.linkedlists.medium;
 
 
 
-import practiceQuestions.algomapio.linkedLists.Node;
+import practiceQuestions.algomapio.linkedlists.Node;
 
 import java.util.HashMap;
 import java.util.Map;

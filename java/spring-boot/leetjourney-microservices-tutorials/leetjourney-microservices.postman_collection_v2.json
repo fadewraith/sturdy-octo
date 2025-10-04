@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "a2c7d60d-6cbe-4550-86cd-8bd172ab251b",
+		"name": "leetjourney-microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38815932"
+	},
+	"item": [
+		{
+			"name": "get-venues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/inventory/venue/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actuator",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"client_authentication": "header",
+						"scope": "openid roles",
+						"clientSecret": "b5zYXCIJCj65Q9BAN8vlFDoFyqtcfzaJ",
+						"clientId": "ticketing-client-id",
+						"accessTokenUrl": "http://localhost:8091/realms/ticketing-security-realm/protocol/openid-connect/token",
+						"grant_type": "client_credentials",
+						"tokenName": "token",
+						"challengeAlgorithm": "S256",
+						"authUrl": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/auth",
+						"state": "2fc61105-40ba-4b5f-8983-ec764ec4e437",
+						"useBrowser": true,
+						"addTokenTo": "header"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8090/actuator/health"
+			},
+			"response": []
+		},
+		{
+			"name": "get-events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/inventory/events"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"client_authentication": "header",
+						"scope": "openid roles",
+						"clientSecret": "b5zYXCIJCj65Q9BAN8vlFDoFyqtcfzaJ",
+						"clientId": "ticketing-client-id",
+						"accessTokenUrl": "http://localhost:8091/realms/ticketing-security-realm/protocol/openid-connect/token",
+						"grant_type": "client_credentials",
+						"tokenName": "token",
+						"challengeAlgorithm": "S256",
+						"authUrl": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/auth",
+						"state": "2fc61105-40ba-4b5f-8983-ec764ec4e437",
+						"useBrowser": true,
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"eventId\": 2,\n    \"ticketCount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8090/api/v1/booking"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/inventory/event/1",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"client_authentication": "header",
+						"scope": "openid roles",
+						"clientSecret": "b5zYXCIJCj65Q9BAN8vlFDoFyqtcfzaJ",
+						"clientId": "ticketing-client-id",
+						"accessTokenUrl": "http://localhost:8091/realms/ticketing-security-realm/protocol/openid-connect/token",
+						"grant_type": "client_credentials",
+						"tokenName": "token",
+						"challengeAlgorithm": "S256",
+						"authUrl": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/auth",
+						"state": "2fc61105-40ba-4b5f-8983-ec764ec4e437",
+						"useBrowser": true,
+						"addTokenTo": "header"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8090/api/v1/inventory/event/1"
+			},
+			"response": []
+		}
+	]
+}

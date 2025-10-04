@@ -1,6 +1,6 @@
-package practiceQuestions.algomapio.linkedLists.medium;
+package practiceQuestions.algomapio.linkedlists.medium;
 
-import practiceQuestions.algomapio.linkedLists.ListNode;
+import practiceQuestions.algomapio.linkedlists.ListNode;
 
 import java.math.BigInteger;
 

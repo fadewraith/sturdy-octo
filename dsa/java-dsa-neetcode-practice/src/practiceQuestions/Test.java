@@ -1,67 +1,54 @@
 package practiceQuestions;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Test {
 
-    private static void solution(int[] nums) {
-        int[] count = new int[3];
-        int j = 0;
-        for(int color: nums) {
-            count[color]++;
+    private static int solution(int[] nums, int val) {
+        int n = nums.length;
+        System.out.println("Initial array: " + Arrays.toString(nums));
+        System.out.println("Removing value: " + val + "\n");
+
+        for(int i = 0; i < n; i++) {
+            System.out.println("\n--- Step " + (i+1) + " ---");
+            System.out.println("Checking index " + i + ": " + nums[i]);
+            
+            if(nums[i] == val) {
+                System.out.println("Found " + val + " at index " + i + ". Shifting elements...");
+                
+                for(int j = i; j < n - 1; j++) {
+                    nums[j] = nums[j + 1];
+                    System.out.println("  Moved " + nums[j] + " from index " + (j+1) + " to " + j);
+                }
+                
+                n--;  // Reduce the effective length
+                i--;  // Recheck current position as it now has a new value
+                
+                System.out.println("After shift: " + Arrays.toString(nums));
+                System.out.println("New effective length: " + n);
+            } else {
+                System.out.println("Value " + nums[i] + " at index " + i + " is not " + val + ". Moving to next.");
+            }
         }
 
-        int red = count[0], white = count[1], blue = count[2];
-        for(int i = 0; i < red; i++) {
-            nums[j++] = 0;
-        }
-
-        for(int i = red; i < red + white; i++) {
-            nums[i] = 1;
-        }
-
-        for(int i = red + white; i < nums.length; i++) {
-            nums[i] = 2;
-        }
-
+        System.out.println("\nFinal array state: " + Arrays.toString(nums));
+        return n;
     }
+
+
 
 
     public static void main(String[] args) {
-
-        outerLoop: // label for the outer loop
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (i * j > 6) {
-                    break outerLoop; // breaks out of the outer loop
-                }
-//                System.out.println("i = " + i + ", j = " + j);
-            }
+        int[] nums = { 1, 1, 2, 3, 4 };
+        int val = 1;
+        int newLength = solution(nums, val);
+        System.out.println("New length: " + newLength);
+        System.out.print("Modified array: ");
+        for (int i = 0; i < newLength; i++) {
+            System.out.print(nums[i] + " ");
         }
-        System.out.println("Loop complete.");
-
-        String s1 = new String("hello");
-        // 1 object -> new -> heap
-        // 2 object -> literal -> SCP (String constant pool area)
-
-        String s2 = "hello"; // 1 object
-        // total object count 2 (statement1 + statement2)
-
-        // using intern to get the object from scp
-        // intern method used to get reference from scp
-        System.out.println(s1.intern());
-        System.out.println(s2.intern());
-        System.out.println(s1.hashCode());
-        System.out.println(s2.hashCode());
-        System.out.println(s1.intern().hashCode());
-        System.out.println(s2.intern().hashCode());
-        System.out.println(s1.intern().hashCode() == s2.hashCode());
-
-
-
-
-
-
     }
+
 }

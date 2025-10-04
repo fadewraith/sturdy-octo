@@ -1,6 +1,4 @@
-package practiceQuestions.algomapio.arraysAndStrings.medium;
-
-import java.util.Arrays;
+package practiceQuestions.algomapio.arraysandstrings.medium;
 
 public class RemoveDuplicatesFromSortedArrayII {
 

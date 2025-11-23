@@ -5,70 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/customdatastructures/hashmapdemo/CustomHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/customdatastructures/hashmapdemo/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/customdatastructures/hashmapdemo/HashMapTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/MaxConsecutiveOnes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/easy/MaximumAverageSubarrayOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/medium/LongestRepeatingCharacterReplacement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/medium/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/medium/MaxConsecutiveOnesThree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/medium/MinimumSizeSubarraySum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/medium/PermutationInString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/ConcatenationOfArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/ConcatenationOfArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/IsSubsequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/IsSubsequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/LengthOfLastWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/LengthOfLastWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/LongestCommonPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/LongestCommonPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/NumberOfSeniorCitizens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/NumberOfSeniorCitizens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/PascalsTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/PascalsTriangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/ReplaceElementsWithRightMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/ReplaceElementsWithRightMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/ScoreOfAString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/ScoreOfAString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/StringMatchingInAnArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/StringMatchingInAnArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/TwoSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/ValidAnagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/ValidAnagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/ez/ValidPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/ValidPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/medium/AppendCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/medium/AppendCharacters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arraysandhashing/medium/GroupAnagrams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/medium/GroupAnagrams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/RemoveElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/ArrayReverse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/MoveZeroesToEnd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/NextPermutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/RotateArrayByDClockwise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/SecondLargestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/practiceQuestions/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/BestTimeToBuyAndSellStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/BestTimeToBuyAndSellStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/FindClosestNumberToZero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/FindClosestNumberToZero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/IsSubsequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/IsSubsequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/LongestCommonPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/LongestCommonPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/MergeStringsAlternately.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeStringsAlternately.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeTwoSortedArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/RemoveDuplicatesFromSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveDuplicatesFromSortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/RemoveElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/RomanToInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RomanToInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/easy/SummaryRanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/SummaryRanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/BestTimeToBuyAndSellStockII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/BestTimeToBuyAndSellStockII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/HIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/HIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/MergeIntervals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/MergeIntervals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/ProductOfArrayExceptSelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/ProductOfArrayExceptSelf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/RemoveDuplicatesFromSortedArrayII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/RemoveDuplicatesFromSortedArrayII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/RotateImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/RotateImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/SortColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/SortColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/SpiralMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/SpiralMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysAndStrings/medium/ZigzagConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/ZigzagConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/ContainsDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/ContainsDuplicates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/JewelsAndStones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/JewelsAndStones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/MajorityElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/MajorityElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/MaximumNumberOfBalloons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/MaximumNumberOfBalloons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/RansomNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/RansomNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/TwoSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/easy/ValidAnagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/easy/ValidAnagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/hard/LongestConsecutiveSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/hard/LongestConsecutiveSequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/medium/GroupAnagrams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/medium/GroupAnagrams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsAndSets/medium/ValidSudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/hashmapsandsets/medium/ValidSudoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/ListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/easy/LinkedListCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/LinkedListCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/easy/MergeTwoSortedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/MergeTwoSortedLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/easy/MiddleOfLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/MiddleOfLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/easy/RemoveDuplicatesFromSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/RemoveDuplicatesFromSortedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/easy/ReverseLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/ReverseLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/CopyListWithRandomPointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/medium/CopyListWithRandomPointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/InsertGreatestCommonDivisors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/medium/InsertGreatestCommonDivisors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedLists/medium/RemoveNthNodeFromEndOfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,78 +53,81 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AddBinary.executor": "Run",
-    "Application.BaseSeven.executor": "Run",
-    "Application.BaseballGame.executor": "Run",
-    "Application.CustomArrayList.executor": "Run",
-    "Application.CustomArrayListNoDuplicatesAllowed.executor": "Run",
-    "Application.DailyTemperatures.executor": "Run",
-    "Application.EvaluateReversePolishNotation.executor": "Run",
-    "Application.EvenOddPrinter.executor": "Run",
-    "Application.FindClosestNumberToZero.executor": "Run",
-    "Application.FourSum.executor": "Run",
-    "Application.FunctionsDemo.executor": "Run",
-    "Application.HIndex.executor": "Run",
-    "Application.HashMapTest.executor": "Run",
-    "Application.InsertGreatestCommonDivisors.executor": "Run",
-    "Application.IsSubsequence.executor": "Run",
-    "Application.JavaTechieJavaEight.executor": "Run",
-    "Application.JewelsAndStones.executor": "Run",
-    "Application.JosephusProblemUsingLinkedList.executor": "Run",
-    "Application.LargestRectangleInHistogram.executor": "Run",
-    "Application.LengthOfLastWord.executor": "Debug",
-    "Application.LongestConsecutiveSequence.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MaxConsecutiveOnes.executor": "Run",
-    "Application.MaxConsecutiveOnesThree.executor": "Debug",
-    "Application.MergeIntervals.executor": "Run",
-    "Application.MergeStringsAlternately.executor": "Run",
-    "Application.MinAndMax.executor": "Run",
-    "Application.MinStack.executor": "Run",
-    "Application.NumberOfOneBits.executor": "Run",
-    "Application.PascalsTriangle.executor": "Run",
-    "Application.ProductOfArrayExceptSelf.executor": "Debug",
-    "Application.RansomNote.executor": "Debug",
-    "Application.RemoveDuplicatesFromSortedArrayII.executor": "Run",
-    "Application.RomanToInteger.executor": "Run",
-    "Application.SLL.executor": "Run",
-    "Application.SearchInUnsortedArray.executor": "Run",
-    "Application.SearchUsingBinarySearch.executor": "Run",
-    "Application.SingleNumber.executor": "Run",
-    "Application.SortColors.executor": "Run",
-    "Application.SpiralMatrix.executor": "Debug",
-    "Application.SquaresOfASortedArray.executor": "Debug",
-    "Application.Test.executor": "Run",
-    "Application.ThreeSumClosest.executor": "Run",
-    "Application.TrappingRainWater.executor": "Run",
-    "Application.ValidPerfectSquare.executor": "Run",
-    "Application.ValidSudoku.executor": "Run",
-    "Application.rotateByNinetyDegree.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
-    "onboarding.tips.debug.path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AddBinary.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ArrayReverse.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BaseSeven.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BaseballGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomArrayList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomArrayListNoDuplicatesAllowed.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DailyTemperatures.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EvaluateReversePolishNotation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EvenOddPrinter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FindClosestNumberToZero.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FourSum.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FunctionsDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HIndex.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashMapTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InsertGreatestCommonDivisors.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IsSubsequence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaTechieJavaEight.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JewelsAndStones.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JosephusProblemUsingLinkedList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LargestRectangleInHistogram.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LengthOfLastWord.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.LongestConsecutiveSequence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MaxConsecutiveOnes.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MaxConsecutiveOnesThree.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MergeIntervals.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MergeStringsAlternately.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MinAndMax.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MinStack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MoveZeroesToEnd.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NextPermutation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NumberOfOneBits.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PascalsTriangle.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductOfArrayExceptSelf.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.RansomNote.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.RemoveDuplicatesFromSortedArrayII.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RomanToInteger.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SLL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchInUnsortedArray.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchUsingBinarySearch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SingleNumber.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SortColors.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpiralMatrix.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.SquaresOfASortedArray.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThreeSumClosest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrappingRainWater.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValidPerfectSquare.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValidSudoku.executor&quot;: &quot;Run&quot;,
+    &quot;Application.rotateByNinetyDegree.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="HashMapTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="customdatastructures.hashmapdemo.HashMapTest" />
+  <component name="RunManager" selected="Application.NextPermutation">
+    <configuration name="ArrayReverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.ArrayReverse" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="customdatastructures.hashmapdemo.*" />
+          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,12 +148,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveOnesThree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.slidingwindow.medium.MaxConsecutiveOnesThree" />
+    <configuration name="MoveZeroesToEnd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.MoveZeroesToEnd" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.slidingwindow.medium.*" />
+          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NextPermutation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.NextPermutation" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -227,26 +187,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidPerfectSquare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.algomapio.binarysearch.easy.ValidPerfectSquare" />
-      <module name="java-dsa-neetcode-practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="practiceQuestions.algomapio.binarysearch.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NextPermutation" />
+        <item itemvalue="Application.ArrayReverse" />
+        <item itemvalue="Application.MoveZeroesToEnd" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.MaxConsecutiveOnes" />
-        <item itemvalue="Application.MaxConsecutiveOnesThree" />
-        <item itemvalue="Application.HashMapTest" />
-        <item itemvalue="Application.ValidPerfectSquare" />
       </list>
     </recent_temporary>
   </component>
@@ -273,12 +220,15 @@
           <line>52</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/practiceQuestions/Test.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

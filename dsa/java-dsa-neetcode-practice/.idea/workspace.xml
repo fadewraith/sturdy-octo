@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/neetcodepracticesets/arraysandhashing/ez/RemoveElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/ArrayReverse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/MoveZeroesToEnd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/NextPermutation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/RotateArrayByDClockwise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/gfg160problems/arrayspractice/SecondLargestElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

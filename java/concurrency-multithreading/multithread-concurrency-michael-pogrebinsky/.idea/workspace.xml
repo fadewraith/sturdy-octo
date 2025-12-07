@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f5725e41-7776-4848-b561-bdbaa9d8a2fa" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35sEFC4j2vZEyQ7jgw5aFXdRETn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AtomicIntegerExample.executor": "Run",
+    "Application.AtomicReferenceDemo.executor": "Run",
+    "Application.CaseStudy (1).executor": "Debug",
+    "Application.CaseStudy (2).executor": "Run",
+    "Application.CaseStudy.executor": "Debug",
+    "Application.DeadlockDemo (1).executor": "Run",
+    "Application.DeadlockDemo.executor": "Run",
+    "Application.ExOne.executor": "Debug",
+    "Application.ExThree.executor": "Run",
+    "Application.ExTwo.executor": "Run",
+    "Application.ImageProcessing.executor": "Run",
+    "Application.ImageProcessingMultithreaded.executor": "Run",
+    "Application.IoBoundApplication.executor": "Run",
+    "Application.IoBoundApplicationV2.executor": "Run",
+    "Application.Main.executor": "Debug",
+    "Application.MainApplication (1).executor": "Run",
+    "Application.MainApplication.executor": "Run",
+    "Application.MatricesGenerator.executor": "Debug",
+    "Application.RaceCondition.executor": "Debug",
+    "Application.ReentrantLockJavaFXDemo.executor": "Run",
+    "Application.ReentrantReadWriteLockDemo.executor": "Run",
+    "Application.SharedClassDemo (1).executor": "Run",
+    "Application.SharedClassDemo.executor": "Run",
+    "Application.StackDemo.executor": "Run",
+    "Application.ThreadCreation (1).executor": "Debug",
+    "Application.ThreadCreation.executor": "Debug",
+    "Application.ThreadCreation2 (1).executor": "Run",
+    "Application.ThreadCreation2.executor": "Run",
+    "Application.ThreadCreation3 (1).executor": "Run",
+    "Application.ThreadCreation3.executor": "Run",
+    "Application.ThroughputHttpServer.executor": "Run",
+    "Application.VirtualThreadsDemo.executor": "Run",
+    "Application.VirtualThreadsWithBlockingCalls.executor": "Run",
+    "Application.VolatileDemo (1).executor": "Run",
+    "Application.VolatileDemo.executor": "Run",
+    "Application.com.multithreading.sectionfive.RaceCondition (1).executor": "Run",
+    "Application.com.multithreading.sectionfive.RaceCondition.executor": "Debug",
+    "Application.com.multithreading.sectiontenvirtualthreads.IoBoundApplication.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Run JavaFX App.executor": "Run",
+    "Maven.multithread-concurrency-michael-pogrebinsky [clean].executor": "Run",
+    "Maven.multithread-concurrency-michael-pogrebinsky [install].executor": "Run",
+    "Maven.multithread-concurrency-michael-pogrebinsky [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-15556c7b-3ac1-42a7-a571-b6527ed3990d_External_JMeter_Notification": "15556c7b-3ac1-42a7-a571-b6527ed3990d_External_JMeter_Notification",
+    "Notification.DoNotAsk-15556c7b-3ac1-42a7-a571-b6527ed3990d_External_JMeter_Notification": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.codeium.AppSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\multithread-concurrency-michael-pogrebinsky\src\main\java\throughputresources\resources" />
+      <recent name="C:\Users\User\Desktop\multithread-concurrency-michael-pogrebinsky\src\main\java\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.multithreading.sectiontenvirtualthreads.IoBoundApplication">
+    <configuration name="IoBoundApplicationV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.multithreading.sectionninethreadingmodels.IoBoundApplicationV2" />
+      <module name="multithread-concurrency-michael-pogrebinsky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.multithreading.sectionninethreadingmodels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.multithreading.Main" />
+      <module name="multithread-concurrency-michael-pogrebinsky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.multithreading.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VirtualThreadsDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.multithreading.sectiontenvirtualthreads.VirtualThreadsDemo" />
+      <module name="multithread-concurrency-michael-pogrebinsky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.multithreading.sectiontenvirtualthreads.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VirtualThreadsWithBlockingCalls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.multithreading.sectiontenvirtualthreads.VirtualThreadsWithBlockingCalls" />
+      <module name="multithread-concurrency-michael-pogrebinsky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.multithreading.sectiontenvirtualthreads.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.multithreading.sectiontenvirtualthreads.IoBoundApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.multithreading.sectiontenvirtualthreads.IoBoundApplication" />
+      <module name="multithread-concurrency-michael-pogrebinsky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.multithreading.sectiontenvirtualthreads.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run JavaFX App" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.VirtualThreadsDemo" />
+      <item itemvalue="Application.VirtualThreadsWithBlockingCalls" />
+      <item itemvalue="Application.com.multithreading.sectiontenvirtualthreads.IoBoundApplication" />
+      <item itemvalue="Application.IoBoundApplicationV2" />
+      <item itemvalue="Maven.Run JavaFX App" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.multithreading.sectiontenvirtualthreads.IoBoundApplication" />
+        <item itemvalue="Application.VirtualThreadsWithBlockingCalls" />
+        <item itemvalue="Application.VirtualThreadsDemo" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.IoBoundApplicationV2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5725e41-7776-4848-b561-bdbaa9d8a2fa" name="Changes" comment="" />
+      <created>1763890273456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763890273456</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/multithreading/sectiononethreadingcreation/partone/ThreadCreation.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/multithreading/sectiononethreadingcreation/partone/ThreadCreation.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/multithreading/sectiononethreadingcreation/partone/ThreadCreation.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/multithreading/sectiononethreadingcreation/partone/ThreadCreation.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

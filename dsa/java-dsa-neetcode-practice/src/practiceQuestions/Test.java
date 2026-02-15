@@ -7,26 +7,27 @@ import java.util.Map;
 
 public class Test {
 
-    private static int[] solution(int[] arr, int d) {
-        int n = arr.length;
+   private static int[] solution(int[] colors) {
+       return null;
+   }
 
-        for(int i = 0; i < d; i++) {
-            int first = arr[0];
 
-            for(int j = 0; j < n - 1; j++) {
-                arr[j] = arr[j + 1];
-            }
-
-            arr[n - 1] = first;
-        }
-
-        return arr;
-
-    }
+   private static void swap(int[] arr, int i, int j) {
+       int temp = arr[i];
+       arr[i] = arr[j];
+       arr[j] = temp;
+   }
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 2};
+        String input = "   Java    is   very    fun   ";
+        System.out.println(input);
 
+        String result = input
+                .trim()
+                .replaceAll("\\s+", " ");
+
+        System.out.println(result);
+// Output: "Java is very fun"
 
 
     }

@@ -4,11 +4,93 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="" />
+    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindMinValueInArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindSecondMaxValueInArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindTwoNumbersThatAddUptoK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FirstNonRepeatingIntegerInArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/LeftRotateArrayByK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/MaximumSubarray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/Merge2SortedArrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/ProductOfArrayExceptSelf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RearrangePositiveNegativeValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RearrangeSortedArrayMaxMinForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RemoveEvenIntegersFromArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RightRotateArrayByK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/codingproblems/FindTwoNumbersAddToN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/1-Greedyalgorithms.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/2-DynamicProgramming.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/MergeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/QuickSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/SelectionBubbleInsertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/BubbleSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/QuickSortAscending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/QuickSortDescending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeII.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidWordAbbreviation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/ReverseWordsInAString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/SortColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ContainerWithMostWaterLC11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/L1-twoPointers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/LongestMountainLC845.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/LongestSubstringLC3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/MinSizeSubarraySumLC209.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/MoveZeroesEndLC283.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/RemoveDuplicatesLC26.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/RemoveElementLC27.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ReverseStringLC344.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SortColorsLC75.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SquaresOfArrayLC977.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SubArrayProductLC713.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ThreeSumLC15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/TrappingRainWaterLC42.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/TwoSumLC167.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ValidPalindromeLC125.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/L2-slidingWindow.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/MaxAvgSubarrayILC643.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/PermutationInStringLC567.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/notes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/bitmanipulation/easy/notes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/easy/LastStoneWeight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/hard/MergeKSortedLinkedLists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/KClosestPointsToOrigin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/KthLargestElementArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/TopKFrequentElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/CombinationSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Combinations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/GenerateParentheses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/JumpGameII.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/LetterCombinationsPhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Permutations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Subsets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/WordSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/StringsDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/StringsDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice" value="2y6DENsuak1nCo4HARSId1ZkwsR" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="edit-panel" value="GPT-5 mini" />
+      <entry key="chat-panel" value="GPT-5 mini" />
+      <entry key="agent-panel" value="GPT-5 mini" />
+    </selectedModels>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -33,6 +115,10 @@
     &quot;accountId&quot;: &quot;1ba16d97-ff87-48a1-b7ba-fe90c9e940d2&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -44,81 +130,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AddBinary.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ArrayReverse.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BaseSeven.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BaseballGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomArrayList.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomArrayListNoDuplicatesAllowed.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DailyTemperatures.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EvaluateReversePolishNotation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EvenOddPrinter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FindClosestNumberToZero.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FourSum.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FunctionsDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HIndex.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HashMapTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.InsertGreatestCommonDivisors.executor&quot;: &quot;Run&quot;,
-    &quot;Application.IsSubsequence.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JavaTechieJavaEight.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JewelsAndStones.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JosephusProblemUsingLinkedList.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LargestRectangleInHistogram.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LengthOfLastWord.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.LongestConsecutiveSequence.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MaxConsecutiveOnes.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MaxConsecutiveOnesThree.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.MergeIntervals.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MergeStringsAlternately.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MinAndMax.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MinStack.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MoveZeroesToEnd.executor&quot;: &quot;Run&quot;,
-    &quot;Application.NextPermutation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.NumberOfOneBits.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PascalsTriangle.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProductOfArrayExceptSelf.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.RansomNote.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.RemoveDuplicatesFromSortedArrayII.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RomanToInteger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SLL.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SearchInUnsortedArray.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SearchUsingBinarySearch.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SingleNumber.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SortColors.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SpiralMatrix.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.SquaresOfASortedArray.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ThreeSumClosest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrappingRainWater.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ValidPerfectSquare.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ValidSudoku.executor&quot;: &quot;Run&quot;,
-    &quot;Application.rotateByNinetyDegree.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AddBinary.executor": "Run",
+    "Application.ArrayReverse.executor": "Run",
+    "Application.BaseSeven.executor": "Run",
+    "Application.BaseballGame.executor": "Run",
+    "Application.ContainerWithMostWater.executor": "Debug",
+    "Application.CustomArrayList.executor": "Run",
+    "Application.CustomArrayListNoDuplicatesAllowed.executor": "Run",
+    "Application.DailyTemperatures.executor": "Run",
+    "Application.EvaluateReversePolishNotation.executor": "Run",
+    "Application.EvenOddPrinter.executor": "Run",
+    "Application.FindClosestNumberToZero.executor": "Run",
+    "Application.FindMiniValueInArray.executor": "Run",
+    "Application.FindSecondMaxValueInArray.executor": "Run",
+    "Application.FindTwoNumbersThatAddUptoK.executor": "Run",
+    "Application.FirstNonRepeatingIntegerInArray.executor": "Run",
+    "Application.FourSum.executor": "Run",
+    "Application.FunctionsDemo.executor": "Run",
+    "Application.HIndex.executor": "Run",
+    "Application.HashMapTest.executor": "Run",
+    "Application.InsertGreatestCommonDivisors.executor": "Run",
+    "Application.IsSubsequence.executor": "Run",
+    "Application.JavaTechieJavaEight.executor": "Run",
+    "Application.JewelsAndStones.executor": "Run",
+    "Application.JosephusProblemUsingLinkedList.executor": "Run",
+    "Application.LargestRectangleInHistogram.executor": "Run",
+    "Application.LeftRotateArrayByK.executor": "Debug",
+    "Application.LengthOfLastWord.executor": "Debug",
+    "Application.LongestConsecutiveSequence.executor": "Run",
+    "Application.LongestSubstringLC3.executor": "Run",
+    "Application.Main.executor": "Debug",
+    "Application.MaxAvgSubarrayILC643.executor": "Run",
+    "Application.MaxConsecutiveOnes.executor": "Run",
+    "Application.MaxConsecutiveOnesThree.executor": "Debug",
+    "Application.MaximumSubarray.executor": "Run",
+    "Application.Merge2SortedArrays.executor": "Run",
+    "Application.MergeIntervals.executor": "Run",
+    "Application.MergeStringsAlternately.executor": "Run",
+    "Application.MinAndMax.executor": "Run",
+    "Application.MinSizeSubarraySumLC209.executor": "Debug",
+    "Application.MinStack.executor": "Run",
+    "Application.MoveZeroesToEnd.executor": "Run",
+    "Application.NextPermutation.executor": "Run",
+    "Application.NumberOfOneBits.executor": "Run",
+    "Application.PascalsTriangle.executor": "Run",
+    "Application.ProductOfArrayExceptSelf.executor": "Debug",
+    "Application.RansomNote.executor": "Debug",
+    "Application.RearrangePositiveNegativeValues.executor": "Run",
+    "Application.RearrangeSortedArrayMaxMinForm.executor": "Run",
+    "Application.RemoveDuplicatesFromSortedArray.executor": "Debug",
+    "Application.RemoveDuplicatesFromSortedArrayII.executor": "Run",
+    "Application.RemoveElementLC27.executor": "Debug",
+    "Application.RemoveEvenIntegersFromArray.executor": "Run",
+    "Application.RemoveNthNodeFromEndOfList.executor": "Run",
+    "Application.ReverseWordsInAString.executor": "Run",
+    "Application.RightRotateArrayByK.executor": "Run",
+    "Application.RomanToInteger.executor": "Run",
+    "Application.SLL.executor": "Run",
+    "Application.SearchInUnsortedArray.executor": "Run",
+    "Application.SearchUsingBinarySearch.executor": "Run",
+    "Application.SingleNumber.executor": "Run",
+    "Application.SortColors.executor": "Run",
+    "Application.SortColorsLC75.executor": "Run",
+    "Application.SpiralMatrix.executor": "Debug",
+    "Application.SquaresOfASortedArray.executor": "Debug",
+    "Application.SquaresOfArrayLC977.executor": "Run",
+    "Application.SubArrayProductLC713.executor": "Debug",
+    "Application.Test.executor": "Run",
+    "Application.ThreeSumClosest.executor": "Run",
+    "Application.ThreeSumLC15.executor": "Run",
+    "Application.TrappingRainWater.executor": "Run",
+    "Application.TwoSumLC167.executor": "Run",
+    "Application.ValidPalindromeII.executor": "Run",
+    "Application.ValidPalindromeLC125.executor": "Run",
+    "Application.ValidPalindromeOne.executor": "Run",
+    "Application.ValidPerfectSquare.executor": "Run",
+    "Application.ValidSudoku.executor": "Run",
+    "Application.ValidWordAbbreviation.executor": "Run",
+    "Application.rotateByNinetyDegree.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
+    "onboarding.tips.debug.path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src\offthecollege\l1" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.NextPermutation">
-    <configuration name="ArrayReverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.ArrayReverse" />
+  <component name="RunManager" selected="Application.MaxAvgSubarrayILC643">
+    <configuration name="LongestSubstringLC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.LongestSubstringLC3" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
+          <option name="PATTERN" value="offthecollege.l1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,12 +244,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveOnes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="neetcodepracticesets.arraysandhashing.ez.MaxConsecutiveOnes" />
+    <configuration name="MaxAvgSubarrayILC643" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="offthecollege.l2.MaxAvgSubarrayILC643" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="neetcodepracticesets.arraysandhashing.ez.*" />
+          <option name="PATTERN" value="offthecollege.l2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,12 +257,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoveZeroesToEnd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.MoveZeroesToEnd" />
+    <configuration name="MinSizeSubarraySumLC209" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.MinSizeSubarraySumLC209" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
+          <option name="PATTERN" value="offthecollege.l1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,12 +270,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NextPermutation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.gfg160problems.arrayspractice.NextPermutation" />
+    <configuration name="SortColorsLC75" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.SortColorsLC75" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.gfg160problems.arrayspractice.*" />
+          <option name="PATTERN" value="offthecollege.l1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,12 +283,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practiceQuestions.Test" />
+    <configuration name="ThreeSumLC15" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.ThreeSumLC15" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practiceQuestions.*" />
+          <option name="PATTERN" value="offthecollege.l1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,13 +298,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NextPermutation" />
-        <item itemvalue="Application.ArrayReverse" />
-        <item itemvalue="Application.MoveZeroesToEnd" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.MaxConsecutiveOnes" />
+        <item itemvalue="Application.MaxAvgSubarrayILC643" />
+        <item itemvalue="Application.MinSizeSubarraySumLC209" />
+        <item itemvalue="Application.LongestSubstringLC3" />
+        <item itemvalue="Application.SortColorsLC75" />
+        <item itemvalue="Application.ThreeSumLC15" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -210,6 +335,46 @@
           <url>file://$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/medium/SpiralMatrix.java</url>
           <line>52</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/ProductOfArrayExceptSelf.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/LeftRotateArrayByK.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/LeftRotateArrayByK.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/LeftRotateArrayByK.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/offthecollege/l1/ContainerWithMostWaterLC11.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/offthecollege/l1/ContainerWithMostWaterLC11.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/offthecollege/l1/ValidPalindromeLC125.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/offthecollege/l1/RemoveElementLC27.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

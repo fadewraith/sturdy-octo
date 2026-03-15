@@ -3,7 +3,7 @@ package practiceQuestions.algomapio.arraysandstrings.easy;
 public class MergeTwoSortedArrays {
 
     private static void solution(int[] nums1, int n1, int[] nums2, int n2) {
-        // reverse 2 twopointers, below are the 2 twopointers
+        // reverse 2 onetwopointers, below are the 2 onetwopointers
         // n1 = len(nums1), n2 = len(nums2)
         int p1 = n1 - 1, p2 = n2 - 1;
 
@@ -28,7 +28,7 @@ public class MergeTwoSortedArrays {
  *
  * The solution uses a reverse two-pointer technique to merge the arrays from the end, avoiding overwriting elements prematurely. Here’s how it works:
  *
- * Initial Setup: We initialize two twopointers: x at m-1 (last element of nums1’s valid portion) and y at n-1 (last element of nums2). A third pointer, z, starts at m+n-1 (the last position in nums1) to place merged elements.
+ * Initial Setup: We initialize two onetwopointers: x at m-1 (last element of nums1’s valid portion) and y at n-1 (last element of nums2). A third pointer, z, starts at m+n-1 (the last position in nums1) to place merged elements.
  * Merging from the End: We iterate backwards, placing the largest remaining element at nums1[z]:
  * If x < 0, nums1 is exhausted, so we copy nums2[y] to nums1[z] and decrement y.
  * If y < 0, nums2 is exhausted, so we stop as the remaining elements in nums1 are already in place.
@@ -50,12 +50,12 @@ public class MergeTwoSortedArrays {
  * Optimal Strategy: Reverse Two-Pointer Technique
  * To solve this efficiently without extra space, we use a reverse two-pointer approach. Instead of merging from the front, which would require shifting elements and potentially overwriting data, we merge from the end of the arrays. This takes advantage of the fact that the trailing space in nums1 is unused and can be populated from the back.
  *
- * We initialize three twopointers:
+ * We initialize three onetwopointers:
  *
  * x starts at m - 1, pointing to the last valid element in nums1.
  * y starts at n - 1, pointing to the last element in nums2.
  * z starts at m + n - 1, which is the last index in nums1.
- * These twopointers help us compare elements from both arrays and place the larger one at position z, then move backwards.
+ * These onetwopointers help us compare elements from both arrays and place the larger one at position z, then move backwards.
  * Step-by-Step Merging Logic
  * We iterate while y >= 0:
  *

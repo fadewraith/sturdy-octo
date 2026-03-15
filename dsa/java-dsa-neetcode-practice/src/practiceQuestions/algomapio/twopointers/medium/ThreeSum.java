@@ -75,12 +75,12 @@ public class ThreeSum {
  * Skip Duplicate Elements
  * If nums[i] is the same as nums[i - 1], skip it to avoid duplicate triplets.
  * Use Two Pointers to Find Remaining Two Elements
- * Initialize two twopointers: lo = i + 1 and hi = n - 1.
+ * Initialize two onetwopointers: lo = i + 1 and hi = n - 1.
  * While lo < hi, compute the sum of nums[i] + nums[lo] + nums[hi].
  * Check the Sum
  * If the sum is 0:
  * Add the triplet to the result list.
- * Move both lo and hi twopointers inward.
+ * Move both lo and hi onetwopointers inward.
  * Skip any duplicate values using while loops.
  * If the sum is less than 0, increment lo.
  * If the sum is greater than 0, decrement hi.

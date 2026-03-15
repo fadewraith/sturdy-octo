@@ -5,75 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindMinValueInArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindSecondMaxValueInArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FindTwoNumbersThatAddUptoK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/FirstNonRepeatingIntegerInArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/LeftRotateArrayByK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/MaximumSubarray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/Merge2SortedArrays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/ProductOfArrayExceptSelf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RearrangePositiveNegativeValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RearrangeSortedArrayMaxMinForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RemoveEvenIntegersFromArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/acejavacoding/ds/arrays/RightRotateArrayByK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/codingproblems/FindTwoNumbersAddToN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/1-Greedyalgorithms.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/2-DynamicProgramming.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/MergeSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/QuickSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/algoforjava/notes/SelectionBubbleInsertion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/BubbleSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/QuickSortAscending.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/QuickSortDescending.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidWordAbbreviation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/ReverseWordsInAString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/SortColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ContainerWithMostWaterLC11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/L1-twoPointers.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/LongestMountainLC845.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/LongestSubstringLC3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/MinSizeSubarraySumLC209.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/MoveZeroesEndLC283.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/RemoveDuplicatesLC26.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/RemoveElementLC27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ReverseStringLC344.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SortColorsLC75.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SquaresOfArrayLC977.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/SubArrayProductLC713.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ThreeSumLC15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/TrappingRainWaterLC42.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/TwoSumLC167.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l1/ValidPalindromeLC125.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/L2-slidingWindow.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/MaxAvgSubarrayILC643.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/offthecollege/l2/PermutationInStringLC567.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/binarysearch/notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/bitmanipulation/easy/notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/easy/LastStoneWeight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/hard/MergeKSortedLinkedLists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/KClosestPointsToOrigin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/KthLargestElementArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/heaps/medium/TopKFrequentElements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/CombinationSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Combinations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/GenerateParentheses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/JumpGameII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/LetterCombinationsPhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Permutations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/Subsets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/recursivebacktracking/medium/WordSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/slidingwindow/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/StringsDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfgjavacourse/basics2advanced/StringsDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/CircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedListReversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/ThreeSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/notes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/MaxAvgSubarrayI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/notes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/HappyNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/PalindromeLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/CircularArrayLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/FindDuplicateNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/LinkedListCycleIII.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/LinkedListCycleIV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/MaxTwinSumOfLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/SplitACLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidPalindromeI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidPalindromeII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidWordAbbreviation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidWordAbbreviation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/RemoveNthNodeFromEndOfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/ReverseWordsInAString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/ReverseWordsInAString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/SortColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/SortColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neetcode/advanced/linkedlists/FastAndSlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcode/advanced/linkedlists/FastAndSlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveDuplicatesFromSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveDuplicatesFromSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/SummaryRanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/SummaryRanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/LinkedListCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/LinkedListCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/ReverseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/ReverseString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/SquaresOfASortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/SquaresOfASortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/ThreeSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/ThreeSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +105,7 @@
     "Application.EvaluateReversePolishNotation.executor": "Run",
     "Application.EvenOddPrinter.executor": "Run",
     "Application.FindClosestNumberToZero.executor": "Run",
+    "Application.FindDuplicateNumber.executor": "Debug",
     "Application.FindMiniValueInArray.executor": "Run",
     "Application.FindSecondMaxValueInArray.executor": "Run",
     "Application.FindTwoNumbersThatAddUptoK.executor": "Run",
@@ -150,6 +113,7 @@
     "Application.FourSum.executor": "Run",
     "Application.FunctionsDemo.executor": "Run",
     "Application.HIndex.executor": "Run",
+    "Application.HappyNumber.executor": "Run",
     "Application.HashMapTest.executor": "Run",
     "Application.InsertGreatestCommonDivisors.executor": "Run",
     "Application.IsSubsequence.executor": "Run",
@@ -159,12 +123,16 @@
     "Application.LargestRectangleInHistogram.executor": "Run",
     "Application.LeftRotateArrayByK.executor": "Debug",
     "Application.LengthOfLastWord.executor": "Debug",
+    "Application.LinkedListCycleIV.executor": "Run",
     "Application.LongestConsecutiveSequence.executor": "Run",
     "Application.LongestSubstringLC3.executor": "Run",
+    "Application.LongestSubstringWithoutRepeatingCharacters.executor": "Run",
     "Application.Main.executor": "Debug",
+    "Application.MaxAvgSubarrayI.executor": "Debug",
     "Application.MaxAvgSubarrayILC643.executor": "Run",
     "Application.MaxConsecutiveOnes.executor": "Run",
     "Application.MaxConsecutiveOnesThree.executor": "Debug",
+    "Application.MaxTwinSumOfLL.executor": "Run",
     "Application.MaximumSubarray.executor": "Run",
     "Application.Merge2SortedArrays.executor": "Run",
     "Application.MergeIntervals.executor": "Run",
@@ -175,6 +143,7 @@
     "Application.MoveZeroesToEnd.executor": "Run",
     "Application.NextPermutation.executor": "Run",
     "Application.NumberOfOneBits.executor": "Run",
+    "Application.PalindromeLL.executor": "Run",
     "Application.PascalsTriangle.executor": "Run",
     "Application.ProductOfArrayExceptSelf.executor": "Debug",
     "Application.RansomNote.executor": "Debug",
@@ -195,10 +164,12 @@
     "Application.SortColors.executor": "Run",
     "Application.SortColorsLC75.executor": "Run",
     "Application.SpiralMatrix.executor": "Debug",
+    "Application.SplitACLL.executor": "Run",
     "Application.SquaresOfASortedArray.executor": "Debug",
     "Application.SquaresOfArrayLC977.executor": "Run",
     "Application.SubArrayProductLC713.executor": "Debug",
     "Application.Test.executor": "Run",
+    "Application.ThreeSum.executor": "Debug",
     "Application.ThreeSumClosest.executor": "Run",
     "Application.ThreeSumLC15.executor": "Run",
     "Application.TrappingRainWater.executor": "Run",
@@ -230,13 +201,13 @@
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src\offthecollege\l1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MaxAvgSubarrayILC643">
-    <configuration name="LongestSubstringLC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.LongestSubstringLC3" />
+  <component name="RunManager" selected="Application.LongestSubstringWithoutRepeatingCharacters">
+    <configuration name="HappyNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.fastandslowpointers.easy.HappyNumber" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="offthecollege.l1.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.fastandslowpointers.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -244,12 +215,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxAvgSubarrayILC643" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="offthecollege.l2.MaxAvgSubarrayILC643" />
+    <configuration name="LongestSubstringWithoutRepeatingCharacters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.LongestSubstringWithoutRepeatingCharacters" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="offthecollege.l2.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -257,12 +228,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinSizeSubarraySumLC209" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.MinSizeSubarraySumLC209" />
+    <configuration name="MaxAvgSubarrayI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.MaxAvgSubarrayI" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="offthecollege.l1.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -270,12 +241,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortColorsLC75" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.SortColorsLC75" />
+    <configuration name="MaxTwinSumOfLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.fastandslowpointers.medium.MaxTwinSumOfLL" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="offthecollege.l1.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.fastandslowpointers.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,12 +254,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreeSumLC15" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="offthecollege.l1.ThreeSumLC15" />
+    <configuration name="SplitACLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.fastandslowpointers.medium.SplitACLL" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="offthecollege.l1.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.fastandslowpointers.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -298,11 +269,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MaxAvgSubarrayILC643" />
-        <item itemvalue="Application.MinSizeSubarraySumLC209" />
-        <item itemvalue="Application.LongestSubstringLC3" />
-        <item itemvalue="Application.SortColorsLC75" />
-        <item itemvalue="Application.ThreeSumLC15" />
+        <item itemvalue="Application.LongestSubstringWithoutRepeatingCharacters" />
+        <item itemvalue="Application.MaxAvgSubarrayI" />
+        <item itemvalue="Application.SplitACLL" />
+        <item itemvalue="Application.HappyNumber" />
+        <item itemvalue="Application.MaxTwinSumOfLL" />
       </list>
     </recent_temporary>
   </component>
@@ -375,6 +346,11 @@
           <url>file://$PROJECT_DIR$/src/offthecollege/l1/RemoveElementLC27.java</url>
           <line>8</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/codingpatterns/fastandslowpointers/medium/FindDuplicateNumber.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

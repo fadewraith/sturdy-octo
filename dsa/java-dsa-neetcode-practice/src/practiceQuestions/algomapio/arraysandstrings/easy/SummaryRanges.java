@@ -74,13 +74,13 @@ public class SummaryRanges {
  * Final output: ["0", "2->4", "6", "8->9"].
  *
  * Alternative Approach: Two-Pointer Technique
- * You can also solve this with a two-pointer technique, where one pointer marks the start of a range, and another pointer moves forward to find where the range ends. Once you detect a break in continuity, record the range and reset the twopointers.
+ * You can also solve this with a two-pointer technique, where one pointer marks the start of a range, and another pointer moves forward to find where the range ends. Once you detect a break in continuity, record the range and reset the onetwopointers.
  *
  * This method can help when adapting the logic for a streaming or chunked input, where you might need to buffer input as it arrives and summarize it in real time.
  *
  * Time and Space Complexity
  * Time Complexity: O(n), where n is the number of elements in the input list. Every element is visited at most twice (once to detect the start, once to find the end of a range).
- * Space Complexity: O(1) extra space (excluding the output list), as we only use a few twopointers and intermediate variables.
+ * Space Complexity: O(1) extra space (excluding the output list), as we only use a few onetwopointers and intermediate variables.
  *
  * Edge Cases to Consider
  * If the input array is empty, return an empty list.

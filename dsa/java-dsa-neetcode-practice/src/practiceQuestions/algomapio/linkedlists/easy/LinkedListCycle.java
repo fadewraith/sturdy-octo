@@ -9,7 +9,7 @@ public class LinkedListCycle {
      * Also known as the "tortoise and hare" algorithm.
      * 
      * Time Complexity: O(n) - where n is the number of nodes in the list
-     * Space Complexity: O(1) - uses only two twopointers regardless of input size
+     * Space Complexity: O(1) - uses only two onetwopointers regardless of input size
      * 
      * @param head The head node of the linked list
      * @return true if a cycle is detected, false otherwise

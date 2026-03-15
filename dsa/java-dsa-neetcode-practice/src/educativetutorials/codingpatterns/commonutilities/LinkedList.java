@@ -31,6 +31,32 @@ public class LinkedList {
         }
     }
 
+    public static ListNode getNode(ListNode head, int pos){
+        ListNode ptr = head;
+        if (pos != -1){
+            int p = 0;
+
+            while (p < pos){
+                ptr = ptr.next;
+                p += 1;
+            }
+
+            return ptr;
+        }
+        return ptr;
+    }
+
+    public static int getLength(ListNode head)
+    {
+        ListNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
     public static class PrintList{
         // Function to display the linked list
         public static void display(ListNode head) {
@@ -40,6 +66,32 @@ public class LinkedList {
                 current = current.next;
             }
             System.out.println("None");
+        }
+
+        public static void printListWithForwardArrow(ListNode head) {
+            ListNode temp = head;
+
+            while (temp != null) {
+                System.out.print(temp.val); // print node value
+                temp = temp.next;
+                if (temp != null) {
+                    System.out.print(" → ");
+                } else{
+                    // if this is the last node, print null at the end
+                    System.out.print(" → null \n ");
+                }
+            }
+        }
+        public static void printListWithForwardArrowLoop(ListNode head) {
+            ListNode temp = head;
+
+            while (temp != null) {
+                System.out.print(temp.val); // print node value
+                temp = temp.next;
+                if (temp != null) {
+                    System.out.print(" → ");
+                }
+            }
         }
     }
 

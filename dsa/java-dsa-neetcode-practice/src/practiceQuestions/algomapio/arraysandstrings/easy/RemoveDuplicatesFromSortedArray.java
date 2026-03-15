@@ -44,7 +44,7 @@ public class RemoveDuplicatesFromSortedArray {
  * For input [1, 1, 2, 2, 3], the pointer i moves through each index, and whenever it finds a new value different from the one before it, that value is placed at position j. At the end of the process, nums will look like [1, 2, 3, _, _], and the function will return 3.
  *
  * Time and Space Complexity
- * This algorithm operates in linear time O(n), where n is the number of elements in the input array. It also satisfies the space constraint, as no additional data structures are used — only twopointers within the original array.
+ * This algorithm operates in linear time O(n), where n is the number of elements in the input array. It also satisfies the space constraint, as no additional data structures are used — only onetwopointers within the original array.
  *
  * Why This Approach Works
  * The key advantage of this method is its efficiency in both time and space. The sorted property ensures that all duplicates are adjacent, making it easy to compare current and previous elements. The two-pointer technique enables in-place modification while preserving the input's structure and constraints. It’s a classic example of space-efficient array manipulation commonly asked in technical interviews.

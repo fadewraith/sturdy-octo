@@ -19,9 +19,9 @@ public class SquaresOfASortedArray {
 
     /**
      * Optimal Solution
-     * The optimal solution uses two twopointers to build the result in O(n) time by comparing absolute values from both ends:
+     * The optimal solution uses two onetwopointers to build the result in O(n) time by comparing absolute values from both ends:
      *
-     * Initialize two twopointers: left to 0 and right to the last index of nums.
+     * Initialize two onetwopointers: left to 0 and right to the last index of nums.
      * Initialize an empty list result to store the squared values.
      * While left is less than or equal to right, compare the absolute values of nums[left] and nums[right].
      * If abs(nums[left]) is greater than abs(nums[right]), append nums[left] ** 2 to result and increment left.

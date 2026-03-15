@@ -17,13 +17,13 @@ public class ReverseString {
 
     /**
      * Optimal Solution
-     * The optimal solution uses two twopointers to reverse the array in-place with O(1) space complexity:
+     * The optimal solution uses two onetwopointers to reverse the array in-place with O(1) space complexity:
      *
      * Get the length n of the array s.
-     * Initialize two twopointers: l at index 0 and r at index n-1.
+     * Initialize two onetwopointers: l at index 0 and r at index n-1.
      * While l is less than r:
      * Swap the characters at s[l] and s[r].
-     * Increment l and decrement r to move the twopointers inward.
+     * Increment l and decrement r to move the onetwopointers inward.
      * */
 
     private static void optimal(char[] s) {

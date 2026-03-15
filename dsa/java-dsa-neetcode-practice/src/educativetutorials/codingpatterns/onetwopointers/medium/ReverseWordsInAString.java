@@ -1,4 +1,4 @@
-package educativetutorials.codingpatterns.twopointers.medium;
+package educativetutorials.codingpatterns.onetwopointers.medium;
 
 import educativetutorials.codingpatterns.commonutilities.CommonUtils;
 

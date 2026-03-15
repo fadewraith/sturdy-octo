@@ -1,4 +1,4 @@
-package educativetutorials.codingpatterns.twopointers.easy;
+package educativetutorials.codingpatterns.onetwopointers.easy;
 
 public class ValidPalindromeII {
 

@@ -5,37 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/CircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedListReversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/ThreeSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/MaxAvgSubarrayI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/HappyNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/PalindromeLL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/CircularArrayLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/FindDuplicateNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/LinkedListCycleIII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/LinkedListCycleIV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/MaxTwinSumOfLL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/medium/SplitACLL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidPalindromeI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidPalindromeII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidPalindromeII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/easy/ValidWordAbbreviation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/ValidWordAbbreviation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/RemoveNthNodeFromEndOfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/RemoveNthNodeFromEndOfList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/ReverseWordsInAString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/ReverseWordsInAString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twopointers/medium/SortColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/SortColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neetcode/advanced/linkedlists/FastAndSlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/neetcode/advanced/linkedlists/FastAndSlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/MergeTwoSortedArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveDuplicatesFromSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/RemoveDuplicatesFromSortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/SummaryRanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/arraysandstrings/easy/SummaryRanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/LinkedListCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/linkedlists/easy/LinkedListCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/ReverseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/ReverseString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/SquaresOfASortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/easy/SquaresOfASortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/ThreeSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/twopointers/medium/ThreeSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/easy/BestTimeToBuySellStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/easy/BestTimeToBuySellStock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/easy/MaxAvgSubarrayI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/easy/MaxAvgSubarrayI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/LongestRepeatingCharReplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/LongestRepeatingCharReplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/LongestSubstringWithoutRepeatingCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/MiddleOfLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/twofastandslowpointers/easy/MiddleOfLL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +72,7 @@
     "Application.ArrayReverse.executor": "Run",
     "Application.BaseSeven.executor": "Run",
     "Application.BaseballGame.executor": "Run",
+    "Application.BestTimeToBuySellStock.executor": "Run",
     "Application.ContainerWithMostWater.executor": "Debug",
     "Application.CustomArrayList.executor": "Run",
     "Application.CustomArrayListNoDuplicatesAllowed.executor": "Run",
@@ -190,6 +165,9 @@
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
     "onboarding.tips.debug.path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/untitled/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -201,7 +179,20 @@
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src\offthecollege\l1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LongestSubstringWithoutRepeatingCharacters">
+  <component name="RunManager" selected="Application.BestTimeToBuySellStock">
+    <configuration name="BestTimeToBuySellStock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.easy.BestTimeToBuySellStock" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HappyNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.fastandslowpointers.easy.HappyNumber" />
       <module name="java-dsa-neetcode-practice" />
@@ -216,11 +207,11 @@
       </method>
     </configuration>
     <configuration name="LongestSubstringWithoutRepeatingCharacters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.LongestSubstringWithoutRepeatingCharacters" />
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.LongestSubstringWithoutRepeatingCharacters" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -229,24 +220,11 @@
       </method>
     </configuration>
     <configuration name="MaxAvgSubarrayI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.MaxAvgSubarrayI" />
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.easy.MaxAvgSubarrayI" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxTwinSumOfLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.fastandslowpointers.medium.MaxTwinSumOfLL" />
-      <module name="java-dsa-neetcode-practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.fastandslowpointers.medium.*" />
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -269,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BestTimeToBuySellStock" />
         <item itemvalue="Application.LongestSubstringWithoutRepeatingCharacters" />
         <item itemvalue="Application.MaxAvgSubarrayI" />
         <item itemvalue="Application.SplitACLL" />
         <item itemvalue="Application.HappyNumber" />
-        <item itemvalue="Application.MaxTwinSumOfLL" />
       </list>
     </recent_temporary>
   </component>

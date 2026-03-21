@@ -1,4 +1,4 @@
-package educativetutorials.codingpatterns.threeslidingwindow;
+package educativetutorials.codingpatterns.threeslidingwindow.medium;
 
 import java.util.Hashtable;
 import java.util.Map;

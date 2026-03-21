@@ -1,4 +1,4 @@
-package educativetutorials.codingpatterns.threeslidingwindow;
+package educativetutorials.codingpatterns.threeslidingwindow.easy;
 
 public class MaxAvgSubarrayI {
 

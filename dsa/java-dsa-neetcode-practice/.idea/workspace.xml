@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/BinarySubarraysWithSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/FrequencyOfMostFrequentElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/MinSizeSubarraySum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/RepeatedDnaSequences.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/easy/DietPlanPerformance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/hard/SlidingWindowMaximum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/NumOfSubstringsContainingAll3Characters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/PermutationInString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/BinarySubarraysWithSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/threeslidingwindow/medium/BinarySubarraysWithSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +125,7 @@
     "Application.NumberOfOneBits.executor": "Run",
     "Application.PalindromeLL.executor": "Run",
     "Application.PascalsTriangle.executor": "Run",
+    "Application.PermutationInString.executor": "Run",
     "Application.ProductOfArrayExceptSelf.executor": "Debug",
     "Application.RansomNote.executor": "Debug",
     "Application.RearrangePositiveNegativeValues.executor": "Run",
@@ -195,7 +196,7 @@
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src\offthecollege\l1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinarySubarraysWithSum">
+  <component name="RunManager" selected="Application.PermutationInString">
     <configuration name="BinarySubarraysWithSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.BinarySubarraysWithSum" />
       <module name="java-dsa-neetcode-practice" />
@@ -222,8 +223,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FruitIntoBaskets" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.FruitIntoBaskets" />
+    <configuration name="PermutationInString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.PermutationInString" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
@@ -231,13 +232,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="java-dsa-neetcode-practice" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,13 +249,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SlidingWindowMaximum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.hard.SlidingWindowMaximum" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.hard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PermutationInString" />
+        <item itemvalue="Application.SlidingWindowMaximum" />
         <item itemvalue="Application.BinarySubarraysWithSum" />
         <item itemvalue="Application.RepeatedDnaSequences" />
         <item itemvalue="Application.FrequencyOfMostFrequentElement" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.FruitIntoBaskets" />
       </list>
     </recent_temporary>
   </component>

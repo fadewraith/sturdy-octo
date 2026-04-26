@@ -19,7 +19,7 @@ public class BinarySubarraysWithSum {
             }
 
             // 2. Count prefix zeros: If sum matches goal, count leading zeros
-            // These zeros allow for multiple valid subarrays ending at 'end'
+            // These zeros allow for multiple valid subarrays ending at 'i'
             while(start < i && nums[start] == 0 && currentSum == goal) {
                 prefixZeros++;
                 currentSum -= nums[start]; // Removing 0 doesn't change sum

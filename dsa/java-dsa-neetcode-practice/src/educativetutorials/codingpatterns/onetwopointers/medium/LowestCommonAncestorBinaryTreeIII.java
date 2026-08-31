@@ -9,15 +9,88 @@ import java.util.List;
 
 public class LowestCommonAncestorBinaryTreeIII {
 
-    public static TreeNode LowestCommonAncestor(TreeNode p, TreeNode q) {
-        // Initialize two pointers
-        TreeNode ptr1 = p;
-        TreeNode ptr2 = q;
+    /**
 
-        // Traverse until they meet
-        while (ptr1 != ptr2) {
-            // Move ptr1 to parent node or switch to the other node if reached the root
-            if (ptr1.parent != null) {
+     * This solution finds the Lowest Common Ancestor (LCA) of two nodes in a
+     * binary tree using a smart two-pointer approach.
+     *
+     * <p>
+     * We start by placing one pointer at node {@code p} and the other at node
+     * {@code q}. Both pointers move up the tree at each step by following their
+     * parent pointers.
+     * </p>
+     *
+     * <p>
+     * If a pointer reaches the root (i.e., its parent is {@code null}), it jumps
+     * to the other starting node. This process continues until the two pointers
+     * meet.
+     * </p>
+     *
+     * <p>
+     * The key idea is that by switching starting points after reaching the top,
+     * both pointers end up traveling the same total distance, even if {@code p}
+     * and {@code q} are at different depths.
+     * </p>
+     *
+     * <p>
+     * When they meet, that meeting point is their Lowest Common Ancestor (LCA).
+     * </p>
+     *
+     * Algorithm:
+     *
+     * 1. Initialize two pointers:
+     * * {@code ptr1} starting at {@code p}
+     * * {@code ptr2} starting at {@code q}
+     *
+     * 2. While {@code ptr1} and {@code ptr2} are not pointing to the same node:
+     *
+     * a. If {@code ptr1} has a parent:
+     * ```
+     {@code ptr1 = ptr1.parent}
+     ```
+     *
+     * ```
+     Otherwise:
+     ```
+     * ```
+     {@code ptr1 = q}
+     ```
+     *
+     * b. If {@code ptr2} has a parent:
+     * ```
+     {@code ptr2 = ptr2.parent}
+     ```
+     *
+     * ```
+     Otherwise:
+     ```
+     * ```
+     {@code ptr2 = p}
+     ```
+     *
+     * 3. When {@code ptr1 == ptr2}, return {@code ptr1}.
+     * This node is the Lowest Common Ancestor (LCA) of {@code p} and {@code q}.
+     *
+     * Time Complexity:
+     * O(h), where h is the height of the tree.
+     *
+     * In the worst case, each pointer may traverse the entire height of the tree.
+     *
+     * Space Complexity:
+     * O(1), since no additional data structures are used. Only two pointers are
+     * maintained, requiring constant space.
+     */
+
+
+    public static TreeNode LowestCommonAncestor(TreeNode p, TreeNode q) {
+                    // Initialize two pointers
+                    TreeNode ptr1 = p;
+                    TreeNode ptr2 = q;
+
+                    // Traverse until they meet
+                    while (ptr1 != ptr2) {
+                        // Move ptr1 to parent node or switch to the other node if reached the root
+                        if (ptr1.parent != null) {
                 ptr1 = ptr1.parent;
             } else {
                 ptr1 = q;

@@ -1,5 +1,6 @@
 package educativetutorials.codingpatterns.commonutilities;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -12,7 +13,7 @@ public class BinaryTree {
             return null;
         }
         TreeNode root = new TreeNode(nodes.get(0));
-        Queue<TreeNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList();
         q.offer(root);
         int i = 1;
         while (i < nodes.size()) {
@@ -41,7 +42,7 @@ public class BinaryTree {
         if (root == null) {
             return null;
         }
-        Queue<TreeNode> q = new LinkedList();
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         while (!q.isEmpty()) {
             TreeNode currentNode = q.poll();

@@ -4,12 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/easy/SquaresOfASortedArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/AppendCharactersToStringToMakeSubsequence.java" afterDir="false" />
+    <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="Added comment">
+      <change afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/ClimbingStairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/FibonacciNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/MinCostClimbingStairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/CoinChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/HouseRobber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/JumpGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/LongestCommonSubsequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/LongestIncreasingSubsequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/MaximumSubarrayKadanesAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/UniquePaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/easy/FindPathExistsGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CloneGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CourseScheduleDetectingCyclesInGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CourseScheduleIITopological.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/MaxAreaOfIsland.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/MinCostToConnectAllPointsPrimAlgorithmToCreateMST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/NetworkDelayTimeDijkstrasAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/NumberOfIslands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/PacificAtlanticWaterFlow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/RottingOranges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/AverageOfLevelsInBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/BalancedBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/DiameterOfBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/InvertBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/MaximumDepthOfBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/MinimumAbsoluteDifferenceInBST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/PathSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/SameBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/SymmetricTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/BinaryTreeLevelOrderTraversalBFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/ImplementTriePrefixTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/KthSmallestElementInABST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/LowestCommonAncestorOfABinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/SubtreeOfAnotherTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/ValidateBinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/commonutilities/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/LowestCommonAncestorBinaryTreeIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/LowestCommonAncestorBinaryTreeIII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +77,9 @@
       </mcp-server-settings>
     </assistant-settings>
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="313" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -72,61 +109,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS100" value="2.04460426895E-312" />
+      <entry key="MS500" value="5.987602314278853E-63" />
+      <entry key="S2" value="5.850196187464135E-16" />
+      <entry key="S5" value="1.5501610326155212E-6" />
+      <entry key="S10" value="0.002154278913315959" />
+      <entry key="S30" value="0.26858615313361" />
+      <entry key="S60" value="0.8977255418757679" />
+      <entry key="M2" value="1.6685268772445185" />
+      <entry key="M5" value="3.5064576895721546" />
+      <entry key="M10" value="7.694932775898339" />
+      <entry key="M15" value="12.090627287491715" />
+      <entry key="M30" value="28.115001742916277" />
+      <entry key="H1" value="64.51344692176704" />
+      <entry key="H2" value="113.19492881333248" />
+      <entry key="H4" value="155.1638473210799" />
+      <entry key="D1" value="204.937569753791" />
+      <entry key="W1" value="215.2277725111419" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="S5" value="1.0000000845496273" />
+      <entry key="S10" value="1.000366273088834" />
+      <entry key="S30" value="1.1099149790263578" />
+      <entry key="S60" value="1.4668200688227686" />
+      <entry key="M2" value="1.9651896062237681" />
+      <entry key="M5" value="2.494699004202702" />
+      <entry key="M10" value="2.8204146407615505" />
+      <entry key="M15" value="3.3293818027287525" />
+      <entry key="M30" value="6.183977780029029" />
+      <entry key="H1" value="11.948933372093054" />
+      <entry key="H2" value="18.35582832820213" />
+      <entry key="H4" value="23.292385148270455" />
+      <entry key="D1" value="28.73194573452661" />
+      <entry key="W1" value="29.814751636799972" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.675320390815912E-13" />
-      <entry key="MS500" value="0.003419497381618218" />
-      <entry key="S2" value="0.24181908240348302" />
-      <entry key="S5" value="0.566756131859993" />
-      <entry key="S10" value="0.7528320741440238" />
-      <entry key="S30" value="0.9097024644731272" />
-      <entry key="S60" value="0.9537832376767413" />
-      <entry key="M2" value="0.9766182660982444" />
-      <entry key="M5" value="0.990580871027818" />
-      <entry key="M10" value="0.9952792929765082" />
-      <entry key="M15" value="0.9968503806554387" />
-      <entry key="M30" value="0.9984239483583308" />
-      <entry key="H1" value="0.9992116634419009" />
-      <entry key="H2" value="0.9996057540059986" />
-      <entry key="H4" value="0.9998028575704305" />
-      <entry key="D1" value="0.999967140229112" />
-      <entry key="W1" value="0.9999953056809067" />
+      <entry key="MS100" value="7.330881355457578E-28" />
+      <entry key="MS500" value="3.7413749846975344E-6" />
+      <entry key="S2" value="0.0439802617289192" />
+      <entry key="S5" value="0.28661932363930437" />
+      <entry key="S10" value="0.5377778989024454" />
+      <entry key="S30" value="1.1814141821070139" />
+      <entry key="S60" value="2.2468122032972317" />
+      <entry key="M2" value="3.5636328014708916" />
+      <entry key="M5" value="5.9679251768518675" />
+      <entry key="M10" value="10.496150631995771" />
+      <entry key="M15" value="15.40502916640724" />
+      <entry key="M30" value="34.28657189115558" />
+      <entry key="H1" value="76.45143589705452" />
+      <entry key="H2" value="131.54265953504304" />
+      <entry key="H4" value="178.45117177424248" />
+      <entry key="D1" value="233.66848614293704" />
+      <entry key="W1" value="245.04237181167716" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -169,6 +206,7 @@
     "Application.HappyNumber.executor": "Run",
     "Application.HashMapTest.executor": "Run",
     "Application.InsertGreatestCommonDivisors.executor": "Run",
+    "Application.IntersectionOfTwoLinkedLists.executor": "Debug",
     "Application.IsSubsequence.executor": "Run",
     "Application.JavaTechieJavaEight.executor": "Run",
     "Application.JewelsAndStones.executor": "Run",
@@ -198,6 +236,7 @@
     "Application.NextPermutation.executor": "Run",
     "Application.NumberOfOneBits.executor": "Run",
     "Application.PalindromeLL.executor": "Run",
+    "Application.PartitionLabels.executor": "Run",
     "Application.PascalsTriangle.executor": "Run",
     "Application.PermutationInString.executor": "Run",
     "Application.ProductOfArrayExceptSelf.executor": "Debug",
@@ -206,6 +245,7 @@
     "Application.RearrangeSortedArrayMaxMinForm.executor": "Run",
     "Application.RemoveDuplicatesFromSortedArray.executor": "Debug",
     "Application.RemoveDuplicatesFromSortedArrayII.executor": "Run",
+    "Application.RemoveElement.executor": "Run",
     "Application.RemoveElementLC27.executor": "Debug",
     "Application.RemoveEvenIntegersFromArray.executor": "Run",
     "Application.RemoveNthNodeFromEndOfList.executor": "Run",
@@ -221,8 +261,9 @@
     "Application.SortColorsLC75.executor": "Run",
     "Application.SpiralMatrix.executor": "Debug",
     "Application.SplitACLL.executor": "Run",
-    "Application.SquaresOfASortedArray.executor": "Debug",
+    "Application.SquaresOfASortedArray.executor": "Run",
     "Application.SquaresOfArrayLC977.executor": "Run",
+    "Application.StringCompression.executor": "Debug",
     "Application.StrobogrammaticNumber.executor": "Run",
     "Application.SubArrayProductLC713.executor": "Debug",
     "Application.Test.executor": "Run",
@@ -245,12 +286,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.google.cloudcode.ide_session_index": "20260903_0001",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/coding_practice/dsa/java-dsa-neetcode-practice/src",
+    "last_opened_file_path": "C:/Users/havoc/Desktop/projects-practice/dsa/java-dsa-neetcode-practice/src/practiceQuestions/algomapio/trees",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -259,22 +301,31 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\havoc\Desktop\projects-practice\dsa\java-dsa-neetcode-practice\src\practiceQuestions\algomapio\trees" />
+      <recent name="C:\Users\havoc\Desktop\projects-practice\dsa\java-dsa-neetcode-practice\src\practiceQuestions\algomapio\dp" />
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\coding_practice\dsa\java-dsa-neetcode-practice\src\offthecollege\l1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppendCharactersToStringToMakeSubsequence">
-    <configuration name="AppendCharactersToStringToMakeSubsequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.medium.AppendCharactersToStringToMakeSubsequence" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="java-dsa-neetcode-practice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartitionLabels" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.medium.PartitionLabels" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
@@ -286,47 +337,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinarySubarraysWithSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.BinarySubarraysWithSum" />
-      <module name="java-dsa-neetcode-practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PermutationInString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.medium.PermutationInString" />
-      <module name="java-dsa-neetcode-practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SlidingWindowMaximum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.threeslidingwindow.hard.SlidingWindowMaximum" />
-      <module name="java-dsa-neetcode-practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="educativetutorials.codingpatterns.threeslidingwindow.hard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StrobogrammaticNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.easy.StrobogrammaticNumber" />
+    <configuration name="RemoveElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.easy.RemoveElement" />
       <module name="java-dsa-neetcode-practice" />
       <extension name="coverage">
         <pattern>
@@ -338,13 +350,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SquaresOfASortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.easy.SquaresOfASortedArray" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="educativetutorials.codingpatterns.onetwopointers.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringCompression" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="educativetutorials.codingpatterns.onetwopointers.medium.StringCompression" />
+      <module name="java-dsa-neetcode-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="educativetutorials.codingpatterns.onetwopointers.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppendCharactersToStringToMakeSubsequence" />
-        <item itemvalue="Application.StrobogrammaticNumber" />
-        <item itemvalue="Application.PermutationInString" />
-        <item itemvalue="Application.SlidingWindowMaximum" />
-        <item itemvalue="Application.BinarySubarraysWithSum" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.StringCompression" />
+        <item itemvalue="Application.SquaresOfASortedArray" />
+        <item itemvalue="Application.RemoveElement" />
+        <item itemvalue="Application.PartitionLabels" />
       </list>
     </recent_temporary>
   </component>
@@ -373,10 +411,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/../../.." />
     </ignored-roots>
+    <MESSAGE value="New files" />
+    <MESSAGE value="Added comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,8 +488,32 @@
           <line>19</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/IntersectionOfTwoLinkedLists.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/IntersectionOfTwoLinkedLists.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/IntersectionOfTwoLinkedLists.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/educativetutorials/codingpatterns/onetwopointers/medium/StringCompression.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

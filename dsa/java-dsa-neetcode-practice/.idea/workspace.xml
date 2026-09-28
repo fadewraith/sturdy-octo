@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3b1c5f-2b34-47fb-a543-9f16d29f72c3" name="Changes" comment="Added comment">
-      <change afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/ClimbingStairs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/FibonacciNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/easy/MinCostClimbingStairs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/CoinChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/HouseRobber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/JumpGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/LongestCommonSubsequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/LongestIncreasingSubsequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/MaximumSubarrayKadanesAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/dp/medium/UniquePaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/easy/FindPathExistsGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CloneGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CourseScheduleDetectingCyclesInGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/CourseScheduleIITopological.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/MaxAreaOfIsland.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/MinCostToConnectAllPointsPrimAlgorithmToCreateMST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/NetworkDelayTimeDijkstrasAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/NumberOfIslands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/PacificAtlanticWaterFlow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/graphs/medium/RottingOranges.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/AverageOfLevelsInBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/BalancedBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/DiameterOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/InvertBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/MaximumDepthOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/MinimumAbsoluteDifferenceInBST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/PathSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/SameBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/easy/SymmetricTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/BinaryTreeLevelOrderTraversalBFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/ImplementTriePrefixTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/KthSmallestElementInABST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/LowestCommonAncestorOfABinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/SubtreeOfAnotherTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practiceQuestions/algomapio/trees/medium/ValidateBinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

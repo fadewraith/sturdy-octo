@@ -36,6 +36,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] FileAllocation.java (Contiguous, Linked, Indexed)
 - [x] FreeSpaceManagement.java (Bitmap, Linked List)
 - [x] RaidSimulations.java (RAID 0, 1, 5, 6)
+- [x] Raid6Simulation.java (dedicated RAID 6 deep-dive)
 
 ### 5. Deadlock & Synchronization (`os.deadlock` / `os.synchronization`)
 - [x] BankersAlgorithm.java (Avoidance)
@@ -44,9 +45,9 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] ProducerConsumer.java
 - [x] DiningPhilosophers.java
 - [x] ReadersWriters.java
-- [x] PetersonsAlgorithm.java
+- [x] PetersonsAlgorithm.java (in synchronization/ folder, not primitives/)
 - [x] BakeryAlgorithm.java
-- [x] CASPrimitives.java (Compare-And-Swap)
+- [x] CompareAndSwap.java (Compare-And-Swap — was incorrectly listed as CASPrimitives.java)
 - [x] TestAndSet.java
 - [x] Spinlock.java
 - [x] MonitorConcept.java
@@ -100,6 +101,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] FloodingMulticast.java & SpanningTreeMulticast.java
 - [x] CristiansAlgorithm.java & BerkeleyAlgorithm.java
 - [x] RecursiveDNSLookup.java & IterativeDNSLookup.java
+- [x] DNSServer.java (Helper simulation file)
 
 ---
 

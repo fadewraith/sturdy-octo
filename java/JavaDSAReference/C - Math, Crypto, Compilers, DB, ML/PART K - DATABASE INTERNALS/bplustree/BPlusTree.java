@@ -68,7 +68,14 @@ public class BPlusTree {
     public void insert(int key, String value) {
         LeafNode leaf = findLeafNode(key);
         int idx = Collections.binarySearch(leaf.keys, key);
-        if (idx < 0) idx = -idx - 1;
+        if (idx >= 0) {
+            // Key already exists: UPDATE the value (upsert). Adding a second copy
+            // would let a split put the copies in different leaves, and search()
+            // would then return the stale one or miss the key entirely.
+            leaf.values.set(idx, value);
+            return;
+        }
+        idx = -idx - 1;
         leaf.keys.add(idx, key);
         leaf.values.add(idx, value);
 

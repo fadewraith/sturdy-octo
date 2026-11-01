@@ -23,16 +23,20 @@ package algorithms.math;
 public class GCDAndLCM {
 
     // Recursive Euclidean Algorithm for GCD
+    // GCD is defined as non-negative, so the result is made positive
+    // (Java's % keeps the sign of the dividend, e.g. gcd(-4, -6) would give -2).
     public static int gcd(int a, int b) {
         if (b == 0) {
-            return a;
+            return Math.abs(a);
         }
         return gcd(b, a % b);
     }
 
-    // Formula for LCM
+    // Formula for LCM. Divide BEFORE multiplying: a * b can overflow int
+    // even when the LCM itself fits.
     public static int lcm(int a, int b) {
-        return (a * b) / gcd(a, b);
+        if (a == 0 || b == 0) return 0;
+        return Math.abs(a / gcd(a, b) * b);
     }
 
     public static void main(String[] args) {

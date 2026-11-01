@@ -1,4 +1,4 @@
-package algorithms.gametheory;
+package algorithms.gametheory.advanced;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -78,25 +78,50 @@ public class ConvexHull {
         points[min] = temp;
         p0 = points[0];
 
+        // Drop duplicates of p0: a point equal to p0 has no angle, which would
+        // make the sort comparator inconsistent.
+        int k = 1;
+        for (int i = 1; i < n; i++) {
+            if (points[i].x != p0.x || points[i].y != p0.y) points[k++] = points[i];
+        }
+        n = k;
+
         // 2. Sort by polar angle with respect to p0
         Arrays.sort(points, 1, n, new Comparator<Point>() {
             @Override
             public int compare(Point p1, Point p2) {
                 int o = orientation(p0, p1, p2);
-                if (o == 0) { // Collinear, pick the further one!
-                    return (distSq(p0, p2) >= distSq(p0, p1)) ? -1 : 1;
+                if (o == 0) { // Collinear: closer point first (consistent comparator)
+                    return Integer.compare(distSq(p0, p1), distSq(p0, p2));
                 }
                 return (o < 0) ? -1 : 1; // Left turns first
             }
         });
 
-        // 3. Process the sorted array
-        PointStack stack = new PointStack(n);
+        // 3. If several points have the same angle from p0, keep only the FARTHEST.
+        // The closer ones lie on a line from p0 and can never be hull corners.
+        // Without this step, collinear points on the first edge stay in the hull,
+        // and an all-collinear input returns a middle point.
+        int m = 1; // size of the filtered array (points[0] = p0 is kept)
+        for (int i = 1; i < n; i++) {
+            while (i < n - 1 && orientation(p0, points[i], points[i + 1]) == 0) {
+                i++; // sorted closer-first, so skip forward to the farthest
+            }
+            points[m++] = points[i];
+        }
+
+        if (m < 3) {
+            System.out.println("Convex hull not possible (all points are collinear or identical).");
+            return;
+        }
+
+        // 4. Process the filtered array
+        PointStack stack = new PointStack(m);
         stack.push(points[0]);
         stack.push(points[1]);
         stack.push(points[2]);
 
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i < m; i++) {
             // Keep removing top while the angle formed by points next-to-top, top, 
             // and points[i] makes a non-left turn
             while (stack.top > 0 && orientation(stack.peekNextToTop(), stack.peek(), points[i]) >= 0) {

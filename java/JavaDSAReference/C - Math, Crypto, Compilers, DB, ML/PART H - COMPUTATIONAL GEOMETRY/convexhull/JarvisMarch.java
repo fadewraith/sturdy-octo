@@ -29,29 +29,49 @@ public class JarvisMarch {
     }
 
     public static List<Point> convexHull(Point[] points) {
-        int n = points.length;
-        if (n < 3) return Arrays.asList(points);
+        // 1. Remove duplicate points. With duplicates the walk can hop onto a copy
+        //    of the start point and never get back to the original -> infinite loop.
+        List<Point> unique = new ArrayList<>();
+        for (Point pt : points) {
+            boolean seen = false;
+            for (Point u : unique) {
+                if (u.x == pt.x && u.y == pt.y) { seen = true; break; }
+            }
+            if (!seen) unique.add(pt);
+        }
+        int n = unique.size();
+        if (n < 3) return unique;
 
         List<Point> hull = new ArrayList<>();
 
+        // 2. Start at the leftmost point (lowest y on a tie) - it is always on the hull
         int l = 0;
         for (int i = 1; i < n; i++) {
-            if (points[i].x < points[l].x) l = i;
+            Point a = unique.get(i), b = unique.get(l);
+            if (a.x < b.x || (a.x == b.x && a.y < b.y)) l = i;
         }
 
         int p = l, q;
         do {
-            hull.add(points[p]);
+            hull.add(unique.get(p));
             q = (p + 1) % n;
             for (int i = 0; i < n; i++) {
-                if (orientation(points[p], points[i], points[q]) == 2) {
+                if (i == p) continue;
+                int o = orientation(unique.get(p), unique.get(i), unique.get(q));
+                // Take i if it is more counter-clockwise than q.
+                // If collinear, take the FARTHER one so middle points on an edge are skipped.
+                if (o == 2 || (o == 0 && distSq(unique.get(p), unique.get(i)) > distSq(unique.get(p), unique.get(q)))) {
                     q = i;
                 }
             }
             p = q;
-        } while (p != l);
+        } while (p != l && hull.size() <= n); // size guard: a hull can never have more than n points
 
         return hull;
+    }
+
+    private static int distSq(Point a, Point b) {
+        return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
     }
 
     private static int orientation(Point p, Point q, Point r) {

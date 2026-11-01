@@ -90,6 +90,9 @@ public class SegmentTree {
     }
 
     private void pointUpdateRec(int node, int start, int end, int index, int newValue) {
+        // Apply any pending range update first, otherwise it would be lost
+        // (or later re-added on top of the new value).
+        propagate(node, start, end);
         if (start == end) {
             // Leaf node found, update it
             tree[node] = newValue;
@@ -101,9 +104,11 @@ public class SegmentTree {
             if (index <= mid) {
                 // If index is in the left child
                 pointUpdateRec(leftChild, start, mid, index, newValue);
+                propagate(rightChild, mid + 1, end); // sibling must be up to date before we sum
             } else {
                 // If index is in the right child
                 pointUpdateRec(rightChild, mid + 1, end, index, newValue);
+                propagate(leftChild, start, mid);
             }
 
             // Recalculate the sum of the current node after updating children

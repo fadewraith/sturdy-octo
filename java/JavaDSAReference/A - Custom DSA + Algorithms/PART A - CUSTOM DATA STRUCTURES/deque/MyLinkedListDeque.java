@@ -30,7 +30,7 @@ import linkedlist.common.DoublyNode;
  * Java's `java.util.LinkedList` actually implements the `Deque` interface in exactly 
  * this way! Building it yourself demystifies how `LinkedList` provides these methods.
  */
-public class MyLinkedListDeque<T> {
+public class MyLinkedListDeque<T> implements Iterable<T> {
 
     private DoublyNode<T> head; // Represents the front
     private DoublyNode<T> tail; // Represents the rear
@@ -118,6 +118,27 @@ public class MyLinkedListDeque<T> {
 
     public int size() {
         return size;
+    }
+
+    /** First to last. */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private DoublyNode<T> current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (current == null) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

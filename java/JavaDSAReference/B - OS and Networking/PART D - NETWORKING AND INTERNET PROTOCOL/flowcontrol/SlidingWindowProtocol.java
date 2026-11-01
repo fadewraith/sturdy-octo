@@ -68,4 +68,8 @@ public class SlidingWindowProtocol {
 
         sender.sendNext();
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

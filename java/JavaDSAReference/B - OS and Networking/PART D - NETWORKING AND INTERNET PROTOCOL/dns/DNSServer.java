@@ -33,4 +33,24 @@ public class DNSServer {
         }
         return null;
     }
+
+    public static void main(String[] args) {
+        System.out.println("--- DNS Server hierarchy (helper used by the DNS lookup demos) ---");
+        DNSServer root = new DNSServer("root");
+        DNSServer com = new DNSServer(".com TLD");
+        DNSServer example = new DNSServer("example.com authoritative");
+        root.delegate(".com", com);
+        com.delegate("example.com", example);
+        example.addARecord("www.example.com", "93.184.216.34");
+
+        String domain = "www.example.com";
+        DNSServer current = root;
+        while (!current.aRecords.containsKey(domain)) {
+            DNSServer next = current.getDelegation(domain);
+            System.out.println(current.name + " refers us to " + (next == null ? "nobody" : next.name));
+            if (next == null) return;
+            current = next;
+        }
+        System.out.println(current.name + " answers: " + domain + " -> " + current.aRecords.get(domain));
+    }
 }

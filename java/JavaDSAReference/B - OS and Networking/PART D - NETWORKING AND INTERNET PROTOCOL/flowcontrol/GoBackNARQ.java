@@ -43,4 +43,8 @@ public class GoBackNARQ {
 
         System.out.println("All packets delivered successfully.");
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

@@ -1,5 +1,6 @@
 package treap;
 
+import array.MyArrayList;
 import java.util.Random;
 
 /**
@@ -55,6 +56,7 @@ public class Treap<T extends Comparable<T>> {
     }
 
     private TreapNode<T> root;
+    private int size; // number of keys, maintained by insert/delete
 
     public Treap() {
         this.root = null;
@@ -97,6 +99,7 @@ public class Treap<T extends Comparable<T>> {
     private TreapNode<T> insertRec(TreapNode<T> node, T key) {
         // 1. Standard BST insertion
         if (node == null) {
+            size++; // a new key really was added (duplicates never reach here)
             return new TreapNode<>(key);
         }
 
@@ -143,14 +146,19 @@ public class Treap<T extends Comparable<T>> {
             // Node found!
 
             // Case 1: Leaf node (No children)
+            // (Cases 1 and 2 are where a node is actually unlinked - case 3 rotates
+            //  and recurses until it lands in one of them - so the count changes here.)
             if (node.left == null && node.right == null) {
+                size--;
                 return null;
             }
-            
+
             // Case 2: One child
             else if (node.left == null) {
+                size--;
                 return node.right;
             } else if (node.right == null) {
+                size--;
                 return node.left;
             }
             
@@ -200,6 +208,49 @@ public class Treap<T extends Comparable<T>> {
             System.out.print(node.key + "(p:" + node.priority + ") ");
             inorderRec(node.right);
         }
+    }
+
+    // --------------------------------------------------------
+    // QUERY HELPERS (return values instead of printing)
+    // --------------------------------------------------------
+
+    /** Number of keys. O(1): a counter kept up to date by insert and delete. */
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    /** Smallest key, or null if empty. O(log N) expected (random priorities keep it balanced). */
+    public T min() {
+        if (root == null) return null;
+        TreapNode<T> cur = root;
+        while (cur.left != null) cur = cur.left;
+        return cur.key;
+    }
+
+    /** Largest key, or null if empty. */
+    public T max() {
+        if (root == null) return null;
+        TreapNode<T> cur = root;
+        while (cur.right != null) cur = cur.right;
+        return cur.key;
+    }
+
+    /** All keys in ascending order. */
+    public MyArrayList<T> toSortedList() {
+        MyArrayList<T> out = new MyArrayList<>();
+        collectRec(root, out);
+        return out;
+    }
+
+    private void collectRec(TreapNode<T> node, MyArrayList<T> out) {
+        if (node == null) return;
+        collectRec(node.left, out);
+        out.add(node.key);
+        collectRec(node.right, out);
     }
 
     // --------------------------------------------------------

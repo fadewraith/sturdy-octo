@@ -31,39 +31,51 @@ public class ClosestPairOfPoints {
     }
 
     public static double closestPair(Point[] points) {
+        int n = points.length;
+        if (n < 2) return Double.POSITIVE_INFINITY;
+
+        // Sort by x (then y, so the order is fully defined even with equal x)
         Point[] px = points.clone();
-        Point[] py = points.clone();
-        Arrays.sort(px, Comparator.comparingDouble(p -> p.x));
-        Arrays.sort(py, Comparator.comparingDouble(p -> p.y));
-        return closestUtil(px, py, px.length);
+        Arrays.sort(px, Comparator.comparingDouble((Point p) -> p.x).thenComparingDouble(p -> p.y));
+
+        // py holds POSITIONS in px, sorted by y. Splitting by position (instead of
+        // by "x <= midX") keeps the left/right halves exactly in sync with px,
+        // even when many points share the same x coordinate.
+        Integer[] byY = new Integer[n];
+        for (int i = 0; i < n; i++) byY[i] = i;
+        Arrays.sort(byY, Comparator.comparingDouble(i -> px[i].y));
+        int[] py = new int[n];
+        for (int i = 0; i < n; i++) py[i] = byY[i];
+
+        return closestUtil(px, 0, n, py);
     }
 
-    private static double closestUtil(Point[] px, Point[] py, int n) {
-        if (n <= 3) return bruteForce(px, n);
+    // Works on px[lo..hi); py = the same positions sorted by y
+    private static double closestUtil(Point[] px, int lo, int hi, int[] py) {
+        int n = hi - lo;
+        if (n <= 3) return bruteForce(Arrays.copyOfRange(px, lo, hi), n);
 
-        int mid = n / 2;
+        int mid = lo + n / 2;
         Point midPoint = px[mid];
 
-        Point[] pyl = new Point[mid];
-        Point[] pyr = new Point[n - mid];
+        int[] pyl = new int[mid - lo];
+        int[] pyr = new int[hi - mid];
         int li = 0, ri = 0;
-        for (int i = 0; i < n; i++) {
-            if (py[i].x <= midPoint.x && li < mid) {
-                pyl[li++] = py[i];
-            } else {
-                pyr[ri++] = py[i];
-            }
+        for (int idx : py) {
+            if (idx < mid) pyl[li++] = idx;
+            else pyr[ri++] = idx;
         }
 
-        double dl = closestUtil(Arrays.copyOfRange(px, 0, mid), pyl, mid);
-        double dr = closestUtil(Arrays.copyOfRange(px, mid, n), pyr, n - mid);
+        double dl = closestUtil(px, lo, mid, pyl);
+        double dr = closestUtil(px, mid, hi, pyr);
         double d = Math.min(dl, dr);
 
+        // Points within d of the dividing line, still in y order
         Point[] strip = new Point[n];
         int j = 0;
-        for (int i = 0; i < n; i++) {
-            if (Math.abs(py[i].x - midPoint.x) < d) {
-                strip[j++] = py[i];
+        for (int idx : py) {
+            if (Math.abs(px[idx].x - midPoint.x) < d) {
+                strip[j++] = px[idx];
             }
         }
 

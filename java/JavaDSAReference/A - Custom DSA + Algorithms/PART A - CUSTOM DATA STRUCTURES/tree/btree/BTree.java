@@ -1,5 +1,7 @@
 package tree.btree;
 
+import array.MyArrayList;
+
 /**
  * B-TREE
  * 
@@ -23,6 +25,7 @@ package tree.btree;
  * Operation      | Time Complexity | Space Complexity | Notes
  * ---------------------------------------------------------------------------------
  * Insert         | O(t * log_t N)  | O(log_t N) stack | Very flat tree = few disk accesses
+ * Delete         | O(t * log_t N)  | O(log_t N) stack | Borrow / merge on the way down
  * Search         | O(t * log_t N)  | O(1) iterative   | Binary search inside the node is possible
  * 
  * Real-world analogy:
@@ -34,6 +37,7 @@ package tree.btree;
 public class BTree<T extends Comparable<T>> {
 
     private BTreeNode<T> root;
+    private int size; // number of keys, maintained by insert/delete
     private final int t; // Minimum degree
 
     /**
@@ -180,6 +184,140 @@ public class BTree<T extends Comparable<T>> {
             keys[i] = y.keys[t - 1];
             n = n + 1;
         }
+
+        // ----------------------------------------------------
+        // DELETE (CLRS). Mirror image of insert: insert splits FULL nodes on the way
+        // down; delete makes sure every node we step into has at least t keys, so
+        // removing one key from it can never break the "t - 1 minimum" rule.
+        // ----------------------------------------------------
+
+        // Index of the first key >= k
+        private int findKey(T k) {
+            int idx = 0;
+            while (idx < n && keys[idx].compareTo(k) < 0) idx++;
+            return idx;
+        }
+
+        /** Removes k from the subtree rooted here. Returns true if k was found. */
+        public boolean remove(T k) {
+            int idx = findKey(k);
+
+            if (idx < n && keys[idx].compareTo(k) == 0) {
+                if (leaf) {
+                    removeFromLeaf(idx);           // Case 1: key in a leaf - just delete it
+                } else {
+                    removeFromNonLeaf(idx);        // Case 2: key in an internal node
+                }
+                return true;
+            }
+
+            if (leaf) return false; // not in the tree
+
+            // Case 3: key is somewhere in children[idx]'s subtree.
+            boolean wasLastChild = (idx == n);
+            if (children[idx].n < t) fill(idx); // make sure the child has >= t keys first
+            // fill() may have merged the last child into its left sibling
+            if (wasLastChild && idx > n) return children[idx - 1].remove(k);
+            return children[idx].remove(k);
+        }
+
+        private void removeFromLeaf(int idx) {
+            for (int i = idx + 1; i < n; i++) keys[i - 1] = keys[i];
+            keys[n - 1] = null;
+            n--;
+        }
+
+        private void removeFromNonLeaf(int idx) {
+            T k = keys[idx];
+            if (children[idx].n >= t) {
+                // 2a: left child is big enough - replace k with its predecessor, delete that
+                T pred = getPredecessor(idx);
+                keys[idx] = pred;
+                children[idx].remove(pred);
+            } else if (children[idx + 1].n >= t) {
+                // 2b: right child is big enough - replace k with its successor, delete that
+                T succ = getSuccessor(idx);
+                keys[idx] = succ;
+                children[idx + 1].remove(succ);
+            } else {
+                // 2c: both children have t - 1 keys - merge them (k moves down) and recurse
+                merge(idx);
+                children[idx].remove(k);
+            }
+        }
+
+        private T getPredecessor(int idx) {
+            BTreeNode<T> cur = children[idx];
+            while (!cur.leaf) cur = cur.children[cur.n];
+            return cur.keys[cur.n - 1];
+        }
+
+        private T getSuccessor(int idx) {
+            BTreeNode<T> cur = children[idx + 1];
+            while (!cur.leaf) cur = cur.children[0];
+            return cur.keys[0];
+        }
+
+        // children[idx] has only t - 1 keys: borrow from a sibling, or merge with one
+        private void fill(int idx) {
+            if (idx != 0 && children[idx - 1].n >= t) {
+                borrowFromPrev(idx);
+            } else if (idx != n && children[idx + 1].n >= t) {
+                borrowFromNext(idx);
+            } else if (idx != n) {
+                merge(idx);
+            } else {
+                merge(idx - 1);
+            }
+        }
+
+        // Rotate right: parent key comes down into child, left sibling's last key goes up
+        private void borrowFromPrev(int idx) {
+            BTreeNode<T> child = children[idx], sibling = children[idx - 1];
+            for (int i = child.n - 1; i >= 0; i--) child.keys[i + 1] = child.keys[i];
+            if (!child.leaf) {
+                for (int i = child.n; i >= 0; i--) child.children[i + 1] = child.children[i];
+                child.children[0] = sibling.children[sibling.n];
+                sibling.children[sibling.n] = null;
+            }
+            child.keys[0] = keys[idx - 1];
+            keys[idx - 1] = sibling.keys[sibling.n - 1];
+            sibling.keys[sibling.n - 1] = null;
+            child.n++;
+            sibling.n--;
+        }
+
+        // Rotate left: parent key comes down into child, right sibling's first key goes up
+        private void borrowFromNext(int idx) {
+            BTreeNode<T> child = children[idx], sibling = children[idx + 1];
+            child.keys[child.n] = keys[idx];
+            if (!child.leaf) child.children[child.n + 1] = sibling.children[0];
+            keys[idx] = sibling.keys[0];
+            for (int i = 1; i < sibling.n; i++) sibling.keys[i - 1] = sibling.keys[i];
+            if (!sibling.leaf) {
+                for (int i = 1; i <= sibling.n; i++) sibling.children[i - 1] = sibling.children[i];
+                sibling.children[sibling.n] = null;
+            }
+            sibling.keys[sibling.n - 1] = null;
+            child.n++;
+            sibling.n--;
+        }
+
+        // Merge children[idx + 1] and keys[idx] into children[idx] (result has 2t - 1 keys)
+        private void merge(int idx) {
+            BTreeNode<T> child = children[idx], sibling = children[idx + 1];
+            child.keys[t - 1] = keys[idx];
+            for (int i = 0; i < sibling.n; i++) child.keys[i + t] = sibling.keys[i];
+            if (!child.leaf) {
+                for (int i = 0; i <= sibling.n; i++) child.children[i + t] = sibling.children[i];
+            }
+            for (int i = idx + 1; i < n; i++) keys[i - 1] = keys[i];
+            for (int i = idx + 2; i <= n; i++) children[i - 1] = children[i];
+            keys[n - 1] = null;
+            children[n] = null;
+            child.n += sibling.n + 1;
+            n--;
+        }
     }
 
     /**
@@ -215,6 +353,7 @@ public class BTree<T extends Comparable<T>> {
      * Inserts a key into the B-Tree.
      */
     public void insert(T k) {
+        size++; // this B-Tree keeps duplicates, so every insert adds a key
         // If tree is empty
         if (root == null) {
             root = new BTreeNode<>(t, true);
@@ -248,6 +387,49 @@ public class BTree<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * Deletes a key from the B-Tree. Returns true if it was present.
+     */
+    public boolean delete(T k) {
+        if (root == null) return false;
+        boolean removed = root.remove(k);
+        if (removed) size--;
+        // If the root lost its last key, the tree shrinks by one level
+        if (root.n == 0) {
+            root = root.leaf ? null : root.children[0];
+        }
+        return removed;
+    }
+
+    // --------------------------------------------------------
+    // QUERY HELPERS (return values instead of printing)
+    // --------------------------------------------------------
+
+    /** Number of keys (duplicates counted). O(1): a counter kept up to date by insert and delete. */
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    /** All keys in ascending order (child 0, key 0, child 1, key 1, ..., last child). */
+    public MyArrayList<T> toSortedList() {
+        MyArrayList<T> out = new MyArrayList<>();
+        collectRec(root, out);
+        return out;
+    }
+
+    private void collectRec(BTreeNode<T> node, MyArrayList<T> out) {
+        if (node == null) return;
+        for (int i = 0; i < node.n; i++) {
+            if (!node.leaf) collectRec(node.children[i], out);
+            out.add(node.keys[i]);
+        }
+        if (!node.leaf) collectRec(node.children[node.n], out);
+    }
+
     // --------------------------------------------------------
     // RUNNER METHOD
     // --------------------------------------------------------
@@ -279,5 +461,12 @@ public class BTree<T extends Comparable<T>> {
         System.out.print("Sorted Traversal after splits: ");
         bTree.traverse();
         // The tree should have grown and safely split nodes while maintaining perfectly flat leaf levels!
+
+        System.out.println("\nDeleting 6 (leaf), 13 (internal), 7, 4, 2 (absent):");
+        for (int k : new int[]{6, 13, 7, 4, 2}) {
+            System.out.println("  delete(" + k + ") -> " + bTree.delete(k));
+        }
+        System.out.print("Sorted Traversal after deletes: ");
+        bTree.traverse(); // 1 3 5 8 9 10 11 12 14 15 16 17 20 30
     }
 }

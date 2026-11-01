@@ -1,5 +1,7 @@
 package tree.redblack;
 
+import array.MyArrayList;
+
 /**
  * RED-BLACK TREE
  * 
@@ -34,7 +36,7 @@ package tree.redblack;
  * This means fewer rotations on average, making it faster for write-heavy workloads. 
  * Java's `TreeMap` and `TreeSet` are built entirely on Red-Black Trees.
  */
-public class RedBlackTree<T extends Comparable<T>> {
+public class RedBlackTree<T extends Comparable<T>> implements Iterable<T> {
 
     private enum Color {
         RED, BLACK
@@ -53,6 +55,7 @@ public class RedBlackTree<T extends Comparable<T>> {
     }
 
     private RBNode root;
+    private int size; // number of keys, maintained by insert/delete
     // TNULL acts as the sentinel for all null leaves
     private final RBNode TNULL;
 
@@ -137,6 +140,7 @@ public class RedBlackTree<T extends Comparable<T>> {
         } else {
             y.right = node;
         }
+        size++; // past the duplicate check: a new key was linked in
 
         if (node.parent == null) {
             node.color = Color.BLACK;
@@ -246,6 +250,7 @@ public class RedBlackTree<T extends Comparable<T>> {
         if (z == TNULL) {
             return; // Key not found
         }
+        size--; // the key exists and is about to be unlinked
 
         y = z;
         Color yOriginalColor = y.color;
@@ -374,6 +379,106 @@ public class RedBlackTree<T extends Comparable<T>> {
         return false;
     }
 
+    // --------------------------------------------------------
+    // NAVIGATION (what makes a sorted tree more useful than a hash table)
+    // All O(log N): one walk from root to leaf.
+    // --------------------------------------------------------
+
+    /**
+     * Returns the STORED element equal to key (by compareTo), or null.
+     * Lets a TreeMap find its entry object by key and update the value in place.
+     */
+    public T get(T key) {
+        RBNode node = root;
+        while (node != TNULL) {
+            int cmp = key.compareTo(node.data);
+            if (cmp == 0) return node.data;
+            node = cmp < 0 ? node.left : node.right;
+        }
+        return null;
+    }
+
+    /** Greatest element <= key, or null. Going right = "this one fits, try for a bigger one". */
+    public T floor(T key) {
+        T best = null;
+        RBNode node = root;
+        while (node != TNULL) {
+            int cmp = key.compareTo(node.data);
+            if (cmp == 0) return node.data;
+            if (cmp > 0) { best = node.data; node = node.right; }
+            else node = node.left;
+        }
+        return best;
+    }
+
+    /** Smallest element >= key, or null. Mirror image of floor. */
+    public T ceiling(T key) {
+        T best = null;
+        RBNode node = root;
+        while (node != TNULL) {
+            int cmp = key.compareTo(node.data);
+            if (cmp == 0) return node.data;
+            if (cmp < 0) { best = node.data; node = node.left; }
+            else node = node.right;
+        }
+        return best;
+    }
+
+    /** Greatest element strictly < key, or null. */
+    public T lower(T key) {
+        T best = null;
+        RBNode node = root;
+        while (node != TNULL) {
+            if (key.compareTo(node.data) > 0) { best = node.data; node = node.right; }
+            else node = node.left;
+        }
+        return best;
+    }
+
+    /** Smallest element strictly > key, or null. */
+    public T higher(T key) {
+        T best = null;
+        RBNode node = root;
+        while (node != TNULL) {
+            if (key.compareTo(node.data) < 0) { best = node.data; node = node.left; }
+            else node = node.right;
+        }
+        return best;
+    }
+
+    /**
+     * In-order iterator using an explicit stack: O(height) memory instead of copying
+     * all N elements into a list first. Each next() is amortized O(1).
+     * Push the left spine; pop one node; then push the left spine of its right child.
+     */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private final MyArrayList<RBNode> stack = new MyArrayList<>();
+            { pushLeft(root); }
+
+            private void pushLeft(RBNode node) {
+                while (node != TNULL) {
+                    stack.add(node);
+                    node = node.left;
+                }
+            }
+
+            @Override
+            public boolean hasNext() {
+                return !stack.isEmpty();
+            }
+
+            @Override
+            public T next() {
+                if (stack.isEmpty()) throw new java.util.NoSuchElementException();
+                RBNode node = stack.remove(stack.size() - 1);
+                pushLeft(node.right);
+                return node.data;
+            }
+        };
+    }
+
     public void inorder() {
         System.out.print("RB-Tree Inorder: ");
         inorderHelper(this.root);
@@ -394,6 +499,50 @@ public class RedBlackTree<T extends Comparable<T>> {
         } else {
             System.out.println("Tree is empty.");
         }
+    }
+
+    // --------------------------------------------------------
+    // QUERY HELPERS (return values instead of printing)
+    // Note: empty children are the TNULL sentinel, not null.
+    // --------------------------------------------------------
+
+    /** Number of keys. O(1): a counter kept up to date by insert and delete. */
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return root == TNULL;
+    }
+
+    /** Smallest key, or null if empty. O(log N). */
+    public T min() {
+        if (root == TNULL) return null;
+        RBNode cur = root;
+        while (cur.left != TNULL) cur = cur.left;
+        return cur.data;
+    }
+
+    /** Largest key, or null if empty. O(log N). */
+    public T max() {
+        if (root == TNULL) return null;
+        RBNode cur = root;
+        while (cur.right != TNULL) cur = cur.right;
+        return cur.data;
+    }
+
+    /** All keys in ascending order. */
+    public MyArrayList<T> toSortedList() {
+        MyArrayList<T> out = new MyArrayList<>();
+        collectRec(root, out);
+        return out;
+    }
+
+    private void collectRec(RBNode node, MyArrayList<T> out) {
+        if (node == TNULL) return;
+        collectRec(node.left, out);
+        out.add(node.data);
+        collectRec(node.right, out);
     }
 
     // --------------------------------------------------------

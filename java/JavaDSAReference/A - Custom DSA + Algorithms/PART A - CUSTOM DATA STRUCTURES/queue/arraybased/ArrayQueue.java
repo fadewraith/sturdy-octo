@@ -31,7 +31,7 @@ package queue.arraybased;
  * A line at a grocery store checkout. The first person in line is the first one 
  * served (dequeued), and new people join at the back of the line (enqueued).
  */
-public class ArrayQueue<T> {
+public class ArrayQueue<T> implements Iterable<T> {
 
     private static final int DEFAULT_CAPACITY = 5; // Kept small to demonstrate the "creeping" flaw
     private T[] data;
@@ -115,6 +115,27 @@ public class ArrayQueue<T> {
 
     public int size() {
         return currentSize;
+    }
+
+    /** Front to rear (the order dequeue() would return them). */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int index = front;
+            private int remaining = currentSize;
+
+            @Override
+            public boolean hasNext() {
+                return remaining > 0;
+            }
+
+            @Override
+            public T next() {
+                if (remaining == 0) throw new java.util.NoSuchElementException();
+                remaining--;
+                return data[index++];
+            }
+        };
     }
 
     // --------------------------------------------------------

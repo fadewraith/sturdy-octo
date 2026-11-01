@@ -48,6 +48,7 @@ public class RaidSimulations {
         System.out.println("\n--- RAID 6 (DOUBLE PARITY) ---");
         System.out.println("Uses advanced Galois Field mathematics to compute two separate parity blocks (P and Q).");
         System.out.println("Allows the array to survive TWO simultaneous disk failures!");
+        System.out.println("(Full working implementation: see Raid6Simulation.java)");
     }
 
     public static void main(String[] args) {

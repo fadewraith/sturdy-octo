@@ -38,7 +38,7 @@ import linkedlist.sll.SinglyLinkedList;
  * on "top", you put it on the empty belt, then move all the existing papers from the main belt
  * behind it on the new belt. Now the newest paper will be the first one to come off.
  */
-public class TwoQueuesStack<T> {
+public class TwoQueuesStack<T> implements Iterable<T> {
 
     /**
      * A tiny wrapper around our SinglyLinkedList to strictly enforce 
@@ -129,6 +129,12 @@ public class TwoQueuesStack<T> {
 
     public int size() {
         return q1.size();
+    }
+
+    /** Top to bottom. q1 always keeps the newest element at its front, so just walk it. */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return q1.list.iterator();
     }
 
     // --------------------------------------------------------

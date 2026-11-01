@@ -49,24 +49,31 @@ public class ShuntingYard {
     }
 
     public static String infixToPostfix(String infix) {
+        // Output tokens are separated by spaces ("10 4 - 3 -") so multi-digit
+        // numbers and names stay intact and PostfixEvaluator can read the result.
         StringBuilder output = new StringBuilder();
         Stack<Character> operatorStack = new Stack<>();
-        
-        // Remove spaces for easier processing
-        infix = infix.replaceAll("\\s+", "");
 
         for (int i = 0; i < infix.length(); i++) {
             char token = infix.charAt(i);
 
-            if (Character.isDigit(token) || Character.isLetter(token)) {
-                // If it's a number or variable (single character for simplicity), add to output
-                output.append(token);
+            if (Character.isWhitespace(token)) {
+                continue;
+            } else if (Character.isDigit(token) || token == '.' || Character.isLetter(token)) {
+                // Read the whole number (e.g. 10, 3.5) or variable name (e.g. rate)
+                int start = i;
+                while (i + 1 < infix.length()) {
+                    char next = infix.charAt(i + 1);
+                    if (Character.isLetterOrDigit(next) || next == '.') i++;
+                    else break;
+                }
+                output.append(infix, start, i + 1).append(' ');
             } else if (isOperator(token)) {
                 while (!operatorStack.isEmpty() && isOperator(operatorStack.peek())) {
                     char top = operatorStack.peek();
                     if ((isLeftAssociative(token) && PRECEDENCE.get(token) <= PRECEDENCE.get(top)) ||
                         (!isLeftAssociative(token) && PRECEDENCE.get(token) < PRECEDENCE.get(top))) {
-                        output.append(operatorStack.pop());
+                        output.append(operatorStack.pop()).append(' ');
                     } else {
                         break;
                     }
@@ -76,7 +83,7 @@ public class ShuntingYard {
                 operatorStack.push(token);
             } else if (token == ')') {
                 while (!operatorStack.isEmpty() && operatorStack.peek() != '(') {
-                    output.append(operatorStack.pop());
+                    output.append(operatorStack.pop()).append(' ');
                 }
                 if (!operatorStack.isEmpty() && operatorStack.peek() == '(') {
                     operatorStack.pop();
@@ -92,10 +99,10 @@ public class ShuntingYard {
             if (operatorStack.peek() == '(') {
                 throw new IllegalArgumentException("Mismatched parentheses");
             }
-            output.append(operatorStack.pop());
+            output.append(operatorStack.pop()).append(' ');
         }
 
-        return output.toString();
+        return output.toString().trim();
     }
 
     public static void main(String[] args) {
@@ -107,6 +114,7 @@ public class ShuntingYard {
             "A+B*C-D/E",
             "3+4*2/(1-5)^2^3",
             "A^B^C",
+            "10 - 4 - 3",
             "((A+B)" // Invalid
         };
 

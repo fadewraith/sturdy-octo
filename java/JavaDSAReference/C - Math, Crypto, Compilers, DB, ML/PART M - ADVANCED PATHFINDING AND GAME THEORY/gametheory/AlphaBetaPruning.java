@@ -1,4 +1,4 @@
-package algorithms.gametheory;
+package algorithms.gametheory.advanced;
 
 /**
  * WHAT IT IS:

@@ -30,7 +30,7 @@ import linkedlist.common.Node;
  * Java doesn't have a built-in Circular Linked List! If you need round-robin scheduling 
  * or continuous looping behaviors, you must build it yourself.
  */
-public class CircularLinkedList<T> {
+public class CircularLinkedList<T> implements Iterable<T> {
 
     private Node<T> head;
     private Node<T> tail;
@@ -157,6 +157,148 @@ public class CircularLinkedList<T> {
         
         // If we found the starting node, it's circular. If we found null, it's not.
         return current == startingNode;
+    }
+
+    // --------------------------------------------------------
+    // 5. MORE INSERTION / ACCESS / UTILITIES
+    // --------------------------------------------------------
+
+    private static boolean same(Object a, Object b) {
+        return a == null ? b == null : a.equals(b);
+    }
+
+    /** O(1): with a tail pointer, the new head just slots in between tail and old head. */
+    public void insertAtHead(T data) {
+        if (head == null) {
+            insert(data);
+            return;
+        }
+        Node<T> newNode = new Node<>(data);
+        newNode.next = head;
+        tail.next = newNode; // tail now points to the new head
+        head = newNode;
+        size++;
+    }
+
+    public void insertAtPosition(int index, T data) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        if (index == 0) { insertAtHead(data); return; }
+        if (index == size) { insert(data); return; }
+        Node<T> prev = head;
+        for (int i = 0; i < index - 1; i++) prev = prev.next;
+        Node<T> newNode = new Node<>(data);
+        newNode.next = prev.next;
+        prev.next = newNode;
+        size++;
+    }
+
+    /** Removes the element at index and returns it. */
+    public T deleteAtPosition(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        Node<T> prev = tail; // node before head
+        for (int i = 0; i < index; i++) prev = prev.next;
+        Node<T> target = prev.next;
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            prev.next = target.next;
+            if (target == head) head = target.next;
+            if (target == tail) tail = prev;
+        }
+        target.next = null;
+        size--;
+        return target.data;
+    }
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        Node<T> cur = head;
+        for (int i = 0; i < index; i++) cur = cur.next;
+        return cur.data;
+    }
+
+    public int indexOf(T value) {
+        Node<T> cur = head;
+        for (int i = 0; i < size; i++, cur = cur.next) {
+            if (same(cur.data, value)) return i;
+        }
+        return -1;
+    }
+
+    public boolean search(T value) {
+        return indexOf(value) != -1;
+    }
+
+    /**
+     * Rotates left by k: the element at index k becomes the new head.
+     * In a circular list this is just moving the head/tail pointers - O(k), no relinking.
+     */
+    public void rotate(int k) {
+        if (size == 0) return;
+        k = ((k % size) + size) % size; // also handles negative k (rotate right)
+        for (int i = 0; i < k; i++) {
+            tail = head;
+            head = head.next;
+        }
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void clear() {
+        if (tail != null) tail.next = null; // break the circle for GC
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        Node<T> cur = head;
+        for (int i = 0; i < size; i++, cur = cur.next) {
+            sb.append(cur.data);
+            if (i < size - 1) sb.append(", ");
+        }
+        return sb.append("]").toString();
+    }
+
+    /**
+     * Head once around the circle. A circular list has no null at the end, so the
+     * iterator counts 'size' steps - otherwise it would loop forever.
+     */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private Node<T> current = head;
+            private int remaining = size;
+
+            @Override
+            public boolean hasNext() {
+                return remaining > 0;
+            }
+
+            @Override
+            public T next() {
+                if (remaining == 0) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                remaining--;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

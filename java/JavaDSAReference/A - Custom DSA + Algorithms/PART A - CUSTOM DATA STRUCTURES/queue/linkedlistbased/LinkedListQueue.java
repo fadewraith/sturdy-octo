@@ -29,7 +29,7 @@ import linkedlist.common.Node;
  * A drive-thru line at a fast food restaurant. Cars (nodes) enter at the back of the 
  * line (`rear`) and are served and leave from the front of the line (`front`).
  */
-public class LinkedListQueue<T> {
+public class LinkedListQueue<T> implements Iterable<T> {
 
     // front is equivalent to the 'head' of a linked list
     private Node<T> front;
@@ -96,6 +96,27 @@ public class LinkedListQueue<T> {
 
     public int size() {
         return size;
+    }
+
+    /** Front to rear (the order dequeue() would return them). */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private Node<T> current = front;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (current == null) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

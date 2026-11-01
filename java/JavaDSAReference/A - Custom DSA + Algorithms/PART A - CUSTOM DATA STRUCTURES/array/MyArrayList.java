@@ -34,7 +34,7 @@ package array;
  * is that resizing is computationally expensive, so if you know the exact size needed in 
  * advance, a static array or pre-sizing the dynamic array is vastly more efficient.
  */
-public class MyArrayList<T> {
+public class MyArrayList<T> implements Iterable<T> {
 
     // Default starting capacity if none is provided
     private static final int DEFAULT_CAPACITY = 10;
@@ -45,6 +45,9 @@ public class MyArrayList<T> {
 
     private T[] data;
     private int size;
+    // Counts structural changes (add/remove/clear/sort) so iterators can detect
+    // that the list was modified while they were looping ("fail-fast").
+    private int modCount = 0;
 
     /**
      * Default constructor initializes array with default capacity.
@@ -78,6 +81,7 @@ public class MyArrayList<T> {
         }
         data[size] = element;
         size++;
+        modCount++;
     }
 
     /**
@@ -102,6 +106,7 @@ public class MyArrayList<T> {
         
         data[index] = element;
         size++;
+        modCount++;
     }
 
     /**
@@ -124,6 +129,7 @@ public class MyArrayList<T> {
         // Nullify the last element for garbage collection
         data[size - 1] = null;
         size--;
+        modCount++;
         
         return removedElement;
     }
@@ -191,6 +197,7 @@ public class MyArrayList<T> {
             data[i] = null;
         }
         size = 0;
+        modCount++;
     }
 
     /**
@@ -240,6 +247,141 @@ public class MyArrayList<T> {
     }
 
     /**
+     * Makes sure the array can hold at least minCapacity elements without resizing.
+     * Useful before a bulk insert: one resize instead of many.
+     */
+    @SuppressWarnings("unchecked")
+    public void ensureCapacity(int minCapacity) {
+        if (minCapacity > data.length) {
+            T[] newData = (T[]) new Object[minCapacity];
+            for (int i = 0; i < size; i++) newData[i] = data[i];
+            data = newData;
+        }
+    }
+
+    /** Appends every element of other (in order). */
+    public void addAll(MyArrayList<? extends T> other) {
+        int count = other.size(); // read once: other may be this same list
+        ensureCapacity(size + count);
+        for (int i = 0; i < count; i++) {
+            data[size++] = other.get(i);
+        }
+        if (count > 0) modCount++;
+    }
+
+    /** Index of the last occurrence, or -1. */
+    public int lastIndexOf(T value) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (value == null ? data[i] == null : value.equals(data[i])) return i;
+        }
+        return -1;
+    }
+
+    /**
+     * Elements from fromIndex (inclusive) to toIndex (exclusive), as a NEW list.
+     * (java.util's subList is a live view; a copy is simpler and safer here.)
+     */
+    public MyArrayList<T> subList(int fromIndex, int toIndex) {
+        if (fromIndex < 0 || toIndex > size || fromIndex > toIndex) {
+            throw new IndexOutOfBoundsException("from: " + fromIndex + ", to: " + toIndex + ", size: " + size);
+        }
+        MyArrayList<T> result = new MyArrayList<>(toIndex - fromIndex);
+        for (int i = fromIndex; i < toIndex; i++) result.add(data[i]);
+        return result;
+    }
+
+    /**
+     * Sorts in place with a STABLE merge sort (equal elements keep their order,
+     * same guarantee as java.util.List.sort). O(N log N) time, O(N) extra space.
+     */
+    @SuppressWarnings("unchecked")
+    public void sort(java.util.Comparator<? super T> comparator) {
+        modCount++; // reordering counts as a structural change (same as java.util)
+        if (size < 2) return;
+        T[] temp = (T[]) new Object[size];
+        mergeSort(0, size - 1, temp, comparator);
+    }
+
+    private void mergeSort(int left, int right, T[] temp, java.util.Comparator<? super T> cmp) {
+        if (left >= right) return;
+        int mid = left + (right - left) / 2;
+        mergeSort(left, mid, temp, cmp);
+        mergeSort(mid + 1, right, temp, cmp);
+        if (cmp.compare(data[mid], data[mid + 1]) <= 0) return; // already in order
+        for (int i = left; i <= right; i++) temp[i] = data[i];
+        int i = left, j = mid + 1, k = left;
+        while (i <= mid && j <= right) {
+            // "<=" takes from the left half on ties -> stable
+            data[k++] = cmp.compare(temp[i], temp[j]) <= 0 ? temp[i++] : temp[j++];
+        }
+        while (i <= mid) data[k++] = temp[i++];
+        while (j <= right) data[k++] = temp[j++];
+    }
+
+    /** Two lists are equal if they have the same elements in the same order. */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyArrayList)) return false;
+        MyArrayList<?> other = (MyArrayList<?>) o;
+        if (other.size != size) return false;
+        for (int i = 0; i < size; i++) {
+            Object a = data[i], b = other.data[i];
+            if (a == null ? b != null : !a.equals(b)) return false;
+        }
+        return true;
+    }
+
+    /** Same formula as java.util.List.hashCode, so equal lists get equal hashes. */
+    @Override
+    public int hashCode() {
+        int h = 1;
+        for (int i = 0; i < size; i++) h = 31 * h + (data[i] == null ? 0 : data[i].hashCode());
+        return h;
+    }
+
+    /**
+     * Index order: for (T x : list) { ... }
+     *
+     * FAIL-FAST (same idea as java.util.ArrayList): every structural change bumps
+     * modCount. The iterator remembers the value it started with; if the list was
+     * changed behind its back (e.g. list.add inside a for-each), next() throws
+     * ConcurrentModificationException instead of silently skipping/repeating items.
+     * The SAFE way to delete while looping is the iterator's own remove().
+     */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int cursor = 0;          // index of the next element to return
+            private int lastReturned = -1;   // index of the element remove() would delete
+            private int expectedModCount = modCount;
+
+            @Override
+            public boolean hasNext() {
+                return cursor < size;
+            }
+
+            @Override
+            public T next() {
+                if (modCount != expectedModCount) throw new java.util.ConcurrentModificationException();
+                if (cursor >= size) throw new java.util.NoSuchElementException();
+                lastReturned = cursor;
+                return data[cursor++];
+            }
+
+            @Override
+            public void remove() {
+                if (lastReturned < 0) throw new IllegalStateException("next() not called, or already removed");
+                if (modCount != expectedModCount) throw new java.util.ConcurrentModificationException();
+                MyArrayList.this.remove(lastReturned);
+                cursor = lastReturned;       // the next element shifted left into this slot
+                lastReturned = -1;
+                expectedModCount = modCount; // our own change is allowed
+            }
+        };
+    }
+
+    /**
      * Internal method to double the capacity of the array.
      * Time Complexity: O(N) because we must copy all existing elements.
      */
@@ -257,8 +399,6 @@ public class MyArrayList<T> {
         
         // Swap the reference
         data = newData;
-        
-        System.out.println("[DEBUG] Array resized. New capacity: " + newCapacity);
     }
 
     /**

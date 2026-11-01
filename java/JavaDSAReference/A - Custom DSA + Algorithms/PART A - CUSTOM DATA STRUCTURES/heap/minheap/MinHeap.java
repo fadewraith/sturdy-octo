@@ -33,16 +33,61 @@ import java.util.Arrays;
  * A triage system in an emergency room. Patients arrive in random order, but the 
  * system constantly re-sorts them so the person with the most severe (lowest severity number) 
  * emergency is always at the very front of the line.
+ *
+ * Ordering: natural order (Comparable) by default, or pass a Comparator to decide what
+ * "smallest" means - e.g. new MinHeap<>(Comparator.comparing(Task::deadline)), or
+ * Comparator.reverseOrder() to turn it into a max-heap. Same rule as java.util.PriorityQueue:
+ * without a Comparator, elements must be Comparable (else ClassCastException on insert).
  */
-public class MinHeap<T extends Comparable<T>> {
+public class MinHeap<T> {
 
     private Object[] heap;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
+    private final java.util.Comparator<? super T> comparator; // null = natural ordering
 
     public MinHeap() {
+        this((java.util.Comparator<? super T>) null);
+    }
+
+    /** Heap ordered by the given comparator (null = natural ordering). */
+    public MinHeap(java.util.Comparator<? super T> comparator) {
         this.heap = new Object[DEFAULT_CAPACITY];
         this.size = 0;
+        this.comparator = comparator;
+    }
+
+    /** BUILD-HEAP in O(N) with a custom ordering. */
+    public MinHeap(T[] elements, java.util.Comparator<? super T> comparator) {
+        this.comparator = comparator;
+        this.heap = new Object[Math.max(DEFAULT_CAPACITY, elements.length)];
+        for (int i = 0; i < elements.length; i++) heap[i] = elements[i];
+        this.size = elements.length;
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            heapifyDown(i);
+        }
+    }
+
+    // One place that decides the order: the comparator if given, else compareTo
+    @SuppressWarnings("unchecked")
+    private int compare(Object a, Object b) {
+        if (comparator != null) return comparator.compare((T) a, (T) b);
+        return ((Comparable<? super T>) a).compareTo((T) b);
+    }
+
+    /**
+     * BUILD-HEAP in O(N) (Floyd's method), not O(N log N).
+     * Copy the array, then sift DOWN every non-leaf node from the last one up to the root.
+     * Why O(N): half the nodes are leaves (0 work), a quarter sink at most 1 level,
+     * an eighth at most 2... the sum N/4*1 + N/8*2 + ... converges to O(N).
+     */
+    public MinHeap(T[] elements) {
+        this(elements, null);
+    }
+
+    public void clear() {
+        for (int i = 0; i < size; i++) heap[i] = null; // help GC
+        size = 0;
     }
 
     /**
@@ -105,7 +150,7 @@ public class MinHeap<T extends Comparable<T>> {
         int parentIndex = (index - 1) / 2;
         
         // While we haven't reached the root, and current node is LESS than its parent
-        while (index > 0 && ((T) heap[index]).compareTo((T) heap[parentIndex]) < 0) {
+        while (index > 0 && compare(heap[index], heap[parentIndex]) < 0) {
             swap(index, parentIndex);
             index = parentIndex;
             parentIndex = (index - 1) / 2;
@@ -120,12 +165,12 @@ public class MinHeap<T extends Comparable<T>> {
             int smallest = index;
             
             // Check if left child is smaller than current
-            if (leftChild < size && ((T) heap[leftChild]).compareTo((T) heap[smallest]) < 0) {
+            if (leftChild < size && compare(heap[leftChild], heap[smallest]) < 0) {
                 smallest = leftChild;
             }
             
             // Check if right child is smaller than the current smallest
-            if (rightChild < size && ((T) heap[rightChild]).compareTo((T) heap[smallest]) < 0) {
+            if (rightChild < size && compare(heap[rightChild], heap[smallest]) < 0) {
                 smallest = rightChild;
             }
             
@@ -168,5 +213,11 @@ public class MinHeap<T extends Comparable<T>> {
         System.out.println("Extract Min: " + minHeap.extractMin()); // 2
         System.out.println("Extract Min: " + minHeap.extractMin()); // 4
         System.out.println("Peek Min now: " + minHeap.peek()); // 10
+
+        // Custom ordering: shortest word first (Strings are Comparable alphabetically,
+        // but the Comparator overrides that)
+        MinHeap<String> byLength = new MinHeap<>(java.util.Comparator.comparingInt(String::length));
+        for (String w : new String[]{"banana", "fig", "apple", "kiwi"}) byLength.insert(w);
+        System.out.println("Shortest word first: " + byLength.extractMin() + ", then " + byLength.extractMin()); // fig, kiwi
     }
 }

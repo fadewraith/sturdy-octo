@@ -1,5 +1,7 @@
 package os.synchronization.primitives;
 
+import java.util.concurrent.atomic.AtomicIntegerArray;
+
 /**
  * LAMPORT'S BAKERY ALGORITHM
  * 
@@ -15,46 +17,49 @@ package os.synchronization.primitives;
 public class BakeryAlgorithm {
 
     private int numProcesses;
-    private volatile boolean[] choosing;
-    private volatile int[] ticket;
+    // "volatile int[]" would only make the array REFERENCE volatile, not its elements,
+    // so threads could spin on stale values. AtomicIntegerArray makes each element
+    // read/write volatile. choosing: 1 = picking a ticket, 0 = not.
+    private final AtomicIntegerArray choosing;
+    private final AtomicIntegerArray ticket;
     private int sharedResource = 0;
 
     public BakeryAlgorithm(int n) {
         this.numProcesses = n;
-        choosing = new boolean[n];
-        ticket = new int[n];
+        choosing = new AtomicIntegerArray(n);
+        ticket = new AtomicIntegerArray(n);
     }
 
     public void lock(int id) {
-        choosing[id] = true;
+        choosing.set(id, 1);
         
         // Find the maximum ticket currently held
         int max = 0;
         for (int i = 0; i < numProcesses; i++) {
-            if (ticket[i] > max) max = ticket[i];
+            if (ticket.get(i) > max) max = ticket.get(i);
         }
         
-        ticket[id] = max + 1; // Take the next ticket
-        choosing[id] = false;
+        ticket.set(id, max + 1); // Take the next ticket
+        choosing.set(id, 0);
         
         // Wait for turn
         for (int j = 0; j < numProcesses; j++) {
             if (j == id) continue;
             
             // Wait while process j is choosing a ticket
-            while (choosing[j]) {}
+            while (choosing.get(j) == 1) {}
             
             // Wait while process j has a valid ticket AND 
             // (j's ticket is smaller OR (tickets are equal but j has lower ID))
-            while (ticket[j] != 0 && 
-                  (ticket[j] < ticket[id] || (ticket[j] == ticket[id] && j < id))) {
+            while (ticket.get(j) != 0 && 
+                  (ticket.get(j) < ticket.get(id) || (ticket.get(j) == ticket.get(id) && j < id))) {
                 // Busy wait
             }
         }
     }
 
     public void unlock(int id) {
-        ticket[id] = 0; // Discard ticket
+        ticket.set(id, 0); // Discard ticket
     }
 
     class BakeryThread extends Thread {

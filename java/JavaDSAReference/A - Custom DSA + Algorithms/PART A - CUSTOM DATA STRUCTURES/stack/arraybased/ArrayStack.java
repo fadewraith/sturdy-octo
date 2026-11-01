@@ -33,7 +33,7 @@ package stack.arraybased;
  * Modern Java prefers `Deque` (like `ArrayDeque`) for stack operations. Building this 
  * teaches you how to manage the array bounds and dynamic resizing yourself.
  */
-public class ArrayStack<T> {
+public class ArrayStack<T> implements Iterable<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
     private T[] data;
@@ -132,6 +132,25 @@ public class ArrayStack<T> {
             newData[i] = data[i];
         }
         data = newData;
+    }
+
+    /** Top to bottom (the order pop() would return them). */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int index = top;
+
+            @Override
+            public boolean hasNext() {
+                return index >= 0;
+            }
+
+            @Override
+            public T next() {
+                if (index < 0) throw new java.util.NoSuchElementException();
+                return data[index--];
+            }
+        };
     }
 
     // --------------------------------------------------------

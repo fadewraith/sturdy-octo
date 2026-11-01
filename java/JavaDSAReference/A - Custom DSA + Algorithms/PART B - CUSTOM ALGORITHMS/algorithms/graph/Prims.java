@@ -53,6 +53,11 @@ public class Prims {
         for (int count = 0; count < V - 1; count++) {
             // Pick the minimum key vertex from the set of vertices not yet included
             int u = getMinKeyVertex(key, inMST);
+            if (u == -1) {
+                // Remaining vertices are unreachable: no spanning tree exists
+                System.out.println("Graph is disconnected - no Minimum Spanning Tree exists.");
+                return;
+            }
             
             inMST[u] = true;
 

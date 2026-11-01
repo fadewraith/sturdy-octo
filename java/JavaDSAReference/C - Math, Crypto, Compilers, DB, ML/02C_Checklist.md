@@ -63,14 +63,14 @@ This workspace contains all the advanced domain-specific logic and computational
 ## PART I — CRYPTOGRAPHY (Educational Only)
 
 ### 1. Hashing (`crypto.hashing`)
-- [x] EducationalSHA256.java
-- [x] EducationalMD5.java
+- [x] EducationalSHA256.java (full FIPS 180-4, matches MessageDigest)
+- [x] EducationalMD5.java (full RFC 1321, matches MessageDigest)
 
 ### 2. Symmetric Encryption (`crypto.symmetric`)
 - [x] CaesarCipher.java
 - [x] VigenereCipher.java
 - [x] XORCipher.java
-- [x] EducationalAES.java
+- [x] EducationalAES.java (full AES-128 encrypt + decrypt, matches javax.crypto)
 
 ### 3. Asymmetric & Signatures (`crypto.asymmetric` / `crypto.signatures`)
 - [x] RSA.java
@@ -94,7 +94,7 @@ This workspace contains all the advanced domain-specific logic and computational
 ## PART K — DATABASE INTERNALS
 
 ### 1. Core Engine Concepts (`db.*`)
-- [x] BPlusTree.java (Leaf-linked range scans)
+- [x] BPlusTree.java (leaf-linked range scans, upsert on duplicate keys)
 - [x] WriteAheadLog.java
 - [x] MVCC.java
 - [x] JoinOrderOptimizer.java
@@ -112,7 +112,7 @@ This workspace contains all the advanced domain-specific logic and computational
 
 ---
 
-## PART M/N — COMPRESSION ALGORITHMS
+## PART N — COMPRESSION ALGORITHMS
 
 ### 1. Compression (`compression.*`)
 - [x] HuffmanCoding.java
@@ -123,22 +123,22 @@ This workspace contains all the advanced domain-specific logic and computational
 
 ---
 
-## PART M � ADVANCED PATHFINDING, GAME THEORY & APPROXIMATION ALGORITHMS
+## PART M — ADVANCED PATHFINDING, GAME THEORY & APPROXIMATION ALGORITHMS
 
-### 1. Advanced Pathfinding (lgorithms.graph.advanced)
+### 1. Advanced Pathfinding (`algorithms.graph.advanced`)
 - [x] BidirectionalSearch.java
 - [x] BidirectionalAStar.java
 - [x] IDAStar.java
-- [x] JumpPointSearch.java
-- [x] DStarLite.java
-- [x] ContractionHierarchies.java
+- [x] JumpPointSearch.java (8-directional JPS, same cost as A*)
+- [x] DStarLite.java (optimized D* Lite with incremental replanning)
+- [x] ContractionHierarchies.java (edge-difference ordering, witness search, bidirectional query)
 
-### 2. Game Theory (lgorithms.gametheory)
+### 2. Game Theory (`algorithms.gametheory.advanced`)
 - [x] Minimax.java
 - [x] AlphaBetaPruning.java
 - [x] MonteCarloTreeSearch.java
 
-### 3. Approximation Algorithms (lgorithms.approximation)
+### 3. Approximation Algorithms (`algorithms.approximation`)
 - [x] TSPApproximation.java
 - [x] VertexCoverApproximation.java
 - [x] SetCoverApproximation.java

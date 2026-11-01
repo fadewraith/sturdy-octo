@@ -12,7 +12,7 @@ import array.MyArrayList;
  * We use an array of "Buckets". Each bucket is the head of a Singly Linked List of Entries.
  * When we want to insert or look up a key:
  * 1. Calculate a hash code for the key.
- * 2. Compress the hash code into an array index: `index = Math.abs(key.hashCode()) % capacity`.
+ * 2. Compress the hash code into an array index: `index = (key.hashCode() & 0x7FFFFFFF) % capacity`.
  *    (This ensures the index fits within our current bucket array).
  * 3. Traverse the linked list at that index. If the key exists, update its value. 
  *    If not, add a new Entry node to the list.
@@ -38,7 +38,7 @@ import array.MyArrayList;
  * 
  * No built-in rule: We return our custom `MyArrayList` for keySet, values, and entrySet!
  */
-public class MyHashMap<K, V> {
+public class MyHashMap<K, V> implements Iterable<MyHashMap.Entry<K, V>> {
 
     /**
      * Internal Entry node for the linked list in each bucket.
@@ -65,6 +65,8 @@ public class MyHashMap<K, V> {
 
     private Entry<K, V>[] buckets;
     private int size;
+    // Counts structural changes (new key / remove / clear) for fail-fast iterators.
+    private int modCount = 0;
     private final float loadFactor;
 
     @SuppressWarnings("unchecked")
@@ -86,8 +88,9 @@ public class MyHashMap<K, V> {
      */
     private int getBucketIndex(K key, int capacity) {
         if (key == null) return 0;
-        // Math.abs handles negative hash codes gracefully
-        return Math.abs(key.hashCode()) % capacity;
+        // Clear the sign bit instead of Math.abs: Math.abs(Integer.MIN_VALUE) is still
+        // negative (e.g. "polygenelubricants".hashCode()), which would give a negative index.
+        return (key.hashCode() & 0x7FFFFFFF) % capacity;
     }
 
     /**
@@ -116,6 +119,7 @@ public class MyHashMap<K, V> {
         newEntry.next = head;
         buckets[index] = newEntry;
         size++;
+        modCount++;
     }
 
     /**
@@ -153,6 +157,7 @@ public class MyHashMap<K, V> {
                     prev.next = current.next;
                 }
                 size--;
+                modCount++;
                 return removedValue;
             }
             prev = current;
@@ -162,7 +167,46 @@ public class MyHashMap<K, V> {
     }
 
     public boolean containsKey(K key) {
-        return get(key) != null;
+        // Not "get(key) != null": a key can be present with a null VALUE.
+        return findEntry(key) != null;
+    }
+
+    private Entry<K, V> findEntry(K key) {
+        Entry<K, V> current = buckets[getBucketIndex(key, buckets.length)];
+        while (current != null) {
+            if (key == null ? current.key == null : key.equals(current.key)) return current;
+            current = current.next;
+        }
+        return null;
+    }
+
+    /** Value for key, or defaultValue if the key is absent. */
+    public V getOrDefault(K key, V defaultValue) {
+        Entry<K, V> e = findEntry(key);
+        return e == null ? defaultValue : e.value;
+    }
+
+    /**
+     * Inserts only if the key is absent - or mapped to null, same rule as java.util.Map.
+     * Returns the existing non-null value, or null if the new value was stored.
+     * The classic building block for "count/group by key" code.
+     */
+    public V putIfAbsent(K key, V value) {
+        Entry<K, V> e = findEntry(key);
+        if (e != null) {
+            if (e.value != null) return e.value;
+            e.value = value; // key present but mapped to null: treat as absent
+            return null;
+        }
+        put(key, value);
+        return null;
+    }
+
+    /** Removes everything but keeps the current bucket array (capacity). */
+    public void clear() {
+        for (int i = 0; i < buckets.length; i++) buckets[i] = null;
+        size = 0;
+        modCount++;
     }
 
     public boolean containsValue(V value) {
@@ -258,7 +302,86 @@ public class MyHashMap<K, V> {
         }
         
         buckets = newBuckets;
-        System.out.println("[DEBUG] HashMap rehashed to capacity: " + newCapacity);
+    }
+
+    /** Current number of buckets (doubles on each rehash). */
+    public int capacity() {
+        return buckets.length;
+    }
+
+    /** Equal if both maps have the same key -> value pairs (order does not matter). */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyHashMap)) return false;
+        @SuppressWarnings("unchecked")
+        MyHashMap<K, V> other = (MyHashMap<K, V>) o;
+        if (other.size != size) return false;
+        for (Entry<K, V> bucketHead : buckets) {
+            for (Entry<K, V> e = bucketHead; e != null; e = e.next) {
+                Entry<K, V> match = other.findEntry(e.key);
+                if (match == null) return false;
+                if (e.value == null ? match.value != null : !e.value.equals(match.value)) return false;
+            }
+        }
+        return true;
+    }
+
+    /** Sum of (key hash XOR value hash) - same rule as java.util.Map, so order never matters. */
+    @Override
+    public int hashCode() {
+        int h = 0;
+        for (Entry<K, V> bucketHead : buckets) {
+            for (Entry<K, V> e = bucketHead; e != null; e = e.next) {
+                h += (e.key == null ? 0 : e.key.hashCode()) ^ (e.value == null ? 0 : e.value.hashCode());
+            }
+        }
+        return h;
+    }
+
+    @Override
+    public String toString() {
+        String entries = entrySet().toString(); // "[k=v, k=v]"
+        return "{" + entries.substring(1, entries.length() - 1) + "}";
+    }
+
+    /**
+     * Iterates entries bucket by bucket (no particular order, like java.util.HashMap):
+     * for (MyHashMap.Entry<K, V> e : map) { e.key; e.value; }
+     * FAIL-FAST: changing the map's structure during the loop (put of a NEW key,
+     * remove, clear) throws ConcurrentModificationException on the next step.
+     * Updating the value of an existing key is allowed (not a structural change).
+     */
+    @Override
+    public java.util.Iterator<Entry<K, V>> iterator() {
+        return new java.util.Iterator<Entry<K, V>>() {
+            private final int expectedModCount = modCount;
+            private int bucket = -1;
+            private Entry<K, V> nextEntry = advance(null);
+
+            // Next entry after 'from': same chain if possible, else the next non-empty bucket
+            private Entry<K, V> advance(Entry<K, V> from) {
+                if (from != null && from.next != null) return from.next;
+                while (++bucket < buckets.length) {
+                    if (buckets[bucket] != null) return buckets[bucket];
+                }
+                return null;
+            }
+
+            @Override
+            public boolean hasNext() {
+                return nextEntry != null;
+            }
+
+            @Override
+            public Entry<K, V> next() {
+                if (modCount != expectedModCount) throw new java.util.ConcurrentModificationException();
+                if (nextEntry == null) throw new java.util.NoSuchElementException();
+                Entry<K, V> result = nextEntry;
+                nextEntry = advance(nextEntry);
+                return result;
+            }
+        };
     }
 
     // --------------------------------------------------------
@@ -275,13 +398,13 @@ public class MyHashMap<K, V> {
         map.put("Alice", 25);
         map.put("Bob", 30);
         map.put("Charlie", 35);
-        System.out.println("Added Alice, Bob, Charlie.");
-        
+        System.out.println("Added Alice, Bob, Charlie. Buckets: " + map.capacity()); // 4
+
         System.out.println("Get Bob: " + map.get("Bob")); // 30
-        
-        // This will likely trigger a rehash (size 4 exceeds 4 * 0.75 = 3)
-        map.put("Diana", 40); 
-        System.out.println("Added Diana. Size is now: " + map.size()); // 4
+
+        // This triggers a rehash (size 3 already reached 4 * 0.75 = 3)
+        map.put("Diana", 40);
+        System.out.println("Added Diana. Size is now: " + map.size() + ", buckets: " + map.capacity()); // 4, 8
         
         // Update existing key
         map.put("Alice", 26);

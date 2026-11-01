@@ -1,27 +1,30 @@
 package treemap;
 
-import tree.bst.BinarySearchTree;
+import tree.redblack.RedBlackTree;
 import array.MyArrayList;
 
 /**
  * TREEMAP
- * 
+ *
  * What it is:
  * A map (key-value store) that maintains its keys in a sorted, ascending order.
- * 
+ *
  * Approach/Strategy:
- * We back this map with the `BinarySearchTree` we built earlier. To do this, we 
- * create an internal `MapEntry<K, V>` class that implements `Comparable`. 
- * The `compareTo` method compares ONLY the keys. This allows the BST to sort and 
+ * We back this map with the `RedBlackTree` we built earlier - the same choice as
+ * java.util.TreeMap. A plain BST would degrade to a linked list (O(N) per operation)
+ * when keys arrive in sorted order; the Red-Black tree stays balanced, so every
+ * operation is O(log N) in the WORST case. To store key-value pairs, we
+ * create an internal `MapEntry<K, V>` class that implements `Comparable`.
+ * The `compareTo` method compares ONLY the keys. This allows the tree to sort and
  * search nodes strictly by their keys, while the nodes quietly carry their associated values.
- * 
+ *
  * Time/Space Complexity:
- * Operation      | Average Time | Worst Time | Space Complexity | Notes
+ * Operation           | Worst Time | Space Complexity | Notes
  * ---------------------------------------------------------------------------------
- * Put            | O(log N)     | O(N)       | O(1)             | BST insertion
- * Get            | O(log N)     | O(N)       | O(1)             | BST search
- * Remove         | O(log N)     | O(N)       | O(1)             | BST deletion
- * keySet/values  | O(N)         | O(N)       | O(N)             | In-order traversal
+ * Put / Get / Remove  | O(log N)   | O(1)             | Balanced tree
+ * first/last/floor/ceiling/lower/higherKey | O(log N) | O(1) | One root-to-leaf walk
+ * Iteration (for-each)| O(N) total | O(log N)         | Stack holds one root-to-leaf path
+ * keySet/values       | O(N)       | O(N)             | In-order traversal
  * 
  * Real-world analogy:
  * A library's card catalog. The cards (entries) are perfectly sorted alphabetically 
@@ -29,23 +32,31 @@ import array.MyArrayList;
  * physical aisle/shelf location (the value).
  * 
  * Why implement this yourself?
- * Java's `java.util.TreeMap` is backed by a Red-Black Tree. Implementing this on top 
- * of a standard BST proves you understand how Maps can be built out of Trees by 
+ * Java's `java.util.TreeMap` is backed by a Red-Black Tree too. Building it this way
+ * proves you understand how Maps can be built out of Trees by
  * encapsulating keys and values into a single comparable Object.
  */
-public class MyTreeMap<K extends Comparable<K>, V> {
+public class MyTreeMap<K extends Comparable<K>, V> implements Iterable<MyTreeMap.MapEntry<K, V>> {
 
     /**
-     * The internal object we store in the BST. 
+     * The object we store in the tree (also what the for-each loop gives you).
      * Crucially, it implements Comparable by checking ONLY the keys.
      */
-    private static class MapEntry<K extends Comparable<K>, V> implements Comparable<MapEntry<K, V>> {
+    public static class MapEntry<K extends Comparable<K>, V> implements Comparable<MapEntry<K, V>> {
         K key;
         V value;
 
         MapEntry(K key, V value) {
             this.key = key;
             this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
         }
 
         @Override
@@ -59,11 +70,11 @@ public class MyTreeMap<K extends Comparable<K>, V> {
         }
     }
 
-    private final BinarySearchTree<MapEntry<K, V>> bst;
+    private RedBlackTree<MapEntry<K, V>> rbTree; // not final: clear() swaps in a fresh tree
     private int size;
 
     public MyTreeMap() {
-        this.bst = new BinarySearchTree<>();
+        this.rbTree = new RedBlackTree<>();
         this.size = 0;
     }
 
@@ -74,14 +85,14 @@ public class MyTreeMap<K extends Comparable<K>, V> {
         if (key == null) throw new IllegalArgumentException("Null keys not supported");
         
         MapEntry<K, V> searchEntry = new MapEntry<>(key, null);
-        MapEntry<K, V> existing = bst.get(searchEntry);
+        MapEntry<K, V> existing = rbTree.get(searchEntry);
         
         if (existing != null) {
             // Key already exists, just update the value
             existing.value = value;
         } else {
-            // New key, insert into BST
-            bst.insert(new MapEntry<>(key, value));
+            // New key, insert into the tree
+            rbTree.insert(new MapEntry<>(key, value));
             size++;
         }
     }
@@ -93,7 +104,7 @@ public class MyTreeMap<K extends Comparable<K>, V> {
         if (key == null) return null;
         
         MapEntry<K, V> searchEntry = new MapEntry<>(key, null);
-        MapEntry<K, V> found = bst.get(searchEntry);
+        MapEntry<K, V> found = rbTree.get(searchEntry);
         
         return found != null ? found.value : null;
     }
@@ -105,10 +116,10 @@ public class MyTreeMap<K extends Comparable<K>, V> {
         if (key == null) return null;
         
         MapEntry<K, V> searchEntry = new MapEntry<>(key, null);
-        MapEntry<K, V> found = bst.get(searchEntry);
+        MapEntry<K, V> found = rbTree.get(searchEntry);
         
         if (found != null) {
-            bst.delete(found); // Uses BST's delete function
+            rbTree.delete(found); // Red-Black delete keeps the tree balanced
             size--;
             return found.value;
         }
@@ -116,7 +127,13 @@ public class MyTreeMap<K extends Comparable<K>, V> {
     }
 
     public boolean containsKey(K key) {
-        return get(key) != null;
+        // Not "get(key) != null": a key can be present with a null VALUE.
+        return key != null && rbTree.get(new MapEntry<>(key, null)) != null;
+    }
+
+    public void clear() {
+        rbTree = new RedBlackTree<>(); // O(1): drop the old tree, GC reclaims it
+        size = 0;
     }
 
     public int size() {
@@ -129,10 +146,10 @@ public class MyTreeMap<K extends Comparable<K>, V> {
 
     /**
      * Returns a dynamically generated, perfectly sorted list of keys using 
-     * the underlying BST's in-order traversal.
+     * the underlying tree's in-order traversal.
      */
     public MyArrayList<K> keySet() {
-        MyArrayList<MapEntry<K, V>> sortedEntries = bst.toSortedList();
+        MyArrayList<MapEntry<K, V>> sortedEntries = rbTree.toSortedList();
         MyArrayList<K> keys = new MyArrayList<>();
         
         for (int i = 0; i < sortedEntries.size(); i++) {
@@ -145,13 +162,73 @@ public class MyTreeMap<K extends Comparable<K>, V> {
      * Returns a list of values in the order of their corresponding sorted keys.
      */
     public MyArrayList<V> values() {
-        MyArrayList<MapEntry<K, V>> sortedEntries = bst.toSortedList();
+        MyArrayList<MapEntry<K, V>> sortedEntries = rbTree.toSortedList();
         MyArrayList<V> vals = new MyArrayList<>();
         
         for (int i = 0; i < sortedEntries.size(); i++) {
             vals.add(sortedEntries.get(i).value);
         }
         return vals;
+    }
+
+    // --------------------------------------------------------
+    // NAVIGATION - the reason to pick a TreeMap over a HashMap.
+    // Each returns a KEY, or null if there is none. All O(log N).
+    // --------------------------------------------------------
+
+    private K keyOf(MapEntry<K, V> e) {
+        return e == null ? null : e.key;
+    }
+
+    private MapEntry<K, V> probe(K key) {
+        if (key == null) throw new IllegalArgumentException("Null keys not supported");
+        return new MapEntry<>(key, null);
+    }
+
+    /** Smallest key. */
+    public K firstKey() {
+        return keyOf(rbTree.min());
+    }
+
+    /** Largest key. */
+    public K lastKey() {
+        return keyOf(rbTree.max());
+    }
+
+    /** Greatest key <= key. E.g. "which price bracket does 37 fall into?" */
+    public K floorKey(K key) {
+        return keyOf(rbTree.floor(probe(key)));
+    }
+
+    /** Smallest key >= key. E.g. "next available time slot at or after 9:30". */
+    public K ceilingKey(K key) {
+        return keyOf(rbTree.ceiling(probe(key)));
+    }
+
+    /** Greatest key strictly < key. */
+    public K lowerKey(K key) {
+        return keyOf(rbTree.lower(probe(key)));
+    }
+
+    /** Smallest key strictly > key. */
+    public K higherKey(K key) {
+        return keyOf(rbTree.higher(probe(key)));
+    }
+
+    /** Entries in ascending key order: for (MapEntry<K, V> e : map) { e.getKey(); e.getValue(); } */
+    @Override
+    public java.util.Iterator<MapEntry<K, V>> iterator() {
+        return rbTree.iterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{");
+        for (MapEntry<K, V> e : this) {
+            if (sb.length() > 1) sb.append(", ");
+            sb.append(e);
+        }
+        return sb.append("}").toString();
     }
 
     // --------------------------------------------------------

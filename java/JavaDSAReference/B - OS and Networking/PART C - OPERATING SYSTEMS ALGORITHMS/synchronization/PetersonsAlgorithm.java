@@ -1,5 +1,7 @@
 package os.synchronization;
 
+import java.util.concurrent.atomic.AtomicIntegerArray;
+
 /**
  * PETERSON'S ALGORITHM
  * 
@@ -10,12 +12,16 @@ package os.synchronization;
  * HOW IT WORKS:
  * Uses a boolean array `flag` (intent to enter) and a `turn` variable (yields to the other).
  * 
- * NOTE: Modern CPUs reorder memory operations, so Peterson's Algorithm fails in 
- * standard Java without the `volatile` keyword preventing reordering.
+ * NOTE: Modern CPUs reorder memory operations, so Peterson's Algorithm fails in
+ * standard Java unless every shared variable has volatile semantics (see below).
  */
 public class PetersonsAlgorithm {
 
-    private static volatile boolean[] flag = new boolean[2];
+    // IMPORTANT: "volatile boolean[] flag" would NOT work. volatile applies only to
+    // the array REFERENCE, not to its elements, so a spinning thread may never see
+    // the other thread's flag[i] = true. AtomicIntegerArray gives every element
+    // volatile read/write semantics (1 = wants to enter, 0 = does not).
+    private static final AtomicIntegerArray flag = new AtomicIntegerArray(2);
     private static volatile int turn = 0;
     
     private static int sharedResource = 0;
@@ -23,11 +29,11 @@ public class PetersonsAlgorithm {
     static class Process0 extends Thread {
         public void run() {
             for (int i = 0; i < 5; i++) {
-                flag[0] = true;
+                flag.set(0, 1);
                 turn = 1; // Give turn to process 1
                 
                 // Busy wait! (Spinlock)
-                while (flag[1] && turn == 1) { 
+                while (flag.get(1) == 1 && turn == 1) { 
                     // Spin...
                 }
 
@@ -36,7 +42,7 @@ public class PetersonsAlgorithm {
                 System.out.println("Process 0 incremented resource to: " + sharedResource);
 
                 // Exit Section
-                flag[0] = false;
+                flag.set(0, 0);
             }
         }
     }
@@ -44,10 +50,10 @@ public class PetersonsAlgorithm {
     static class Process1 extends Thread {
         public void run() {
             for (int i = 0; i < 5; i++) {
-                flag[1] = true;
+                flag.set(1, 1);
                 turn = 0; // Give turn to process 0
                 
-                while (flag[0] && turn == 0) { 
+                while (flag.get(0) == 1 && turn == 0) { 
                     // Spin...
                 }
 
@@ -56,7 +62,7 @@ public class PetersonsAlgorithm {
                 System.out.println("Process 1 incremented resource to: " + sharedResource);
 
                 // Exit Section
-                flag[1] = false;
+                flag.set(1, 0);
             }
         }
     }

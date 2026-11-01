@@ -34,7 +34,7 @@ package array;
  * the shifting logic manually, which is typically hidden away in utility methods like 
  * System.arraycopy(). Tradeoff: slight memory and performance overhead compared to raw arrays.
  */
-public class StaticArray<T> {
+public class StaticArray<T> implements Iterable<T> {
 
     private final T[] data;
     private int size;
@@ -158,6 +158,37 @@ public class StaticArray<T> {
         return size;
     }
 
+    public int capacity() {
+        return capacity;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public boolean isFull() {
+        return size == capacity;
+    }
+
+    public boolean contains(T value) {
+        return search(value) != -1;
+    }
+
+    public void clear() {
+        for (int i = 0; i < size; i++) data[i] = null; // help GC
+        size = 0;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < size; i++) {
+            sb.append(data[i]);
+            if (i < size - 1) sb.append(", ");
+        }
+        return sb.append("]").toString();
+    }
+
     /**
      * Prints the current state of the array.
      */
@@ -170,6 +201,25 @@ public class StaticArray<T> {
             }
         }
         System.out.println("]");
+    }
+
+    /** Index order: for (T x : array) { ... } */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public T next() {
+                if (index >= size) throw new java.util.NoSuchElementException();
+                return data[index++];
+            }
+        };
     }
 
     /**

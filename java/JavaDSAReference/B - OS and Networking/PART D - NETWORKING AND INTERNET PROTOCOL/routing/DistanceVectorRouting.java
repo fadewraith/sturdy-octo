@@ -90,4 +90,8 @@ public class DistanceVectorRouting {
         System.out.println("Distance Vector converged in " + iter + " iterations.");
         System.out.println("A's Routing Table: " + a.routingTable);
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

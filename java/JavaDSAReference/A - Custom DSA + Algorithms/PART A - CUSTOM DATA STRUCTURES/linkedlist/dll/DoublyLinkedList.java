@@ -36,7 +36,7 @@ import linkedlist.common.DoublyNode;
  * understand the edge cases (like updating head.prev when inserting at head) which are 
  * notoriously easy to get wrong in interviews.
  */
-public class DoublyLinkedList<T> {
+public class DoublyLinkedList<T> implements Iterable<T> {
 
     private DoublyNode<T> head;
     // Note: We could maintain a 'tail' pointer for O(1) tail operations,
@@ -234,6 +234,111 @@ public class DoublyLinkedList<T> {
             current = current.prev;
         }
         System.out.println("null");
+    }
+
+    // --------------------------------------------------------
+    // 5. ACCESS, SEARCH & UTILITIES
+    // --------------------------------------------------------
+
+    // Null-safe equality (a list may hold null elements)
+    private static boolean same(Object a, Object b) {
+        return a == null ? b == null : a.equals(b);
+    }
+
+    private DoublyNode<T> nodeAt(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        DoublyNode<T> current = head;
+        for (int i = 0; i < index; i++) current = current.next;
+        return current;
+    }
+
+    public T get(int index) {
+        return nodeAt(index).data;
+    }
+
+    /** Replaces the element at index and returns the old one. */
+    public T set(int index, T data) {
+        DoublyNode<T> node = nodeAt(index);
+        T old = node.data;
+        node.data = data;
+        return old;
+    }
+
+    /** Index of the first occurrence, or -1. */
+    public int indexOf(T value) {
+        int i = 0;
+        for (DoublyNode<T> cur = head; cur != null; cur = cur.next, i++) {
+            if (same(cur.data, value)) return i;
+        }
+        return -1;
+    }
+
+    public boolean search(T value) {
+        return indexOf(value) != -1;
+    }
+
+    /**
+     * Removes the first occurrence of value. Returns true if something was removed.
+     * In a DLL the node can unlink itself (it knows its prev), no "previous" pointer needed.
+     */
+    public boolean deleteByValue(T value) {
+        for (DoublyNode<T> cur = head; cur != null; cur = cur.next) {
+            if (!same(cur.data, value)) continue;
+            if (cur.prev == null) head = cur.next;
+            else cur.prev.next = cur.next;
+            if (cur.next != null) cur.next.prev = cur.prev;
+            cur.next = null;
+            cur.prev = null;
+            size--;
+            return true;
+        }
+        return false;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void clear() {
+        head = null;
+        size = 0;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        for (DoublyNode<T> cur = head; cur != null; cur = cur.next) {
+            sb.append(cur.data);
+            if (cur.next != null) sb.append(", ");
+        }
+        return sb.append("]").toString();
+    }
+
+    /** Head to tail: for (T x : list) { ... } */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private DoublyNode<T> current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (current == null) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

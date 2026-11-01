@@ -40,4 +40,18 @@ public class CRC {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        System.out.println("--- CRC (Cyclic Redundancy Check) ---");
+        String data = "11010011101100";
+        String generator = "1011"; // x^3 + x + 1
+        String crc = calculateCRC(data, generator);
+        System.out.println("Data: " + data + ", generator: " + generator + " -> CRC bits: " + crc); // Expected: 100
+        System.out.println("Receiver check (no error): " + verifyCRC(data, crc, generator)); // true
+
+        // Flip one bit in transit
+        char[] corrupted = data.toCharArray();
+        corrupted[3] = corrupted[3] == '0' ? '1' : '0';
+        System.out.println("Receiver check (1 bit flipped): " + verifyCRC(new String(corrupted), crc, generator)); // false
+    }
 }

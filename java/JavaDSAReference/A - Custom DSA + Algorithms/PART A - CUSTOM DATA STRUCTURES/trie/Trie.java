@@ -1,5 +1,7 @@
 package trie;
 
+import array.MyArrayList;
+
 /**
  * TRIE (Prefix Tree)
  * 
@@ -58,12 +60,21 @@ public class Trie {
      */
     public void insert(String word) {
         if (word == null || word.isEmpty()) return;
-        
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            if (ch < 'a' || ch > 'z') {
+                throw new IllegalArgumentException("Only lowercase a-z is supported: " + word);
+            }
+        }
+        // The trie stores a SET of words. Inserting a duplicate must not bump
+        // prefixCount again, or counts drift and delete() can no longer undo it.
+        if (search(word)) return;
+
         TrieNode current = root;
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             int index = ch - 'a';
-            
+
             if (current.children[index] == null) {
                 current.children[index] = new TrieNode();
             }
@@ -130,6 +141,56 @@ public class Trie {
         current.isEndOfWord = false;
     }
 
+    // --------------------------------------------------------
+    // AUTOCOMPLETE & SIZE
+    // --------------------------------------------------------
+
+    /**
+     * All stored words that start with prefix, in alphabetical order
+     * (children are visited a -> z). "" returns every word.
+     * Time: O(L + total characters in the matching words).
+     */
+    public MyArrayList<String> wordsWithPrefix(String prefix) {
+        return autocomplete(prefix, Integer.MAX_VALUE);
+    }
+
+    /**
+     * Up to 'limit' completions of prefix, alphabetically - what a search box shows.
+     * Stops the DFS as soon as enough words are found.
+     */
+    public MyArrayList<String> autocomplete(String prefix, int limit) {
+        MyArrayList<String> result = new MyArrayList<>();
+        TrieNode start = getNode(prefix);
+        if (start == null || limit <= 0) return result;
+        collect(start, new StringBuilder(prefix), result, limit);
+        return result;
+    }
+
+    private void collect(TrieNode node, StringBuilder path, MyArrayList<String> out, int limit) {
+        if (out.size() >= limit) return;
+        if (node.isEndOfWord) out.add(path.toString());
+        for (int i = 0; i < 26 && out.size() < limit; i++) {
+            if (node.children[i] != null) {
+                path.append((char) ('a' + i));
+                collect(node.children[i], path, out, limit);
+                path.deleteCharAt(path.length() - 1); // backtrack
+            }
+        }
+    }
+
+    /** Number of stored words. O(26): every word passes through exactly one child of the root. */
+    public int size() {
+        int total = 0;
+        for (TrieNode child : root.children) {
+            if (child != null) total += child.prefixCount;
+        }
+        return total;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
     /**
      * Private helper to traverse down to the node representing the end of a string.
      */
@@ -140,8 +201,8 @@ public class Trie {
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             int index = ch - 'a';
-            
-            if (current.children[index] == null) {
+
+            if (index < 0 || index >= 26 || current.children[index] == null) {
                 return null;
             }
             current = current.children[index];

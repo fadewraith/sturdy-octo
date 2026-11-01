@@ -77,4 +77,8 @@ public class CountToInfinityProblem {
         }
         System.out.println("Counted to Infinity!");
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

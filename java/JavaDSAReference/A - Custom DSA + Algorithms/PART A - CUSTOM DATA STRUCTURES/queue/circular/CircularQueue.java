@@ -28,7 +28,7 @@ package queue.circular;
  * people get on (enqueue). The wheel keeps spinning in a circle, constantly reusing 
  * the same fixed number of cabins.
  */
-public class CircularQueue<T> {
+public class CircularQueue<T> implements Iterable<T> {
 
     private final T[] data;
     private int front;
@@ -101,6 +101,29 @@ public class CircularQueue<T> {
 
     public int size() {
         return currentSize;
+    }
+
+    /** Front to rear, wrapping around the end of the array with modulo. */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int index = front;
+            private int remaining = currentSize;
+
+            @Override
+            public boolean hasNext() {
+                return remaining > 0;
+            }
+
+            @Override
+            public T next() {
+                if (remaining == 0) throw new java.util.NoSuchElementException();
+                T element = data[index];
+                index = (index + 1) % capacity;
+                remaining--;
+                return element;
+            }
+        };
     }
 
     // --------------------------------------------------------

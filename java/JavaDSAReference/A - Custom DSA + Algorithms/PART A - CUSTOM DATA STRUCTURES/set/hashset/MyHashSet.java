@@ -26,7 +26,7 @@ import array.MyArrayList;
  * A guest list for a VIP party. You don't care about the guest's age or phone number 
  * (no values), you just need to instantly check "Are they on the list or not?" (keys only).
  */
-public class MyHashSet<T> {
+public class MyHashSet<T> implements Iterable<T> {
 
     // The backing map
     private final MyHashMap<T, Boolean> map;
@@ -83,6 +83,75 @@ public class MyHashSet<T> {
      */
     public MyArrayList<T> toList() {
         return map.keySet();
+    }
+
+    public void clear() {
+        map.clear();
+    }
+
+    // ---------------- Set algebra (each returns a NEW set) ----------------
+
+    /** Elements in this set OR other. */
+    public MyHashSet<T> union(MyHashSet<T> other) {
+        MyHashSet<T> result = new MyHashSet<>();
+        MyArrayList<T> mine = toList(), theirs = other.toList();
+        for (int i = 0; i < mine.size(); i++) result.add(mine.get(i));
+        for (int i = 0; i < theirs.size(); i++) result.add(theirs.get(i));
+        return result;
+    }
+
+    /** Elements in BOTH sets. Iterates the smaller set: O(min(n, m)) lookups. */
+    public MyHashSet<T> intersection(MyHashSet<T> other) {
+        MyHashSet<T> small = size() <= other.size() ? this : other;
+        MyHashSet<T> big = (small == this) ? other : this;
+        MyHashSet<T> result = new MyHashSet<>();
+        MyArrayList<T> items = small.toList();
+        for (int i = 0; i < items.size(); i++) {
+            if (big.contains(items.get(i))) result.add(items.get(i));
+        }
+        return result;
+    }
+
+    /** Elements in this set but NOT in other. */
+    public MyHashSet<T> difference(MyHashSet<T> other) {
+        MyHashSet<T> result = new MyHashSet<>();
+        MyArrayList<T> mine = toList();
+        for (int i = 0; i < mine.size(); i++) {
+            if (!other.contains(mine.get(i))) result.add(mine.get(i));
+        }
+        return result;
+    }
+
+    /** True if every element of this set is also in other. */
+    public boolean isSubsetOf(MyHashSet<T> other) {
+        if (size() > other.size()) return false;
+        MyArrayList<T> mine = toList();
+        for (int i = 0; i < mine.size(); i++) {
+            if (!other.contains(mine.get(i))) return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return toList().toString();
+    }
+
+    /** Iterates the elements (no particular order). Fail-fast, like the backing map. */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        java.util.Iterator<MyHashMap.Entry<T, Boolean>> entries = map.iterator();
+        return new java.util.Iterator<T>() {
+            @Override
+            public boolean hasNext() {
+                return entries.hasNext();
+            }
+
+            @Override
+            public T next() {
+                return entries.next().key;
+            }
+        };
     }
 
     // --------------------------------------------------------

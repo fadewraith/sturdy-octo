@@ -128,6 +128,54 @@ public class QuadTree {
         return found;
     }
     
+    /** Number of points stored in this quad and all its children. */
+    public int size() {
+        int total = points.size();
+        if (subdivided) total += nw.size() + ne.size() + sw.size() + se.size();
+        return total;
+    }
+
+    /**
+     * Removes one point with the same coordinates as p. Returns true if one was removed.
+     * After removing, if this quad's whole subtree fits in one node again, the four
+     * children are MERGED back (otherwise deletes would leave many near-empty quads).
+     */
+    public boolean remove(Point p) {
+        if (!boundary.contains(p)) return false;
+
+        boolean removed = false;
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x == p.x && points.get(i).y == p.y) {
+                points.remove(i);
+                removed = true;
+                break;
+            }
+        }
+        if (!removed && subdivided) {
+            removed = nw.remove(p) || ne.remove(p) || sw.remove(p) || se.remove(p);
+        }
+
+        if (removed && subdivided && size() <= capacity) {
+            collectInto(points, nw);
+            collectInto(points, ne);
+            collectInto(points, sw);
+            collectInto(points, se);
+            nw = ne = sw = se = null;
+            subdivided = false;
+        }
+        return removed;
+    }
+
+    private static void collectInto(List<Point> target, QuadTree node) {
+        target.addAll(node.points);
+        if (node.subdivided) {
+            collectInto(target, node.nw);
+            collectInto(target, node.ne);
+            collectInto(target, node.sw);
+            collectInto(target, node.se);
+        }
+    }
+
     private boolean intersects(Boundary b1, Boundary b2) {
         return !(b2.x - b2.width/2 > b1.x + b1.width/2 ||
                  b2.x + b2.width/2 < b1.x - b1.width/2 ||

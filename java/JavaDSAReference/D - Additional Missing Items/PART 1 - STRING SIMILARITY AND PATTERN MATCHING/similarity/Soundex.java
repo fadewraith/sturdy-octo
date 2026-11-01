@@ -20,7 +20,8 @@ package algorithms.strings.similarity;
  *    l -> 4
  *    m, n -> 5
  *    r -> 6
- * 4. Replace adjacent same digits with one digit.
+ * 4. Replace adjacent same digits with one digit. Letters separated only by
+ *    H or W count as adjacent; letters separated by a vowel do not.
  * 5. Pad with zeros to return a 4-character code.
  */
 public class Soundex {
@@ -36,8 +37,12 @@ public class Soundex {
         
         for (int i = 1; i < s.length() && result.length() < 4; i++) {
             char c = s.charAt(i);
+            // H and W are "transparent": letters with the same code on both sides of
+            // them still merge (Ashcraft -> A261, not A226). Vowels DO separate them.
+            // Non-letters (spaces, hyphens, apostrophes) are skipped too.
+            if (c == 'H' || c == 'W' || !Character.isLetter(c)) continue;
             char code = getMapping(c);
-            
+
             if (code != '0' && code != prevCode) {
                 result.append(code);
             }
@@ -70,5 +75,7 @@ public class Soundex {
         
         System.out.println(name1 + " -> " + getCode(name1));
         System.out.println(name2 + " -> " + getCode(name2)); // Expected: both R163
+        System.out.println("Ashcraft -> " + getCode("Ashcraft")); // Expected: A261 (H rule)
+        System.out.println("Tymczak -> " + getCode("Tymczak"));   // Expected: T522
     }
 }

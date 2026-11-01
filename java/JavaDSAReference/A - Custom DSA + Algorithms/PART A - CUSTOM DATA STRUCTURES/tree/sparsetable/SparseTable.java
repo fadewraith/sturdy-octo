@@ -43,8 +43,7 @@ public class SparseTable {
         this.n = arr.length;
         
         // 1. Precompute logs for O(1) query time (avoiding Math.log calls)
-        this.log2 = new int[n + 1];
-        log2[1] = 0;
+        this.log2 = new int[n + 2]; // +2 so log2[1] exists even when n == 0
         for (int i = 2; i <= n; i++) {
             log2[i] = log2[i / 2] + 1;
         }

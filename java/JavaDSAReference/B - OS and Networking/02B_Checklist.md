@@ -36,6 +36,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] FileAllocation.java (Contiguous, Linked, Indexed)
 - [x] FreeSpaceManagement.java (Bitmap, Linked List)
 - [x] RaidSimulations.java (RAID 0, 1, 5, 6)
+- [x] Raid6Simulation.java (real GF(2^8) P+Q parity, recovers any 2 failed disks)
 
 ### 5. Deadlock & Synchronization (`os.deadlock` / `os.synchronization`)
 - [x] BankersAlgorithm.java (Avoidance)
@@ -44,9 +45,9 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] ProducerConsumer.java
 - [x] DiningPhilosophers.java
 - [x] ReadersWriters.java
-- [x] PetersonsAlgorithm.java
-- [x] BakeryAlgorithm.java
-- [x] CASPrimitives.java (Compare-And-Swap)
+- [x] PetersonsAlgorithm.java (AtomicIntegerArray flags; in synchronization/, not primitives/)
+- [x] BakeryAlgorithm.java (AtomicIntegerArray for correct visibility)
+- [x] CompareAndSwap.java (Compare-And-Swap)
 - [x] TestAndSet.java
 - [x] Spinlock.java
 - [x] MonitorConcept.java
@@ -100,6 +101,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] FloodingMulticast.java & SpanningTreeMulticast.java
 - [x] CristiansAlgorithm.java & BerkeleyAlgorithm.java
 - [x] RecursiveDNSLookup.java & IterativeDNSLookup.java
+- [x] DNSServer.java (helper used by both lookups)
 
 ---
 
@@ -107,7 +109,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 
 ### 1. Distributed Systems (`distributed.*`)
 - [x] Paxos.java
-- [x] Raft.java
+- [x] Raft.java (elections with up-to-date-log rule, log repair via prevLogIndex/prevLogTerm)
 - [x] BullyAlgorithm.java
 - [x] RingAlgorithm.java
 - [x] LamportTimestamps.java

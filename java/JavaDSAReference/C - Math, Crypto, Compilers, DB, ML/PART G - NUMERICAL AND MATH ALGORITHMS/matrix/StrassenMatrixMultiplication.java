@@ -13,8 +13,39 @@ package math.matrix;
  * Combine P1..P7 into C11, C12, C21, C22.
  */
 public class StrassenMatrixMultiplication {
-    // simplified implementation for exact powers of 2
+    /**
+     * Multiplies two n x n matrices for ANY n.
+     * Strassen splits the matrix in half on every level, so it needs a size that
+     * is a power of 2. We pad with zeros up to the next power of 2, multiply,
+     * then cut the result back to n x n (zero rows/cols don't change the product).
+     */
     public static int[][] multiply(int[][] A, int[][] B) {
+        int n = A.length;
+        if (n == 0) return new int[0][0];
+        if (B.length != n || A[0].length != n || B[0].length != n) {
+            throw new IllegalArgumentException("Both matrices must be n x n with the same n");
+        }
+        int size = 1;
+        while (size < n) size <<= 1;
+        if (size == n) return strassen(A, B);
+
+        int[][] pa = new int[size][size], pb = new int[size][size];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                pa[i][j] = A[i][j];
+                pb[i][j] = B[i][j];
+            }
+        }
+        int[][] pc = strassen(pa, pb);
+        int[][] C = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) C[i][j] = pc[i][j];
+        }
+        return C;
+    }
+
+    // Core recursion: only valid when n is a power of 2
+    private static int[][] strassen(int[][] A, int[][] B) {
         int n = A.length;
         if (n <= 1) return new int[][]{{A[0][0] * B[0][0]}};
         
@@ -36,13 +67,13 @@ public class StrassenMatrixMultiplication {
             }
         }
         
-        int[][] p1 = multiply(add(a11, a22), add(b11, b22));
-        int[][] p2 = multiply(add(a21, a22), b11);
-        int[][] p3 = multiply(a11, sub(b12, b22));
-        int[][] p4 = multiply(a22, sub(b21, b11));
-        int[][] p5 = multiply(add(a11, a12), b22);
-        int[][] p6 = multiply(sub(a21, a11), add(b11, b12));
-        int[][] p7 = multiply(sub(a12, a22), add(b21, b22));
+        int[][] p1 = strassen(add(a11, a22), add(b11, b22));
+        int[][] p2 = strassen(add(a21, a22), b11);
+        int[][] p3 = strassen(a11, sub(b12, b22));
+        int[][] p4 = strassen(a22, sub(b21, b11));
+        int[][] p5 = strassen(add(a11, a12), b22);
+        int[][] p6 = strassen(sub(a21, a11), add(b11, b12));
+        int[][] p7 = strassen(sub(a12, a22), add(b21, b22));
         
         int[][] c11 = add(sub(add(p1, p4), p5), p7);
         int[][] c12 = add(p3, p5);

@@ -32,7 +32,7 @@ import stack.linkedlistbased.LinkedListStack;
  * document, you take the entire inbox pile and flip it upside down into the outbox. 
  * Now the oldest document is on top of the outbox, ready to be processed.
  */
-public class TwoStacksQueue<T> {
+public class TwoStacksQueue<T> implements Iterable<T> {
 
     private final LinkedListStack<T> inbox;
     private final LinkedListStack<T> outbox;
@@ -93,6 +93,21 @@ public class TwoStacksQueue<T> {
                 outbox.push(inbox.pop());
             }
         }
+    }
+
+    /**
+     * Front to rear. The OLDEST elements are in the outbox (oldest on top);
+     * the newest are in the inbox (newest on top, so it must be read bottom-up).
+     * Takes a snapshot into a list: O(N), without moving anything between the stacks.
+     */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        array.MyArrayList<T> order = new array.MyArrayList<>();
+        for (T x : outbox) order.add(x);           // top -> bottom = oldest first
+        array.MyArrayList<T> newest = new array.MyArrayList<>();
+        for (T x : inbox) newest.add(x);           // top -> bottom = newest first...
+        for (int i = newest.size() - 1; i >= 0; i--) order.add(newest.get(i)); // ...so reverse
+        return order.iterator();
     }
 
     // --------------------------------------------------------

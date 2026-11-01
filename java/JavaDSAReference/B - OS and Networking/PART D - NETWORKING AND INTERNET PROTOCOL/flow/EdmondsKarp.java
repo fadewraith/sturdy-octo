@@ -62,4 +62,18 @@ public class EdmondsKarp {
         }
         return false;
     }
+
+    public static void main(String[] args) {
+        System.out.println("--- EdmondsKarp Max Flow ---");
+        // Classic CLRS network: source 0, sink 5
+        int[][] capacity = {
+            {0, 16, 13, 0, 0, 0},
+            {0, 0, 10, 12, 0, 0},
+            {0, 4, 0, 0, 14, 0},
+            {0, 0, 9, 0, 0, 20},
+            {0, 0, 0, 7, 0, 4},
+            {0, 0, 0, 0, 0, 0}
+        };
+        System.out.println("Max flow from 0 to 5: " + new EdmondsKarp().maxFlow(capacity, 0, 5)); // Expected: 23
+    }
 }

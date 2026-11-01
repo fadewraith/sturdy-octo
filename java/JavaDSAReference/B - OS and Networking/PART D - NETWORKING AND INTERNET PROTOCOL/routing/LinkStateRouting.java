@@ -77,4 +77,8 @@ public class LinkStateRouting {
             System.out.println("Cost to " + entry.getKey() + " is " + entry.getValue());
         }
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

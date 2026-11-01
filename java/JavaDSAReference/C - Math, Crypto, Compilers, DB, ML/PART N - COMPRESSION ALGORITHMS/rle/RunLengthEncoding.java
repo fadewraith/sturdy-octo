@@ -13,8 +13,18 @@ package compression.rle;
  *   else: output prev_char + count, prev_char = char, count = 1
  */
 public class RunLengthEncoding {
+    /**
+     * Output format: <char><count> repeated, e.g. "AAAABBB" -> "A4B3".
+     * Counts can have several digits ("C10"), so the input itself must not
+     * contain digits - otherwise "a111" -> "a113" could mean "a" x 113.
+     */
     public static String encode(String text) {
         if (text == null || text.isEmpty()) return "";
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isDigit(text.charAt(i))) {
+                throw new IllegalArgumentException("Text RLE format cannot encode digits (ambiguous with counts): " + text);
+            }
+        }
         StringBuilder sb = new StringBuilder();
         int count = 1;
         for (int i = 1; i < text.length(); i++) {
@@ -32,9 +42,19 @@ public class RunLengthEncoding {
     public static String decode(String text) {
         if (text == null || text.isEmpty()) return "";
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < text.length(); i += 2) {
-            char c = text.charAt(i);
-            int count = Character.getNumericValue(text.charAt(i + 1));
+        int i = 0;
+        while (i < text.length()) {
+            char c = text.charAt(i++);
+            // Read ALL digits of the count, not just one ("C10" means 10 C's)
+            int count = 0;
+            int digitsStart = i;
+            while (i < text.length() && Character.isDigit(text.charAt(i))) {
+                count = count * 10 + (text.charAt(i) - '0');
+                i++;
+            }
+            if (i == digitsStart) {
+                throw new IllegalArgumentException("Missing count after '" + c + "' in: " + text);
+            }
             for (int j = 0; j < count; j++) sb.append(c);
         }
         return sb.toString();
@@ -52,5 +72,11 @@ public class RunLengthEncoding {
         System.out.println("Original: " + test2);
         System.out.println("Encoded: " + enc2);
         System.out.println("Decoded: " + decode(enc2));
+
+        String test3 = "BCCCCCCCCCCCCA"; // a run of 12 -> needs a 2-digit count
+        String enc3 = encode(test3);
+        System.out.println("Original: " + test3);
+        System.out.println("Encoded: " + enc3);
+        System.out.println("Decoded: " + decode(enc3));
     }
 }

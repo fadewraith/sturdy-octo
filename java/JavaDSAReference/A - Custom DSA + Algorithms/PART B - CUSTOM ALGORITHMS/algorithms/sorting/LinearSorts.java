@@ -70,36 +70,50 @@ public class LinearSorts {
     // --------------------------------------------------------
     public static void radixSort(int[] arr) {
         if (arr.length <= 1) return;
-        
-        int max = arr[0];
+
+        // Radix sort works on non-negative digits. To support negatives we shift
+        // every value up by -min so the smallest becomes 0, sort, then shift back.
+        // 'long' avoids overflow (e.g. MAX_VALUE - MIN_VALUE does not fit in int).
+        int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) max = arr[i];
+            if (arr[i] < min) min = arr[i];
         }
-        
+        long[] shifted = new long[arr.length];
+        long max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            shifted[i] = (long) arr[i] - min;
+            if (shifted[i] > max) max = shifted[i];
+        }
+
         // Do counting sort for every digit, where exp is 10^i
-        for (int exp = 1; max / exp > 0; exp *= 10) {
-            countingSortForRadix(arr, exp);
+        for (long exp = 1; max / exp > 0; exp *= 10) {
+            countingSortForRadix(shifted, exp);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (shifted[i] + min);
         }
     }
-    
-    private static void countingSortForRadix(int[] arr, int exp) {
-        int[] output = new int[arr.length];
+
+    private static void countingSortForRadix(long[] arr, long exp) {
+        long[] output = new long[arr.length];
         int[] count = new int[10]; // Digits are 0-9
-        
+
         for (int i = 0; i < arr.length; i++) {
-            count[(arr[i] / exp) % 10]++;
+            count[(int) ((arr[i] / exp) % 10)]++;
         }
-        
+
         for (int i = 1; i < 10; i++) {
             count[i] += count[i - 1];
         }
-        
+
+        // Go backwards so equal digits keep their order (stability is what makes radix sort work)
         for (int i = arr.length - 1; i >= 0; i--) {
-            int digit = (arr[i] / exp) % 10;
+            int digit = (int) ((arr[i] / exp) % 10);
             output[count[digit] - 1] = arr[i];
             count[digit]--;
         }
-        
+
         for (int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
         }

@@ -116,6 +116,33 @@ public class LRUCache<K, V> {
         }
     }
 
+    /** True if the key is cached. Does NOT count as a "use" (recency is unchanged). */
+    public boolean containsKey(K key) {
+        return map.containsKey(key);
+    }
+
+    /** Removes key from the cache. Returns its value, or null if it was not cached. O(1). */
+    public V remove(K key) {
+        Node node = map.remove(key);
+        if (node == null) return null;
+        removeNode(node);
+        return node.value;
+    }
+
+    public int size() {
+        return map.size();
+    }
+
+    public int capacity() {
+        return capacity;
+    }
+
+    public void clear() {
+        map.clear();
+        head.next = tail;
+        tail.prev = head;
+    }
+
     // --------------------------------------------------------
     // DLL HELPER METHODS (Strictly O(1))
     // --------------------------------------------------------

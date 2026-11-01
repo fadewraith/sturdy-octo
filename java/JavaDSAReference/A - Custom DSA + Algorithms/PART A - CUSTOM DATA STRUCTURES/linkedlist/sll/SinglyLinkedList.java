@@ -39,7 +39,7 @@ import linkedlist.common.Node;
  * scratch is essential for mastering pointer manipulations and algorithmic patterns 
  * (like fast/slow pointers and reversing in place), which are heavily tested in interviews.
  */
-public class SinglyLinkedList<T> {
+public class SinglyLinkedList<T> implements Iterable<T> {
 
     private Node<T> head;
     private int size;
@@ -388,7 +388,7 @@ public class SinglyLinkedList<T> {
     /**
      * Checks if the linked list is a palindrome.
      * Strategy: Find middle, reverse the second half, compare both halves, 
-     * then optionally restore the list (omitted here for simplicity, but ideal).
+     * then reverse the second half again so the list is left unchanged.
      * Time: O(N), Space: O(1)
      */
     public boolean isPalindrome() {
@@ -425,9 +425,18 @@ public class SinglyLinkedList<T> {
             p2 = p2.next;
         }
         
-        // Note: A true production implementation would re-reverse the second half here
-        // to restore the list to its original state.
-        
+        // 4. Restore the list: reverse the second half back.
+        // The node before 'slow' still points to 'slow', so once the second half
+        // is reversed again the list is exactly as it was.
+        Node<T> restorePrev = null;
+        Node<T> restoreCurr = prev;
+        while (restoreCurr != null) {
+            Node<T> nextTemp = restoreCurr.next;
+            restoreCurr.next = restorePrev;
+            restorePrev = restoreCurr;
+            restoreCurr = nextTemp;
+        }
+
         return isPalin;
     }
 
@@ -447,6 +456,27 @@ public class SinglyLinkedList<T> {
             current = current.next;
         }
         System.out.println("null");
+    }
+
+    /** Head to tail: for (T x : list) { ... } */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private Node<T> current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (current == null) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

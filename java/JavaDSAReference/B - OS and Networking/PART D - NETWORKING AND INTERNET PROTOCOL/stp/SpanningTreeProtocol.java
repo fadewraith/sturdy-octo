@@ -66,4 +66,30 @@ public class SpanningTreeProtocol {
         }
         return null;
     }
+
+    public static void main(String[] args) {
+        System.out.println("--- Spanning Tree Protocol ---");
+        // 4 switches in a loop plus a diagonal: 1-2, 2-3, 3-4, 4-1, 2-4
+        List<Switch> switches = new ArrayList<>();
+        for (int id = 1; id <= 4; id++) switches.add(new Switch(id));
+        List<Link> links = new ArrayList<>();
+        links.add(new Link(1, 2, 4));
+        links.add(new Link(2, 3, 4));
+        links.add(new Link(3, 4, 4));
+        links.add(new Link(4, 1, 19));
+        links.add(new Link(2, 4, 4));
+
+        runSTP(switches, links);
+
+        // Lowest bridge ID wins the root election; every other switch keeps ONE port toward the root
+        for (Switch s : switches) {
+            System.out.println("Switch " + s.id + ": root=" + s.rootId + ", costToRoot=" + s.costToRoot
+                    + (s.nextHopToRoot == -1 ? " (ROOT BRIDGE)" : ", root port -> switch " + s.nextHopToRoot));
+        }
+        // Links that are not on any switch's root path are BLOCKED to break the loops
+        for (Link l : links) {
+            boolean used = getSwitch(switches, l.from).nextHopToRoot == l.to || getSwitch(switches, l.to).nextHopToRoot == l.from;
+            System.out.println("Link " + l.from + "-" + l.to + ": " + (used ? "forwarding" : "BLOCKED"));
+        }
+    }
 }

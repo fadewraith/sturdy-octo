@@ -33,37 +33,52 @@ public class BipartiteCheck {
         boolean isEmpty() { return front == rear; }
     }
 
+    /** Checks the WHOLE graph, including disconnected components. */
+    public static boolean isBipartite(int[][] adjMatrix) {
+        return isBipartite(adjMatrix, 0);
+    }
+
+    /**
+     * BFS 2-coloring. Starts at startNode, then also starts a new BFS from every
+     * vertex still uncolored - a disconnected graph is bipartite only if EVERY
+     * component is, so checking just the start component is not enough.
+     */
     public static boolean isBipartite(int[][] adjMatrix, int startNode) {
         int vertices = adjMatrix.length;
-        
+        if (vertices == 0) return true;
+
         // Colors: -1 (Uncolored), 0 (RED), 1 (BLUE)
         int[] color = new int[vertices];
         for (int i = 0; i < vertices; ++i) {
             color[i] = -1;
         }
 
-        // Color start node RED
-        color[startNode] = 0;
-
         IntQueue queue = new IntQueue(vertices);
-        queue.enqueue(startNode);
 
-        while (!queue.isEmpty()) {
-            int u = queue.dequeue();
+        for (int k = 0; k < vertices; k++) {
+            int source = (startNode + k) % vertices; // startNode first, then the rest
+            if (color[source] != -1) continue;       // already colored by an earlier BFS
 
-            // Self-loop check (A self-loop immediately ruins a bipartite graph)
-            if (adjMatrix[u][u] == 1) return false;
+            color[source] = 0; // Color the component's first node RED
+            queue.enqueue(source);
 
-            for (int v = 0; v < vertices; v++) {
-                // If there is an edge and neighbor is uncolored
-                if (adjMatrix[u][v] == 1 && color[v] == -1) {
-                    // Assign alternate color
-                    color[v] = 1 - color[u];
-                    queue.enqueue(v);
-                } 
-                // If there is an edge and neighbor HAS THE SAME COLOR! Conflict!
-                else if (adjMatrix[u][v] == 1 && color[v] == color[u]) {
-                    return false;
+            while (!queue.isEmpty()) {
+                int u = queue.dequeue();
+
+                // Self-loop check (A self-loop immediately ruins a bipartite graph)
+                if (adjMatrix[u][u] != 0) return false;
+
+                for (int v = 0; v < vertices; v++) {
+                    if (adjMatrix[u][v] == 0) continue;
+                    // If neighbor is uncolored, assign the alternate color
+                    if (color[v] == -1) {
+                        color[v] = 1 - color[u];
+                        queue.enqueue(v);
+                    }
+                    // Neighbor HAS THE SAME COLOR! Conflict!
+                    else if (color[v] == color[u]) {
+                        return false;
+                    }
                 }
             }
         }
@@ -90,5 +105,15 @@ public class BipartiteCheck {
             {0, 0, 1, 0}
         };
         System.out.println("Graph 2 is Bipartite? " + isBipartite(graph2, 0)); // false
+
+        // Disconnected: an edge 0-1, plus a separate triangle 2-3-4
+        int[][] graph3 = {
+            {0, 1, 0, 0, 0},
+            {1, 0, 0, 0, 0},
+            {0, 0, 0, 1, 1},
+            {0, 0, 1, 0, 1},
+            {0, 0, 1, 1, 0}
+        };
+        System.out.println("Graph 3 (disconnected, has a triangle) is Bipartite? " + isBipartite(graph3)); // false
     }
 }

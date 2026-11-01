@@ -25,16 +25,57 @@ import java.util.Arrays;
  * Insert         | O(log N)        | O(1) amortized   | Bubble up
  * Extract Max    | O(log N)        | O(1)             | Sink down
  * Peek (Get Max) | O(1)            | O(1)             | Direct array access
+ *
+ * Ordering: natural order (Comparable) by default, or pass a Comparator to decide what
+ * "largest" means. Without a Comparator, elements must be Comparable.
  */
-public class MaxHeap<T extends Comparable<T>> {
+public class MaxHeap<T> {
 
     private Object[] heap;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
+    private final java.util.Comparator<? super T> comparator; // null = natural ordering
 
     public MaxHeap() {
+        this((java.util.Comparator<? super T>) null);
+    }
+
+    /** Heap ordered by the given comparator (null = natural ordering); the "largest" is on top. */
+    public MaxHeap(java.util.Comparator<? super T> comparator) {
         this.heap = new Object[DEFAULT_CAPACITY];
         this.size = 0;
+        this.comparator = comparator;
+    }
+
+    /**
+     * BUILD-HEAP in O(N) (Floyd's method): copy, then sift down every non-leaf
+     * from the last one to the root. (Inserting one by one would be O(N log N).)
+     */
+    public MaxHeap(T[] elements) {
+        this(elements, null);
+    }
+
+    /** BUILD-HEAP in O(N) with a custom ordering. */
+    public MaxHeap(T[] elements, java.util.Comparator<? super T> comparator) {
+        this.comparator = comparator;
+        this.heap = new Object[Math.max(DEFAULT_CAPACITY, elements.length)];
+        for (int i = 0; i < elements.length; i++) heap[i] = elements[i];
+        this.size = elements.length;
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            heapifyDown(i);
+        }
+    }
+
+    // One place that decides the order: the comparator if given, else compareTo
+    @SuppressWarnings("unchecked")
+    private int compare(Object a, Object b) {
+        if (comparator != null) return comparator.compare((T) a, (T) b);
+        return ((Comparable<? super T>) a).compareTo((T) b);
+    }
+
+    public void clear() {
+        for (int i = 0; i < size; i++) heap[i] = null; // help GC
+        size = 0;
     }
 
     public void insert(T element) {
@@ -80,7 +121,7 @@ public class MaxHeap<T extends Comparable<T>> {
         int parentIndex = (index - 1) / 2;
         
         // Changed to > 0 (Current node is GREATER than parent)
-        while (index > 0 && ((T) heap[index]).compareTo((T) heap[parentIndex]) > 0) {
+        while (index > 0 && compare(heap[index], heap[parentIndex]) > 0) {
             swap(index, parentIndex);
             index = parentIndex;
             parentIndex = (index - 1) / 2;
@@ -95,12 +136,12 @@ public class MaxHeap<T extends Comparable<T>> {
             int largest = index;
             
             // Changed to > 0 (Left child is GREATER than current largest)
-            if (leftChild < size && ((T) heap[leftChild]).compareTo((T) heap[largest]) > 0) {
+            if (leftChild < size && compare(heap[leftChild], heap[largest]) > 0) {
                 largest = leftChild;
             }
             
             // Changed to > 0 (Right child is GREATER than current largest)
-            if (rightChild < size && ((T) heap[rightChild]).compareTo((T) heap[largest]) > 0) {
+            if (rightChild < size && compare(heap[rightChild], heap[largest]) > 0) {
                 largest = rightChild;
             }
             

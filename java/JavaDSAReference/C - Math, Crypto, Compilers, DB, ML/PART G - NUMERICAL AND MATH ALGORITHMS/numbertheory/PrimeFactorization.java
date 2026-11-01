@@ -48,18 +48,44 @@ public class PrimeFactorization {
         return b == 0 ? a : gcd(b, a % b);
     }
 
+    /**
+     * Returns a non-trivial divisor of n, or n itself if n is prime.
+     * Pollard's Rho can only split COMPOSITE numbers - on a prime it never finds
+     * a divisor, so we test primality first (otherwise it loops forever).
+     */
     public static long pollardRho(long n) {
+        if (n < 2) throw new IllegalArgumentException("n must be >= 2");
         if (n % 2 == 0) return 2;
-        long x = 2, y = 2, d = 1;
-        long c = new Random().nextLong() % (n - 1) + 1;
-        while (d == 1) {
-            x = (x * x % n + c + n) % n;
-            y = (y * y % n + c + n) % n;
-            y = (y * y % n + c + n) % n;
-            d = gcd(Math.abs(x - y), n);
-            if (d == n) return pollardRho(n);
+        if (java.math.BigInteger.valueOf(n).isProbablePrime(30)) return n;
+
+        Random rand = new Random();
+        while (true) { // each attempt uses a new random constant c
+            long c = 1 + Math.floorMod(rand.nextLong(), n - 1);
+            long x = 2, y = 2, d = 1;
+            while (d == 1) {
+                x = f(x, c, n);          // tortoise: 1 step
+                y = f(f(y, c, n), c, n); // hare: 2 steps (Floyd cycle detection)
+                d = gcd(Math.abs(x - y), n);
+            }
+            if (d != n) return d;        // d == n means this c failed - retry
         }
-        return d;
+    }
+
+    // f(x) = (x^2 + c) mod n
+    private static long f(long x, long c, long n) {
+        return (mulMod(x, x, n) + c) % n;
+    }
+
+    // (a * b) mod m without overflow: x * x overflows a long once n > ~3 * 10^9
+    private static long mulMod(long a, long b, long m) {
+        long result = 0;
+        a %= m;
+        while (b > 0) {
+            if ((b & 1) == 1) result = (result + a) % m;
+            a = (a << 1) % m; // safe while m < 2^62
+            b >>= 1;
+        }
+        return result;
     }
 
     public static void main(String[] args) {

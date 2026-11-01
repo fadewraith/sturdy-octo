@@ -32,4 +32,35 @@ public class CustomSemaphore {
         permits++;
         notify(); // Wake up one waiting thread
     }
+
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("--- Custom Semaphore (2 permits, 5 threads) ---");
+        CustomSemaphore semaphore = new CustomSemaphore(2);
+        int[] inside = {0};
+        int[] maxInside = {0};
+        Thread[] threads = new Thread[5];
+        for (int i = 0; i < threads.length; i++) {
+            final int id = i;
+            threads[i] = new Thread(() -> {
+                try {
+                    semaphore.acquire();
+                    synchronized (inside) {
+                        inside[0]++;
+                        maxInside[0] = Math.max(maxInside[0], inside[0]);
+                        System.out.println("Thread " + id + " entered (inside now: " + inside[0] + ")");
+                    }
+                    Thread.sleep(50);
+                    synchronized (inside) {
+                        inside[0]--;
+                    }
+                    semaphore.release();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+            threads[i].start();
+        }
+        for (Thread t : threads) t.join();
+        System.out.println("Max threads inside at once: " + maxInside[0] + " (never more than 2)");
+    }
 }

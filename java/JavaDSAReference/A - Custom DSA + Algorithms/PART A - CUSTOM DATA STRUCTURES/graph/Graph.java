@@ -82,6 +82,95 @@ public class Graph<T> {
         }
     }
 
+    public boolean hasVertex(T vertex) {
+        return adjList.containsKey(vertex);
+    }
+
+    public boolean hasEdge(T source, T destination) {
+        return adjList.containsKey(source) && adjList.get(source).contains(destination);
+    }
+
+    /** Copy of the neighbor list (callers cannot accidentally change the graph). */
+    public MyArrayList<T> getNeighbors(T vertex) {
+        MyArrayList<T> result = new MyArrayList<>();
+        if (adjList.containsKey(vertex)) result.addAll(adjList.get(vertex));
+        return result;
+    }
+
+    public MyArrayList<T> getVertices() {
+        return adjList.keySet();
+    }
+
+    /**
+     * Removes the vertex and EVERY edge touching it.
+     * Directed graphs need a full scan for incoming edges: O(V + E).
+     */
+    public void removeVertex(T vertex) {
+        if (!adjList.containsKey(vertex)) return;
+        MyArrayList<T> vertices = adjList.keySet();
+        for (int i = 0; i < vertices.size(); i++) {
+            MyArrayList<T> neighbors = adjList.get(vertices.get(i));
+            while (neighbors.remove(vertex)) {
+                // remove(value) drops one copy at a time; loop handles parallel edges
+            }
+        }
+        adjList.remove(vertex);
+    }
+
+    public int vertexCount() {
+        return adjList.size();
+    }
+
+    /** Number of edges (an undirected edge is stored twice but counted once). */
+    public int edgeCount() {
+        int total = 0;
+        MyArrayList<T> vertices = adjList.keySet();
+        for (int i = 0; i < vertices.size(); i++) total += adjList.get(vertices.get(i)).size();
+        return isDirected ? total : total / 2;
+    }
+
+    /**
+     * Fewest-edges path from source to target using BFS (correct for UNWEIGHTED graphs).
+     * Returns the vertices along the path, or an empty list if target is unreachable.
+     * Each vertex remembers who discovered it (parent); we walk those links back from target.
+     */
+    public MyArrayList<T> shortestPath(T source, T target) {
+        MyArrayList<T> path = new MyArrayList<>();
+        if (!adjList.containsKey(source) || !adjList.containsKey(target)) return path;
+
+        MyHashMap<T, T> parent = new MyHashMap<>();
+        MyHashSet<T> visited = new MyHashSet<>();
+        LinkedListQueue<T> queue = new LinkedListQueue<>();
+        visited.add(source);
+        queue.enqueue(source);
+
+        while (!queue.isEmpty()) {
+            T current = queue.dequeue();
+            if (current == null ? target == null : current.equals(target)) break;
+            MyArrayList<T> neighbors = adjList.get(current);
+            for (int i = 0; i < neighbors.size(); i++) {
+                T next = neighbors.get(i);
+                if (!visited.contains(next)) {
+                    visited.add(next);
+                    parent.put(next, current);
+                    queue.enqueue(next);
+                }
+            }
+        }
+        if (!visited.contains(target)) return path; // unreachable
+
+        // Walk back from target to source, then reverse
+        MyArrayList<T> reversed = new MyArrayList<>();
+        T step = target;
+        reversed.add(step);
+        while (!(step == null ? source == null : step.equals(source))) {
+            step = parent.get(step);
+            reversed.add(step);
+        }
+        for (int i = reversed.size() - 1; i >= 0; i--) path.add(reversed.get(i));
+        return path;
+    }
+
     // --------------------------------------------------------
     // 2. BFS (Breadth-First Search)
     // --------------------------------------------------------

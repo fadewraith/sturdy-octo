@@ -86,4 +86,8 @@ public class PoisonReverse {
         a.updateFrom(b, 1);
         System.out.println("A -> X after update from B: " + a.routingTable.get("X"));
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

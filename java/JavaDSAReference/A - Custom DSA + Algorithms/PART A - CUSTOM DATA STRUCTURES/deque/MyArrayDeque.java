@@ -30,7 +30,7 @@ package deque;
  * either the front of the train or the back of the train, and you can detach cars 
  * from either end as well.
  */
-public class MyArrayDeque<T> {
+public class MyArrayDeque<T> implements Iterable<T> {
 
     private static final int DEFAULT_CAPACITY = 8;
     private T[] data;
@@ -124,6 +124,25 @@ public class MyArrayDeque<T> {
         data = newData;
         front = 0;
         rear = size;
+    }
+
+    /** First to last, wrapping around the circular array. */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private int offset = 0;
+
+            @Override
+            public boolean hasNext() {
+                return offset < size;
+            }
+
+            @Override
+            public T next() {
+                if (offset >= size) throw new java.util.NoSuchElementException();
+                return data[(front + offset++) % data.length];
+            }
+        };
     }
 
     // --------------------------------------------------------

@@ -51,99 +51,113 @@ public class DiskScheduling {
         System.out.println("Total Seek Distance: " + totalSeek);
     }
 
+    // --------------------------------------------------------
+    // SCAN-family helpers. These SIMULATE the head movement step by step,
+    // so edge cases (all requests on one side of the head, request at the
+    // head position, etc.) are handled correctly.
+    // --------------------------------------------------------
+
+    // Requests at or above the head, ascending
+    private static List<Integer> upper(int[] requests, int head) {
+        List<Integer> list = new ArrayList<>();
+        for (int r : requests) if (r >= head) list.add(r);
+        Collections.sort(list);
+        return list;
+    }
+
+    // Requests below the head, ascending
+    private static List<Integer> lower(int[] requests, int head) {
+        List<Integer> list = new ArrayList<>();
+        for (int r : requests) if (r < head) list.add(r);
+        Collections.sort(list);
+        return list;
+    }
+
+    private static void printResult(List<Integer> path, int totalSeek) {
+        System.out.println("Head path: " + path);
+        System.out.println("Total Seek Distance: " + totalSeek);
+    }
+
+    /**
+     * SCAN (Elevator): move in one direction serving requests, go all the way
+     * to the END of the disk, then reverse and serve the rest.
+     */
     public static void scan(int[] requests, int head, int diskSize, boolean directionUp) {
         System.out.println("--- SCAN (Elevator) ---");
-        List<Integer> reqList = new ArrayList<>();
-        for (int r : requests) reqList.add(r);
-        
-        reqList.add(head); // Add current head to sort around it
-        // Add end bounds for SCAN
-        reqList.add(0);
-        reqList.add(diskSize - 1);
-        
-        Collections.sort(reqList);
-        int headIdx = reqList.indexOf(head);
-        
-        int totalSeek = 0;
-        
-        if (directionUp) {
-            // Go up to disk size, then down
-            totalSeek += Math.abs((diskSize - 1) - head); // Distance to top
-            totalSeek += Math.abs((diskSize - 1) - reqList.get(1)); // Distance from top to lowest request
-        } else {
-            // Go down to 0, then up
-            totalSeek += Math.abs(head - 0); // Distance to bottom
-            totalSeek += Math.abs(reqList.get(reqList.size() - 2) - 0); // Distance from 0 to highest request
-        }
-        System.out.println("Total Seek Distance: " + totalSeek);
+        List<Integer> up = upper(requests, head), down = lower(requests, head);
+        Collections.reverse(down); // served from high to low when moving down
+        List<Integer> path = new ArrayList<>();
+        path.add(head);
+        int pos = head, totalSeek = 0;
+
+        // up is ascending, down is descending - exactly the order they are met
+        List<Integer> first = directionUp ? up : down;
+        List<Integer> second = directionUp ? down : up;
+
+        for (int r : first) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        // Textbook SCAN always travels to the disk edge before reversing
+        // (that is the difference from LOOK, which turns at the last request).
+        int edge = directionUp ? diskSize - 1 : 0;
+        if (pos != edge) { totalSeek += Math.abs(edge - pos); pos = edge; path.add(edge); }
+        for (int r : second) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        printResult(path, totalSeek);
     }
 
+    /**
+     * C-SCAN: move UP serving requests, go to the end, JUMP back to cylinder 0
+     * (the jump is counted as head movement here), then continue upward.
+     */
     public static void cscan(int[] requests, int head, int diskSize) {
         System.out.println("--- C-SCAN (Circular SCAN) ---");
-        // Always goes UP, then immediately jumps back to 0 without servicing, then goes UP again.
-        List<Integer> reqList = new ArrayList<>();
-        for (int r : requests) reqList.add(r);
-        reqList.add(head);
-        reqList.add(0);
-        reqList.add(diskSize - 1);
-        
-        Collections.sort(reqList);
-        int headIdx = reqList.indexOf(head);
-        
-        int totalSeek = 0;
-        
-        // Go up to the top
-        totalSeek += Math.abs((diskSize - 1) - head);
-        // Jump to 0 (cost depends on model, standard assumption includes this massive jump)
-        totalSeek += (diskSize - 1); 
-        // Go up to highest request before original head
-        totalSeek += Math.abs(reqList.get(headIdx - 1) - 0);
-        
-        System.out.println("Total Seek Distance: " + totalSeek);
+        List<Integer> up = upper(requests, head), down = lower(requests, head);
+        List<Integer> path = new ArrayList<>();
+        path.add(head);
+        int pos = head, totalSeek = 0;
+
+        for (int r : up) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        if (pos != diskSize - 1) {                                                         // always to the end
+            totalSeek += Math.abs((diskSize - 1) - pos); pos = diskSize - 1; path.add(pos);
+        }
+        if (!down.isEmpty()) {
+            totalSeek += diskSize - 1; pos = 0; path.add(0);                               // jump to start
+            for (int r : down) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        }
+        printResult(path, totalSeek);
     }
 
+    /**
+     * LOOK: like SCAN, but only goes as far as the last REQUEST in each
+     * direction (not to the physical end of the disk).
+     */
     public static void look(int[] requests, int head, boolean directionUp) {
         System.out.println("--- LOOK ---");
-        // Like SCAN, but stops at the furthest request instead of going to the very edge of the disk!
-        List<Integer> reqList = new ArrayList<>();
-        for (int r : requests) reqList.add(r);
-        reqList.add(head);
-        Collections.sort(reqList);
-        
-        int headIdx = reqList.indexOf(head);
-        int totalSeek = 0;
-        
-        if (directionUp) {
-            totalSeek += Math.abs(reqList.get(reqList.size() - 1) - head);
-            totalSeek += Math.abs(reqList.get(reqList.size() - 1) - reqList.get(0));
-        } else {
-            totalSeek += Math.abs(head - reqList.get(0));
-            totalSeek += Math.abs(reqList.get(reqList.size() - 1) - reqList.get(0));
-        }
-        System.out.println("Total Seek Distance: " + totalSeek);
+        List<Integer> up = upper(requests, head), down = lower(requests, head);
+        Collections.reverse(down);
+        List<Integer> first = directionUp ? up : down;
+        List<Integer> second = directionUp ? down : up;
+        List<Integer> path = new ArrayList<>();
+        path.add(head);
+        int pos = head, totalSeek = 0;
+
+        for (int r : first) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        for (int r : second) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        printResult(path, totalSeek);
     }
 
+    /**
+     * C-LOOK: move UP to the last request, jump to the LOWEST pending request
+     * (jump counted as head movement), then continue upward.
+     */
     public static void clook(int[] requests, int head) {
         System.out.println("--- C-LOOK ---");
-        // Like C-SCAN, but stops at furthest requests instead of edges.
-        List<Integer> reqList = new ArrayList<>();
-        for (int r : requests) reqList.add(r);
-        reqList.add(head);
-        Collections.sort(reqList);
-        
-        int headIdx = reqList.indexOf(head);
-        int totalSeek = 0;
-        
-        // Go to highest request
-        totalSeek += Math.abs(reqList.get(reqList.size() - 1) - head);
-        // Jump to lowest request
-        totalSeek += Math.abs(reqList.get(reqList.size() - 1) - reqList.get(0));
-        // Go to highest request before head
-        if (headIdx > 0) {
-            totalSeek += Math.abs(reqList.get(headIdx - 1) - reqList.get(0));
-        }
-        
-        System.out.println("Total Seek Distance: " + totalSeek);
+        List<Integer> up = upper(requests, head), down = lower(requests, head);
+        List<Integer> path = new ArrayList<>();
+        path.add(head);
+        int pos = head, totalSeek = 0;
+
+        for (int r : up) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        for (int r : down) { totalSeek += Math.abs(r - pos); pos = r; path.add(r); }
+        printResult(path, totalSeek);
     }
 
     public static void main(String[] args) {
@@ -157,5 +171,11 @@ public class DiskScheduling {
         cscan(requests, head, diskSize);
         look(requests, head, true);
         clook(requests, head);
+
+        // Edge case: every request is above the head -> no reversal needed
+        System.out.println("\n=== All requests above head (10) ===");
+        int[] allAbove = {40, 20, 90};
+        scan(allAbove, 10, diskSize, true); // 10 -> 20 -> 40 -> 90 -> 199 = 189 (goes to the edge)
+        look(allAbove, 10, true);           // 10 -> 20 -> 40 -> 90 = 80 (stops at last request)
     }
 }

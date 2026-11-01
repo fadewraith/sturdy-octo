@@ -157,6 +157,47 @@ public class LFUCache<K, V> {
     /**
      * Core helper: Moves a node from its current frequency DLL to the (freq + 1) DLL.
      */
+    /** True if the key is cached. Does NOT count as a use (frequency is unchanged). */
+    public boolean containsKey(K key) {
+        return cache.containsKey(key);
+    }
+
+    /**
+     * Removes key. Returns its value, or null if it was not cached.
+     * O(1) usually. If it was the LAST key at minFreq, minFreq must be recomputed,
+     * otherwise the next eviction would look in an empty list. That rescan is O(N),
+     * but only happens in that case (get/put never need it: they can only move minFreq by +1 or reset it to 1).
+     */
+    public V remove(K key) {
+        Node node = cache.remove(key);
+        if (node == null) return null;
+        DoublyLinkedList list = freqMap.get(node.freq);
+        list.removeNode(node);
+        if (node.freq == minFreq && list.size == 0) {
+            minFreq = 0;
+            array.MyArrayList<Node> nodes = cache.values();
+            for (int i = 0; i < nodes.size(); i++) {
+                int f = nodes.get(i).freq;
+                if (minFreq == 0 || f < minFreq) minFreq = f;
+            }
+        }
+        return node.value;
+    }
+
+    public int size() {
+        return cache.size();
+    }
+
+    public int capacity() {
+        return capacity;
+    }
+
+    public void clear() {
+        cache.clear();
+        freqMap.clear();
+        minFreq = 0;
+    }
+
     private void updateNodeFrequency(Node node) {
         int currentFreq = node.freq;
         DoublyLinkedList currentList = freqMap.get(currentFreq);

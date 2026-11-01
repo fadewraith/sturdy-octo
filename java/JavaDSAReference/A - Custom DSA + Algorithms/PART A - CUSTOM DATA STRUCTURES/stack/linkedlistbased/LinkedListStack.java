@@ -32,7 +32,7 @@ import linkedlist.common.Node;
  * stack. However, it incurs extra memory overhead per element (due to the `next` pointer 
  * object reference) and loses cache locality. Knowing both tradeoffs is crucial for interviews.
  */
-public class LinkedListStack<T> {
+public class LinkedListStack<T> implements Iterable<T> {
 
     // We reuse the Node class created in the linkedlist package!
     private Node<T> top;
@@ -90,6 +90,27 @@ public class LinkedListStack<T> {
      */
     public int size() {
         return size;
+    }
+
+    /** Top to bottom (the order pop() would return them). */
+    @Override
+    public java.util.Iterator<T> iterator() {
+        return new java.util.Iterator<T>() {
+            private Node<T> current = top;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                if (current == null) throw new java.util.NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
     // --------------------------------------------------------

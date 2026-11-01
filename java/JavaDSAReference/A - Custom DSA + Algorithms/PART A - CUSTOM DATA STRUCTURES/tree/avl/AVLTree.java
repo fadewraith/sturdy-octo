@@ -1,5 +1,7 @@
 package tree.avl;
 
+import array.MyArrayList;
+
 /**
  * AVL TREE
  * 
@@ -50,6 +52,7 @@ public class AVLTree<T extends Comparable<T>> {
     }
 
     private AVLNode root;
+    private int size; // number of keys, maintained by insert/delete
 
     public AVLTree() {
         this.root = null;
@@ -152,6 +155,7 @@ public class AVLTree<T extends Comparable<T>> {
     private AVLNode insertRec(AVLNode node, T data) {
         // 1. Perform standard BST insert
         if (node == null) {
+            size++; // a new key really was added (duplicates return earlier)
             return new AVLNode(data);
         }
 
@@ -220,6 +224,9 @@ public class AVLTree<T extends Comparable<T>> {
 
             // Node with only one child or no child
             if ((node.left == null) || (node.right == null)) {
+                // The only place a node is actually unlinked (the two-children case
+                // recurses down to here for the successor), so count it here.
+                size--;
                 AVLNode temp = null;
                 if (temp == node.left) temp = node.right;
                 else temp = node.left;
@@ -321,6 +328,49 @@ public class AVLTree<T extends Comparable<T>> {
         } else {
             System.out.println("Tree is empty.");
         }
+    }
+
+    // --------------------------------------------------------
+    // QUERY HELPERS (return values instead of printing)
+    // --------------------------------------------------------
+
+    /** Number of keys. O(1): a counter kept up to date by insert and delete. */
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    /** Smallest key (leftmost node), or null if empty. O(log N) - the tree is balanced. */
+    public T min() {
+        if (root == null) return null;
+        AVLNode cur = root;
+        while (cur.left != null) cur = cur.left;
+        return cur.data;
+    }
+
+    /** Largest key (rightmost node), or null if empty. */
+    public T max() {
+        if (root == null) return null;
+        AVLNode cur = root;
+        while (cur.right != null) cur = cur.right;
+        return cur.data;
+    }
+
+    /** All keys in ascending order (in-order traversal). */
+    public MyArrayList<T> toSortedList() {
+        MyArrayList<T> out = new MyArrayList<>();
+        collectRec(root, out);
+        return out;
+    }
+
+    private void collectRec(AVLNode node, MyArrayList<T> out) {
+        if (node == null) return;
+        collectRec(node.left, out);
+        out.add(node.data);
+        collectRec(node.right, out);
     }
 
     // --------------------------------------------------------

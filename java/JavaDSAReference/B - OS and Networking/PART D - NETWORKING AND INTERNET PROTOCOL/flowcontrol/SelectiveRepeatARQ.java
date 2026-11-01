@@ -58,4 +58,8 @@ public class SelectiveRepeatARQ {
 
         System.out.println("All packets delivered successfully with Selective Repeat.");
     }
+
+    public static void main(String[] args) {
+        simulate();
+    }
 }

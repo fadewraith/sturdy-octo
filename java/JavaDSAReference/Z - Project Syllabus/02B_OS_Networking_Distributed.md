@@ -30,6 +30,7 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] DemandPaging.java
 - [x] ContiguousAllocation.java (First, Best, Worst Fit)
 - [x] BuddySystem.java
+- [x] GarbageCollectors.java (`os.garbagecollection`: reference counting, mark-sweep, Cheney copying)
 
 ### 4. Disk Scheduling & File Systems (`os.diskscheduling` / `os.filesystem` / `os.raid`)
 - [x] DiskScheduling.java (FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK)
@@ -88,11 +89,14 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] TCPReno.java
 - [x] LeakyBucket.java
 - [x] TokenBucket.java
+- [x] RateLimiters.java (`net.ratelimiting`: fixed window, sliding log, sliding window counter, time-based token bucket, per-key)
 - [x] CSMACD.java
 - [x] CSMACA.java
 
 ### 3. Layers & Protocols (`net.*`)
 - [x] Checksum.java & CRC.java
+- [x] HammingCode.java (SEC-DED: corrects 1-bit errors, detects 2-bit errors)
+- [x] LongestPrefixMatch.java (`net.routing`: IPv4 routing table as a binary trie)
 - [x] SpanningTreeProtocol.java
 - [x] FordFulkerson.java & EdmondsKarp.java
 - [x] ARPSimulation.java
@@ -117,7 +121,18 @@ This workspace contains the high-level simulations of OS mechanics, Networking p
 - [x] TwoPhaseCommit.java
 - [x] ThreePhaseCommit.java
 - [x] GossipProtocol.java
+- [x] MerkleTree.java (`distributed.merkle`: inclusion proofs, anti-entropy diff)
+- [x] QuorumReplication.java (N/W/R quorums, versioned values, read repair)
+- [x] CRDTs.java (G-Counter, PN-Counter, G-Set, OR-Set, LWW-Register)
+- [x] ChandyLamportSnapshot.java (consistent global snapshot with markers)
+- [x] RicartAgrawala.java (`distributed.mutualexclusion`: message-passing mutex)
+- [x] FailureDetectors.java (heartbeat timeout, phi accrual)
+- [x] RendezvousHashing.java (`distributed.hashing`: HRW, weighted, top-k replicas)
+- [x] SnowflakeIdGenerator.java & Base62.java (`distributed.idgen`: time-ordered ids, URL-safe codes)
 
 ### 2. Probabilistic Data Structures (`probabilistic.*`)
 - [x] CountMinSketch.java
 - [x] HyperLogLog.java
+- [x] CuckooFilter.java (membership with delete, partial-key cuckoo hashing)
+- [x] MinHashLSH.java (Jaccard estimation, LSH banding for near-duplicates)
+- [x] HeavyHitters.java (Misra-Gries, Space-Saving)

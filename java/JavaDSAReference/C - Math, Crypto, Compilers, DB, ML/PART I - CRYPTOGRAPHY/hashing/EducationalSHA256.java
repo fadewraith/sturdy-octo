@@ -41,7 +41,14 @@ public class EducationalSHA256 {
 
     /** Returns the SHA-256 digest of the UTF-8 bytes of message, as 64 lowercase hex chars. */
     public static String hash(String message) {
-        byte[] msg = message.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        byte[] d = digest(message.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte x : d) sb.append(String.format("%02x", x));
+        return sb.toString();
+    }
+
+    /** Returns the raw 32-byte SHA-256 digest of any byte array (used by HMAC / PBKDF2). */
+    public static byte[] digest(byte[] msg) {
 
         // Step 1: Padding. Append bit '1' (byte 0x80), then zeros until the length
         // is 56 mod 64 bytes, then the original length in BITS as a 64-bit big-endian number.
@@ -101,7 +108,15 @@ public class EducationalSHA256 {
             h4 += e; h5 += f; h6 += g; h7 += h;
         }
 
-        return String.format("%08x%08x%08x%08x%08x%08x%08x%08x", h0, h1, h2, h3, h4, h5, h6, h7);
+        int[] words = {h0, h1, h2, h3, h4, h5, h6, h7};
+        byte[] out = new byte[32];
+        for (int i = 0; i < 8; i++) {                    // big-endian
+            out[4 * i] = (byte) (words[i] >>> 24);
+            out[4 * i + 1] = (byte) (words[i] >>> 16);
+            out[4 * i + 2] = (byte) (words[i] >>> 8);
+            out[4 * i + 3] = (byte) words[i];
+        }
+        return out;
     }
 
     public static void main(String[] args) {

@@ -113,24 +113,33 @@ This workspace contains the foundational 'from-scratch' DSA implementations.
 ### algorithms
 - [x] ActivitySelection.java
 - [x] ArrayRotation.java
+- [x] ArticulationPoints.java
 - [x] AStar.java
 - [x] BellmanFord.java
 - [x] BFSShortestPath.java
-- [x] BinarySearch.java
+- [x] BFSVariants.java (multi-source BFS, 0-1 BFS)
+- [x] BinarySearch.java (bounds, first/last/count, rotated incl. duplicates, peak, 2D matrix, integer sqrt)
 - [x] BinarySearchOnAnswer.java
 - [x] BipartiteCheck.java
 - [x] BitTricks.java
 - [x] BoyerMoore.java
 - [x] BoyerMooreMajority.java
+- [x] BuildTreeFromTraversals.java
+- [x] BurstBalloons.java
 - [x] ClosestPairOfPoints.java
-- [x] CoinChange.java
+- [x] CoinChange.java (min coins, count combinations / ordered ways)
 - [x] CombinationSum.java
 - [x] ConvexHull.java
+- [x] CountInversions.java
+- [x] DecodeWays.java
 - [x] DiameterOfTree.java
+- [x] DigitDP.java
 - [x] Dijkstra.java
+- [x] Dinic.java (max flow + min cut)
 - [x] DutchNationalFlag.java
 - [x] EditDistance.java
-- [x] EulerianPath.java (Hierholzer with odd-degree start + existence checks)
+- [x] EggDrop.java
+- [x] EulerianPath.java (Hierholzer, undirected + directed, existence checks)
 - [x] ExponentialSearch.java
 - [x] FastExponentiation.java
 - [x] FibonacciFactorial.java
@@ -140,40 +149,55 @@ This workspace contains the foundational 'from-scratch' DSA implementations.
 - [x] FordFulkerson.java
 - [x] FractionalKnapsack.java
 - [x] GCDAndLCM.java
-- [x] GraphColoring.java
+- [x] GenerateParentheses.java
+- [x] GraphColoring.java (greedy, backtracking m-coloring, chromatic number)
+- [x] GridPaths.java
+- [x] GridTraversal.java (islands, flood fill, binary-matrix path)
 - [x] HammingDistance.java
+- [x] HeapPatterns.java (merge k lists, top-k, top-k frequent, median stream)
 - [x] HeapSortAlgo.java
 - [x] HeldKarpTSP.java
+- [x] HopcroftKarp.java
 - [x] HouseRobber.java
 - [x] HuffmanCoding.java
 - [x] InterpolationSearch.java
-- [x] IntervalProblems.java
+- [x] IntervalProblems.java (merge, insert, non-overlapping, meeting rooms I/II, intersection, min arrows)
 - [x] JobSequencing.java
 - [x] JumpGame.java
 - [x] KadanesAlgorithm.java
 - [x] KMPAlgorithm.java
 - [x] KosarajusSCC.java
 - [x] Kruskals.java
+- [x] LargestRectangleHistogram.java
+- [x] LCABinaryLifting.java
 - [x] LinearSorts.java
 - [x] LongestCommonSubsequence.java
 - [x] LongestCommonSubstring.java
 - [x] LongestIncreasingSubsequence.java
+- [x] LongestPalindromicSubsequence.java
 - [x] LowestCommonAncestor.java
 - [x] ManachersAlgorithm.java
 - [x] MatrixChainMultiplication.java
+- [x] MatrixTraversal.java (spiral, rotate, set zeroes)
 - [x] MedianOfTwoSortedArrays.java
 - [x] MeetInTheMiddleAlgo.java
 - [x] MergeSort.java
 - [x] Minimax.java
+- [x] MinimumWindowSubstring.java
 - [x] MonotonicStack.java
-- [x] MoreBitTricks.java
+- [x] MoreBitTricks.java (bit ops, counting bits, reverse, single number II/III, Gray code, Gosper, submasks)
 - [x] MorrisTraversal.java
 - [x] NaivePatternMatching.java
+- [x] NextPermutation.java
+- [x] NimGame.java (Nim, Sprague-Grundy)
 - [x] NQueens.java
 - [x] OppositeDirection.java
+- [x] PalindromePartitioning.java
 - [x] Permutations.java
+- [x] PermutationsWithDuplicates.java
 - [x] PrefixSumAndDifference.java
 - [x] Prims.java
+- [x] ProductExceptSelf.java
 - [x] QuadraticSorts.java
 - [x] QuickSelect.java
 - [x] QuickSort.java
@@ -189,11 +213,15 @@ This workspace contains the foundational 'from-scratch' DSA implementations.
 - [x] SudokuSolver.java
 - [x] TarjansBridges.java
 - [x] TarjansSCC.java
-- [x] TopologicalSort.java
+- [x] ThreeSum.java
+- [x] TopologicalSort.java (DFS + cycle detection, Kahn, findCycle, canFinish)
 - [x] TrappingRainWater.java
+- [x] UnboundedKnapsack.java
 - [x] UnionFindAlgo.java
 - [x] VariableWindow.java
+- [x] WeightedRandomPick.java (prefix sums, alias method)
 - [x] WordBreak.java
+- [x] WordSearch.java
 - [x] ZAlgorithm.java
 - [x] ZeroOneKnapsack.java
 

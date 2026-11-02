@@ -20,6 +20,8 @@ This workspace contains string similarity, spatial data structures, real-world d
 - [x] SuffixArray.java
 - [x] SuffixTree.java
 - [x] BKTree.java
+- [x] MyersDiff.java (`algorithms.strings.diff`: O(ND) shortest edit script, the git diff algorithm)
+- [x] SuffixAutomaton.java (contains, distinct substrings, occurrence counts, longest common substring)
 
 ## PART 2 - SPATIAL DATA STRUCTURES AND HASHING
 - [x] GenericKDTree.java (K dimensions, values, nearest / k-nearest / range / delete / balanced build)
@@ -28,6 +30,8 @@ This workspace contains string similarity, spatial data structures, real-world d
 - [x] RTreeDemo.java (Guttman insert with quadratic split, search)
 - [x] CuckooHashMap.java (generic key -> value, O(1) worst-case lookups)
 - [x] CuckooHashing.java (int set, rehash on cycles)
+- [x] Geohash.java (encode/decode, bounding box, 8 neighbours)
+- [x] SpaceFillingCurves.java (Z-order/Morton and Hilbert curves)
 
 ## PART 3 - REAL WORLD AND SYSTEM ALGORITHMS
 - [x] CollaborativeFiltering.java
@@ -37,3 +41,5 @@ This workspace contains string similarity, spatial data structures, real-world d
 
 ## PART 4 - COMPUTATIONAL GEOMETRY
 - [x] BresenhamsLine.java
+- [x] MidpointCircle.java (integer-only circle rasterisation, 8-way symmetry)
+- [x] Clipping.java (`geometry.clipping`: Cohen-Sutherland lines, Sutherland-Hodgman polygons)
